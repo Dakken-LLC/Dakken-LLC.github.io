@@ -1,6 +1,7 @@
-import { Link } from "react-router";
-import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { RiMenu2Fill } from "react-icons/ri";
+import { IoCloseOutline } from "react-icons/io5";
 import dakken_llc_logo_3_w from "../assets/dakken_llc_logo_3_w.png";
 import styles from "./Header.module.css";
 
@@ -14,10 +15,15 @@ const LinkItem = ({ title, to }: { title: string; to: string }) => {
 
 export default function HeaderLayout() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+    useEffect(() => {
+      setIsOpen(false);
+    }, [location]);
 
   return (
     <header className={styles.header}>
@@ -46,7 +52,7 @@ export default function HeaderLayout() {
         </ul>
       </nav>
       <div className={styles.hamburger} onClick={toggleMenu}>
-        {isOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+        {isOpen ? <IoCloseOutline size={40} /> : <RiMenu2Fill size={40} />}
       </div>
     </header>
   );
