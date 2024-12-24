@@ -9,7 +9,8 @@ export default function BusinessPage() {
         <h1>事業内容</h1>
       </div>
       <div className="page-content">
-        <h3>ITをはじめとした様々な仕事を承ります。</h3>
+        <h3>企業のIT化に貢献します
+        </h3>
         <br></br>
         <br></br>
         <br></br>

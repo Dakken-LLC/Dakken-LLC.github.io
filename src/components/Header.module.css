@@ -1,7 +1,6 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   background-color: rgba(40, 40, 40, 0.8);
   color: white;
   position: fixed; /* 位置を固定 */
@@ -12,22 +11,12 @@
   backdrop-filter: blur(5px);
 }
 
-.header.isOpen {
-  border-bottom: none;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-size: 30px;
-}
-
 .logo img {
   height: 55px;
   width: 110px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 nav ul {
@@ -35,12 +24,14 @@ nav ul {
   padding: 0;
   display: flex;
   backdrop-filter: inherit;
-  backdrop-filter: blur(5px);
+  justify-content: center;
+  margin: 10px;
 }
 
 nav ul li {
   list-style: none;
   margin: 5px 15px;
+
 }
 
 nav ul li a {
@@ -49,7 +40,7 @@ nav ul li a {
   font-size: 20px;
   display: flex;
   align-items: center;
-  transition: all 0.4s;
+  transition: all 0.3s;
   margin: 10px;
   justify-content: center;
   font-family: "Josefin Sans", serif;
@@ -63,17 +54,11 @@ nav ul li a:hover {
   margin-left: 8px;
 }
 
-.icon {
-  display: none;
-}
-nav ul.active {
-  display: flex;
-  max-height: 300px; /* メニューの最大高さを設定 */
-}
+
 .hamburger {
   display: none;
-  flex-direction: column;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .hamburger div {
@@ -85,35 +70,34 @@ nav ul.active {
 }
 
 @media (max-width: 800px) {
+  .header.isOpen {
+  height: 320px;
+  display: flex;
+  align-items: start;
+  transition: all 0.4s;
+}
+  .header.isClose {
+    height: 70px;
+    transition: all 0.4s;
+  }
+
   .linkText {
     display: none;
   }
 
-  .icon {
-    display: inline;
-  }
-
   nav ul {
-    display: none;
     flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    background-color: rgba(40, 40, 40, 0.8);
-    max-height: 0;
+    max-height: 0;;
     overflow: hidden;
     opacity: 0;
-    border-bottom: 6px solid rgb(211, 75, 75);
-    animation: fadeIn 0.4s ease-out forwards;
-    backdrop-filter: blur(5px);
+    margin-top: 70px;
+    margin-right:60px;
+    transition: all 0.5s;
   }
 
   nav ul.active {
-    display: flex;
     max-height: 300px; /* メニューの最大高さを設定 */
     opacity: 1;
-    animation: fadeIn 0.5s ease-out forwards;
   }
 
   nav ul li a:hover {
@@ -121,15 +105,16 @@ nav ul.active {
   }
 
   nav ul.active {
-    display: flex;
     max-height: 300px; /* メニューの最大高さを設定 */
   }
 
   .hamburger {
     display: flex;
     margin-right: 20px;
+    margin-top: 15px;
   }
 }
+
 
 @keyframes fadeIn {
   0% {

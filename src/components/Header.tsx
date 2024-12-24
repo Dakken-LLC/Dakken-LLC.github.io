@@ -26,7 +26,9 @@ export default function HeaderLayout() {
   }, [location]);
 
   return (
-    <header className={`${styles.header} ${isOpen ? styles.isOpen : ""} `}>
+    <header
+      className={`${styles.header} ${isOpen ? styles.isOpen : styles.isClose} `}
+    >
       <div className={styles.logo}>
         <Link to="/">
           <img
@@ -47,7 +49,7 @@ export default function HeaderLayout() {
           <LinkItem title="Home" to="/" />
           <LinkItem title="Vision" to="/vision" />
           <LinkItem title="Business" to="/business" />
-          {/* <LinkItem title="Member" to="/member" /> */}
+          <LinkItem title="Member" to="/member" />
           <LinkItem title="Contact" to="/contact" />
         </ul>
       </nav>
