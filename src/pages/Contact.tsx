@@ -1,14 +1,14 @@
 import "../App.css";
-import dakken_contact from "../assets/dakken_contact_12.png";
+import dakkenContact from "../assets/dakken_contact_12.png";
 
 export default function ContactPage() {
   return (
     <div className="container text-center">
-      <img src={dakken_contact} className="page_top_image" alt="Top Image" />
-      <div className="page_title">
+      <img src={dakkenContact} className="page-top-image" alt="Top Image" />
+      <div className="page-title">
         <h1>お問い合わせ</h1>
       </div>
-      <div className="page_content">
+      <div className="page-content">
         <h3>
           <div className="fade-effect">
             <span className="red-text">
@@ -23,7 +23,7 @@ export default function ContactPage() {
         <br></br>
         <a
           href="https://www.uoh-dakken.com/contact"
-          target="_blank"
+          target="-blank"
           rel="noopener noreferrer"
         >
           部活動DA研の公式ページのお問い合わせ
