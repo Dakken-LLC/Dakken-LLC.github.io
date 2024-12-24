@@ -21,12 +21,12 @@ export default function HeaderLayout() {
     setIsOpen(!isOpen);
   };
 
-    useEffect(() => {
-      setIsOpen(false);
-    }, [location]);
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isOpen ? styles.isOpen : ""} `}>
       <div className={styles.logo}>
         <Link to="/">
           <img
@@ -40,7 +40,7 @@ export default function HeaderLayout() {
         <ul
           className={
             isOpen
-              ? `${styles.linkContainer} ${styles.active}`
+              ? `${styles.linkContainer} ${styles.active} `
               : styles.linkContainer
           }
         >
