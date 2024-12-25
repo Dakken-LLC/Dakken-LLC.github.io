@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoCloseOutline } from "react-icons/io5";
 import dakken_llc_logo_3_w from "../assets/dakken_llc_logo_3_w.png";
@@ -49,7 +49,7 @@ export default function HeaderLayout() {
           <LinkItem title="Home" to="/" />
           <LinkItem title="Vision" to="/vision" />
           <LinkItem title="Business" to="/business" />
-          <LinkItem title="Member" to="/member" />
+          {/* <LinkItem title="Member" to="/member" /> */}
           <LinkItem title="Contact" to="/contact" />
         </ul>
       </nav>

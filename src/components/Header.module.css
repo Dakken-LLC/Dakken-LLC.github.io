@@ -31,7 +31,6 @@ nav ul {
 nav ul li {
   list-style: none;
   margin: 5px 15px;
-
 }
 
 nav ul li a {
@@ -54,7 +53,6 @@ nav ul li a:hover {
   margin-left: 8px;
 }
 
-
 .hamburger {
   display: none;
   cursor: pointer;
@@ -71,11 +69,11 @@ nav ul li a:hover {
 
 @media (max-width: 800px) {
   .header.isOpen {
-  height: 320px;
-  display: flex;
-  align-items: start;
-  transition: all 0.4s;
-}
+    height: 320px;
+    display: flex;
+    align-items: start;
+    transition: all 0.4s;
+  }
   .header.isClose {
     height: 70px;
     transition: all 0.4s;
@@ -87,11 +85,11 @@ nav ul li a:hover {
 
   nav ul {
     flex-direction: column;
-    max-height: 0;;
+    max-height: 0;
     overflow: hidden;
     opacity: 0;
     margin-top: 70px;
-    margin-right:60px;
+    margin-right: 60px;
     transition: all 0.5s;
   }
 
@@ -114,7 +112,6 @@ nav ul li a:hover {
     margin-top: 15px;
   }
 }
-
 
 @keyframes fadeIn {
   0% {

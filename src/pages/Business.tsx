@@ -1,16 +1,15 @@
 import "../App.css";
-import dakkenBussiness from "../assets/dakken_business_12.png";
+import dakkenBusiness from "../assets/dakken_business_12.png";
 
 export default function BusinessPage() {
   return (
     <div className="container text-center">
-      <img src={dakkenBussiness} className="page-top-image" alt="Top Image" />
+      <img src={dakkenBusiness} className="page-top-image" alt="Top Image" />
       <div className="page-title">
         <h1>事業内容</h1>
       </div>
       <div className="page-content">
-        <h3>企業のIT化に貢献します
-        </h3>
+        <h3>企業のIT化に貢献します</h3>
         <br></br>
         <br></br>
         <br></br>
