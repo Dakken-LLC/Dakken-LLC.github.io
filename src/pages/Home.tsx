@@ -35,7 +35,7 @@ export default function HomePage() {
         <br></br>
         <a
           href="https://www.uoh-dakken.com/"
-          target="-blank"
+          target="_blank"
           rel="noopener noreferrer"
         >
           部活動DA研の公式ページ
