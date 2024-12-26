@@ -1,40 +1,36 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: rgb(40, 40, 40);
+  background-color: rgba(40, 40, 40, 0.8);
   color: white;
   position: fixed; /* 位置を固定 */
   width: 100%;
-  z-index: 10;
-  height: 80px;
-  opacity: 0.95; /* 透明度を設定 */
+  z-index: 99;
+  height: 70px;
   border-bottom: 6px solid rgb(211, 75, 75);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-size: 30px;
+  backdrop-filter: blur(5px);
 }
 
 .logo img {
-  height: 65px;
-  width: 130px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
+  height: 55px;
+  width: 110px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  backdrop-filter: inherit;
+  justify-content: center;
+  margin: 10px;
 }
 
 nav ul li {
   list-style: none;
-  margin-right:30px;
+  margin: 5px 15px;
 }
 
 nav ul li a {
@@ -43,7 +39,10 @@ nav ul li a {
   font-size: 20px;
   display: flex;
   align-items: center;
-  transition: all 0.4s;
+  transition: all 0.3s;
+  margin: 10px;
+  justify-content: center;
+  font-family: "Josefin Sans", serif;
 }
 
 nav ul li a:hover {
@@ -54,14 +53,10 @@ nav ul li a:hover {
   margin-left: 8px;
 }
 
-.icon {
-  display: none;
-}
-
 .hamburger {
   display: none;
-  flex-direction: column;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .hamburger div {
@@ -72,25 +67,35 @@ nav ul li a:hover {
   transition: all 0.3s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+  .header.isOpen {
+    height: 320px;
+    display: flex;
+    align-items: start;
+    transition: all 0.4s;
+  }
+  .header.isClose {
+    height: 70px;
+    transition: all 0.4s;
+  }
+
   .linkText {
     display: none;
   }
 
-  .icon {
-    display: inline;
+  nav ul {
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 70px;
+    margin-right: 60px;
+    transition: all 0.5s;
   }
 
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    background-color: rgb(40, 40, 40);
-    margin-bottom: 20px;
-    font-family: ;
+  nav ul.active {
+    max-height: 300px; /* メニューの最大高さを設定 */
+    opacity: 1;
   }
 
   nav ul li a:hover {
@@ -98,11 +103,30 @@ nav ul li a:hover {
   }
 
   nav ul.active {
-    display: flex;
+    max-height: 300px; /* メニューの最大高さを設定 */
   }
 
   .hamburger {
     display: flex;
     margin-right: 20px;
+    margin-top: 15px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

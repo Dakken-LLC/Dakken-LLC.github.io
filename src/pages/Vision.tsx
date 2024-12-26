@@ -1,14 +1,14 @@
 import "../App.css";
-import dakken_vision from "../assets/dakken_vision_12.png";
+import dakkenVision from "../assets/dakken_vision_12.png";
 
 export default function VisionPage() {
   return (
     <div className="container text-center">
-      <img src={dakken_vision} className="page_top_image" alt="Top Image" />
-      <div className="page_title">
+      <img src={dakkenVision} className="page-top-image" alt="Top Image" />
+      <div className="page-title">
         <h1>企業理念</h1>
       </div>
-      <div className="page_content">
+      <div className="page-content">
         <h3>
           情報科学の知見を学生の
           <span className="blue-text">若い発想力と実行力で</span><br></br>
