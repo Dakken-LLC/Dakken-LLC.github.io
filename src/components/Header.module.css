@@ -16,13 +16,11 @@
   backdrop-filter: none;
   border-bottom: 6px solid transparent; /* topに戻るときの赤線を透明にする */
   transition: border-bottom 0.5s, background-color 0.5s;
-
 }
 
 .header.scrolled {
   background-color: rgba(40, 40, 40, 0.8); /* スクロールしたときの色 */
   transition: all 0.5s;
-
 }
 
 .logo img {
@@ -31,7 +29,6 @@
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 15px;
-  transition: all 0.5s;
 }
 
 nav ul {
@@ -68,14 +65,12 @@ nav ul li a:hover {
 }
 
 .hamburger {
-
   display: None;
   flex-direction: column;
   cursor: pointer;
   margin-right: 20px;
   margin-top: 20px;
 }
-
 
 .hamburger div {
   width: 30px;
@@ -84,8 +79,6 @@ nav ul li a:hover {
   margin: 6px;
   transition: all 0.2s;
 }
-
-
 
 @media (max-width: 800px) {
   .header.isOpen {
