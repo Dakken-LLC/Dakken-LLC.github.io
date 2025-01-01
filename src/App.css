@@ -72,7 +72,6 @@ img {
   width: auto;
   letter-spacing: 3px;
   border-bottom: 3px solid #000;
-  animation: fadeIn 0.5s ease-in-out;
 }
 
 .page-content {
