@@ -137,3 +137,72 @@ h4 {
     font-size: 1.2rem; /* 600px以上の画面幅の場合のフォントサイズ */
   }
 }
+
+.Home-top-grad {
+  display: flex;
+  width: 100%;
+  height: 650px;
+  background: linear-gradient(0deg, #0cb1c1, #3948b9);
+  background-size: 200% 200%;
+  animation: Grad 15s ease infinite;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Home-top-title {
+  font-size: 8vh;
+  font-family: Arial;
+  font-weight: 600;
+  color: #fff;
+  margin-left: 40%;
+  margin-bottom: 0;
+}
+
+.Home-top-text {
+  font-size: 3vh;
+  font-family: Arial;
+  font-weight: 600;
+  color: #fff;
+  margin-left: 40%;
+}
+
+@keyframes Grad {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+/* 点滅効果を定義 */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 点滅効果を適用するクラス */
+.blink {
+  animation: blink 1s infinite;
+}
+
+@media (max-width: 850px) {
+  .Home-top-title {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .Home-top-text {
+    margin-left: 0;
+  }
+}

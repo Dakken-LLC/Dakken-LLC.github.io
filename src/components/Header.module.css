@@ -80,7 +80,7 @@ nav ul li a:hover {
   transition: all 0.2s;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .header.isOpen {
     height: 320px;
     display: flex;

@@ -1,4 +1,3 @@
-import dakkenHome from "../assets/dakken_home_12.png";
 import "../App.css";
 import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
@@ -7,7 +6,14 @@ export default function HomePage() {
   return (
     <PageMoveTransition>
       <motion.div className="container text-center">
-        <img src={dakkenHome} className="page-top-image" alt="Top Image" />
+        <div className="Home-top-grad">
+          <p className="Home-top-title">
+            IT for Everyone<span className="blink">.</span>
+          </p>
+          <p className="Home-top-text">
+            学生による新しいITサービスを全ての人々へ
+         </p>
+        </div>
         <div className="page-title">
           <h1>合同会社DA研へようこそ</h1>
         </div>
