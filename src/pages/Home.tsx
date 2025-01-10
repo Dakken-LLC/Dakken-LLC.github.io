@@ -7,12 +7,12 @@ export default function HomePage() {
     <PageMoveTransition>
       <motion.div className="container text-center">
         <div className="Home-top-grad">
-          <p className="Home-top-title">
+          <p className="Home-top-title slide-in-left">
             IT for Everyone<span className="blink">.</span>
           </p>
           <p className="Home-top-text">
             学生による新しいITサービスを全ての人々へ
-         </p>
+          </p>
         </div>
         <div className="page-title">
           <h1>合同会社DA研へようこそ</h1>
