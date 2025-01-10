@@ -1,54 +1,92 @@
+import React, { useState, useEffect } from "react";
 import "../App.css";
 import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
+import { SlArrowDown } from "react-icons/sl";
+
+const text = "IT for Everyone";
+
+const letterAnimation = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.05,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
 
 export default function HomePage() {
+  const [showDot, setShowDot] = useState(false);
+  const [showArrow, setShowArrow] = useState(false);
+
+  useEffect(() => {
+    const totalDuration = text.length * 0.05; // 文字の描画が完了するまでの時間
+    const timer1 = setTimeout(() => {
+      setShowDot(true);
+    }, totalDuration * 1000); // ミリ秒に変換
+
+    const timer2 = setTimeout(() => {
+      setShowArrow(true);
+    }, (totalDuration + 3) * 1000); // 文字の描画が完了してから3秒後に矢印を表示
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <PageMoveTransition>
       <motion.div className="container text-center">
         <div className="Home-top-grad">
-          <p className="Home-top-title slide-in-left">
-            IT for Everyone<span className="blink">.</span>
-          </p>
-          <p className="Home-top-text">
-            学生による新しいITサービスを全ての人々へ
-          </p>
-        </div>
-        <div className="page-title">
-          <h1>合同会社DA研へようこそ</h1>
-        </div>
-        <div className="page-content">
-          <h3>WEBアプリ開発・データ加工分析 etc...</h3>
-          <br></br>
-          <br></br>
-          <br></br>
-          <h4>
-            兵庫県立大学 社会情報科学部
-            DA研メンバーの学生たちによって設立されています。
-            <br></br>
-            主に兵庫県内の企業や自治体を中心にシステム開発やデータ分析を行っています。
-          </h4>
-          <br></br>
-          <br></br>
-          <h3>
-            <div className="fade-effect">
-              <span className="red-text">
-                ※只今Webサイトのリニューアル中です。
-              </span>
-            </div>
-          </h3>
-          <br></br>
-          <br></br>
-          <h4>完成まで下部のサイトをご覧ください</h4>
-          <br></br>
-          <br></br>
-          <a
-            href="https://www.uoh-dakken.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.p
+            className="Home-top-title"
+            initial="hidden"
+            animate="visible"
           >
-            部活動DA研の公式ページ
-          </a>
+            {text.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                custom={index}
+                variants={letterAnimation}
+              >
+                {char}
+              </motion.span>
+            ))}
+            {showDot && <span className="blink">.</span>}
+          </motion.p>
+          <motion.p
+            className="Home-top-text"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: text.length * 0.1 + 0.2,
+              duration: 0.5,
+              ease: "easeOut",
+            }}
+          >
+            学生による新しいITサービスを全ての人々へ
+          </motion.p>
+          <div
+            className={`scroll-arrow ${showArrow ? "visible" : ""}`}
+            onClick={handleScroll}
+          >
+            <SlArrowDown />
+          </div>
+        </div>
+        <div className="Home-sub-title">
+          お知らせ
         </div>
       </motion.div>
     </PageMoveTransition>
