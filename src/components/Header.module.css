@@ -36,12 +36,12 @@ nav ul {
   display: flex;
   backdrop-filter: inherit;
   justify-content: center;
-  margin: 13px;
+  margin-right: 10px;
 }
 
 nav ul li {
   list-style: none;
-  margin: 5px 15px;
+  margin: 5px 25px;
 }
 
 nav ul li a {
@@ -50,16 +50,31 @@ nav ul li a {
   font-size: 23px;
   display: flex;
   align-items: center;
-  transition: all 0.3s;
-  margin: 10px;
+  transition: color 0.3s;
   justify-content: center;
   font-family: "Josefin Sans", serif;
+  padding: 10px 0px;
+  position: relative; /* アンダーラインの位置を相対的に設定 */
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(190, 65, 65);
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* 加速的なトランジション */
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* ホバー時にアンダーラインを表示 */
 }
 
 nav ul li a:hover {
-  color: rgb(190, 65, 65);
+  color: rgb(190, 65, 65); /* ホバー時のテキストカラー */
 }
-
 .linkText {
   margin-left: 8px;
 }
@@ -82,7 +97,7 @@ nav ul li a:hover {
 
 @media (max-width: 850px) {
   .header.isOpen {
-    height: 320px;
+    height: 280px;
     display: flex;
     align-items: start;
     transition: all 0.4s;
@@ -117,14 +132,16 @@ nav ul li a:hover {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    margin-top: 50px;
+    margin-top: 60px;
     transition: all 0.5s;
     margin-right: 60px;
   }
 
+
   nav ul.active {
     max-height: 300px; /* メニューの最大高さを設定 */
     opacity: 1;
+
   }
 
   nav ul li a:hover {
@@ -134,6 +151,7 @@ nav ul li a:hover {
   nav ul.active {
     max-height: 300px; /* メニューの最大高さを設定 */
   }
+
 
   .hamburger {
     display: block;
@@ -156,4 +174,36 @@ nav ul li a:hover {
   100% {
     opacity: 0;
   }
+}
+
+.header-link {
+  position: relative;
+  display: inline-block;
+}
+
+.header-link span {
+  display: inline-block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.header-link::after {
+  content: attr(data-hover-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none; /* ホバー時のテキストがクリックできないようにする */
+}
+
+.header-link:hover::after {
+  opacity: 1;
+  color: white;
+}
+
+.header-link:hover span {
+  opacity: 0;
 }

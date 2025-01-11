@@ -27,6 +27,7 @@
   padding: 0; /* 余白を取り除く */
   margin: 0; /* 余白を取り除く */
   position: relative; /* 相対位置に設定 */
+  
 }
 
 .page-top-image {
@@ -253,8 +254,9 @@ h4 {
 
 .Home-sub-title{
   font-size: 3vh;
-  font-family: Arial;
+  font-family: "M PLUS 1p", serif;
   font-weight: 600;
   color: black;
   align-items: center;
 }
+
