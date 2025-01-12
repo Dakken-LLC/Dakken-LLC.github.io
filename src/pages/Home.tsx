@@ -48,7 +48,7 @@ export default function HomePage() {
 
   return (
     <PageMoveTransition>
-      <motion.div className="container text-center">
+      <motion.div className="container">
         <div className="Home-top-grad">
           <motion.p
             className="Home-top-title"
@@ -86,7 +86,13 @@ export default function HomePage() {
           </div>
         </div>
         <div className="Home-sub-title">
-          お知らせ
+          Vision
+          <br>
+          </br>
+          <div>企業理念</div>
+        </div>
+        <div className="topic-container">
+          
         </div>
       </motion.div>
     </PageMoveTransition>
