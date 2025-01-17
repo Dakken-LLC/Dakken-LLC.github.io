@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../App.css";
 import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
@@ -23,6 +23,8 @@ const letterAnimation = {
 export default function HomePage() {
   const [showDot, setShowDot] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
+  const homeTopGradRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const totalDuration = text.length * 0.05; // 文字の描画が完了するまでの時間
@@ -42,7 +44,7 @@ export default function HomePage() {
 
   const handleScroll = () => {
     window.scrollTo({
-      top: window.innerHeight,
+      top: window.innerHeight - 70,
       behavior: "smooth",
     });
   };

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
+import { IoMailOutline } from "react-icons/io5";
 import dakken_llc_logo_3_w from "../assets/dakken_llc_logo_3_w.png";
 import styles from "./Header.module.css";
 
@@ -7,15 +8,18 @@ const LinkItem = ({
   title,
   to,
   className,
+  icon,
 }: {
   title: string;
   to: string;
   className?: string;
+  icon?: TSX.Element;
 }) => {
   return (
     <li>
       <Link to={to} className={className}>
-        {title}
+        <span>{title}</span>
+        {icon && <span className={styles.icon}>{icon}</span>}
       </Link>
     </li>
   );
@@ -69,12 +73,16 @@ export default function HeaderLayout() {
                 : styles.linkContainer
             }
           >
-            <LinkItem title="Home" to="/" />
-            <LinkItem title="Vision" to="/business" />
-            <LinkItem title="Business" to="/business" />
-            <LinkItem title="Member" to="/business" />
-            <LinkItem title="News" to="/news" />
-            <LinkItem title="Contact" to="/contact" />
+            <LinkItem title="ホーム" to="/" />
+            <LinkItem title="会社案内" to="/business" />
+            <LinkItem title="サービス" to="/business" />
+            <LinkItem title="ニュース" to="/news" />
+            <LinkItem
+              title="お問い合わせ"
+              to="/contact"
+              className={styles.contactLink}
+              icon={<IoMailOutline />}
+            />
           </ul>
         </nav>
       </div>

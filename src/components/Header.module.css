@@ -7,7 +7,7 @@
   width: 100%;
   z-index: 99;
   height: 70px;
-  border-bottom: 6px solid rgb(211, 75, 75);
+  border-bottom: 3px solid rgb(211, 75, 75);
   backdrop-filter: blur(5px);
 }
 
@@ -26,8 +26,7 @@
 .logo img {
   height: 55px;
   width: 110px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 4px;
   margin-left: 15px;
 }
 
@@ -36,25 +35,25 @@ nav ul {
   display: flex;
   backdrop-filter: inherit;
   justify-content: center;
-  margin-right: 10px;
+  margin-right:20px;
 }
 
 nav ul li {
   list-style: none;
-  margin: 5px 25px;
+  margin: 2px 15px 0px 15px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: 23px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   transition: color 0.3s;
   justify-content: center;
-  font-family: "Josefin Sans", serif;
-  padding: 8px 0px;
+  font-family: "Noto Sans JP", serif;
   position: relative; /* アンダーラインの位置を相対的に設定 */
+  padding: 6px 10px;
 }
 
 nav ul li a::after {
@@ -95,15 +94,47 @@ nav ul li a:hover {
   transition: all 0.2s;
 }
 
+.contactLink {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+
+  padding: 5px 15px;
+}
+
+.contactLink.isOpen {
+  opacity: 1; /* メニューが開いたときに表示する */
+}
+
+.contactLink:hover {
+  background-color: rgb(190, 65, 65);
+  color: white;
+
+}
+
+.icon {
+  padding-top:3px;
+  padding-left: 5px; /* アイコンとテキストの間にスペースを追加 */
+
+}
+
 @media (max-width: 950px) {
   .header.isOpen {
-    height: 280px;
+    height: 315px;
     display: flex;
     align-items: start;
     transition: all 0.4s;
     background-color: rgba(40, 40, 40, 0.6);
-    border-bottom: 6px solid rgb(211, 75, 75);
+    border-bottom: 3px solid rgb(211, 75, 75);
     backdrop-filter: blur(5px);
+  }
+
+  nav ul li a:hover::after {
+    width: 0%; /* ホバー時にアンダーラインを表示 */
+  }
+
+  .contactLink {
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .hamburger.isOpen div:nth-child(1) {
@@ -136,7 +167,11 @@ nav ul li a:hover {
     opacity: 0;
     margin-top: 70px;
     transition: all 0.5s;
-    margin-right: 60px;
+    margin-right: 30px;
+  }
+
+  nav ul a {
+    margin-bottom: 5px;
   }
 
   nav ul.active {
@@ -155,6 +190,13 @@ nav ul li a:hover {
   .hamburger {
     display: block;
   }
+  .logo img {
+  height: 50px;
+  width: 100px;
+  margin-top: 4px;
+  margin-left: 5px;
+}
+
 }
 
 @keyframes fadeIn {
