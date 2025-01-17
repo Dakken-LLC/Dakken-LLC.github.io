@@ -3,6 +3,7 @@ import "../App.css";
 import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
 import { SlArrowDown } from "react-icons/sl";
+import dakken_llc_logo_3 from "../assets/dakken_llc_logo_3.png";
 
 const text = "IT for Everyone";
 
@@ -48,7 +49,7 @@ export default function HomePage() {
 
   return (
     <PageMoveTransition>
-      <motion.div className="container">
+      <motion.div className="container,Home-top-grad">
         <div className="Home-top-grad">
           <motion.p
             className="Home-top-title"
@@ -86,13 +87,12 @@ export default function HomePage() {
           </div>
         </div>
         <div className="Home-sub-title">
-          Vision
-          <br>
-          </br>
-          <div>企業理念</div>
+          <br></br>
+          <div>合同会社DA研へようこそ。</div>
         </div>
         <div className="topic-container">
-          
+          <img src={dakken_llc_logo_3} alt="Top Image"/>
+          <h2>合同会社DA研へようこそ。</h2>
         </div>
       </motion.div>
     </PageMoveTransition>

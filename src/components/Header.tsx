@@ -70,7 +70,9 @@ export default function HeaderLayout() {
             }
           >
             <LinkItem title="Home" to="/" />
+            <LinkItem title="Vision" to="/business" />
             <LinkItem title="Business" to="/business" />
+            <LinkItem title="Member" to="/business" />
             <LinkItem title="News" to="/news" />
             <LinkItem title="Contact" to="/contact" />
           </ul>

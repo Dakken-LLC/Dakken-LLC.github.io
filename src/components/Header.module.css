@@ -95,7 +95,7 @@ nav ul li a:hover {
   transition: all 0.2s;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 950px) {
   .header.isOpen {
     height: 280px;
     display: flex;
@@ -128,7 +128,9 @@ nav ul li a:hover {
   }
 
   nav ul {
+    display: flex;
     flex-direction: column;
+    justify-content: center; /* アイテムを中央揃えにする */
     max-height: 0;
     overflow: hidden;
     opacity: 0;

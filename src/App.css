@@ -104,46 +104,27 @@ h4 {
   display: inline-block; /* テキストが縦に並ばないようにする */
   margin: 0; /* マージンをリセット */
 }
-
 h1 {
-  font-size: 2rem; /* デフォルトのフォントサイズ */
+  font-size: 3rem; /* 600px以上の画面幅の場合のフォントサイズ */
 }
 
 h2 {
-  font-size: 1.5rem; /* デフォルトのフォントサイズ */
+  font-size: 2.5rem; /* 600px以上の画面幅の場合のフォントサイズ */
 }
 
 h3 {
-  font-size: 1.2rem; /* デフォルトのフォントサイズ */
+  font-size: 2rem; /* 600px以上の画面幅の場合のフォントサイズ */
 }
 
 h4 {
-  font-size: 1.1rem; /* デフォルトのフォントサイズ */
+  font-size: 1.2rem; /* 600px以上の画面幅の場合のフォントサイズ */
 }
 
-/* レスポンシブデザインのためのメディアクエリ */
-@media (min-width: 600px) {
-  h1 {
-    font-size: 3rem; /* 600px以上の画面幅の場合のフォントサイズ */
-  }
-
-  h2 {
-    font-size: 2.5rem; /* 600px以上の画面幅の場合のフォントサイズ */
-  }
-
-  h3 {
-    font-size: 2rem; /* 600px以上の画面幅の場合のフォントサイズ */
-  }
-
-  h4 {
-    font-size: 1.2rem; /* 600px以上の画面幅の場合のフォントサイズ */
-  }
-}
 
 .Home-top-grad {
   display: flex;
   width: 100%;
-  height: 85svh;
+  height: 75svh;
   background: linear-gradient(0deg, #0cb1c1, #3948b9, #224b8f);
   background-size: 200% 200%;
   animation: Grad 15s ease infinite;
@@ -201,15 +182,6 @@ h4 {
   display: inline-block; /* インラインブロックに設定 */
   width: 0; /* 幅を0に設定 */
 }
-@media (max-width: 850px) {
-  .Home-top-title {
-    margin-left: 0;
-    margin-bottom: 0;
-  }
-  .Home-top-text {
-    margin-left: 0;
-  }
-}
 
 @keyframes slideInFromLeft {
   0% {
@@ -228,7 +200,7 @@ h4 {
 
 .scroll-arrow {
   position: absolute;
-  top: 70svh;
+  top: 65svh;
   transform: translateX(-50%);
   font-size: 2rem;
   color: #fff;
@@ -273,4 +245,41 @@ h4 {
   align-items: center;
   text-align: center;
   margin-top: 20px;
+}
+
+/* レスポンシブデザインのためのメディアクエリ */
+@media (max-width: 950px) {
+
+  h1 {
+    font-size: 2rem; /* デフォルトのフォントサイズ */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* デフォルトのフォントサイズ */
+  }
+
+  h3 {
+    font-size: 1.2rem; /* デフォルトのフォントサイズ */
+  }
+
+  h4 {
+    font-size: 1.1rem; /* デフォルトのフォントサイズ */
+  }
+
+  .Home-top-grad {
+  height: 100svh;
+  }
+
+  .scroll-arrow {
+  top: 90svh;
+  }
+
+  .Home-top-title {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .Home-top-text {
+    margin-left: 0;
+  }
+
 }
