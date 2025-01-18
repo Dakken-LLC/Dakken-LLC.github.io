@@ -23,8 +23,6 @@ const letterAnimation = {
 export default function HomePage() {
   const [showDot, setShowDot] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
-  const homeTopGradRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const totalDuration = text.length * 0.05; // 文字の描画が完了するまでの時間
@@ -43,10 +41,18 @@ export default function HomePage() {
   }, []);
 
   const handleScroll = () => {
+
+    const rootStyles = getComputedStyle(document.documentElement);
+    const gradHeight = rootStyles.getPropertyValue("--height").trim();
+    const headerHeight = rootStyles.getPropertyValue("--header-height").trim();
+    const headerHeightPx = parseFloat(headerHeight);
+    const gradHeightPx = (parseFloat(gradHeight) * window.innerHeight) / 100;
     window.scrollTo({
-      top: window.innerHeight - 70,
+      top: gradHeightPx - headerHeightPx,
       behavior: "smooth",
     });
+
+
   };
 
   return (
@@ -93,7 +99,7 @@ export default function HomePage() {
           <div>合同会社DA研へようこそ。</div>
         </div>
         <div className="topic-container">
-          <img src={dakken_llc_logo_3} alt="Top Image"/>
+          <img src={dakken_llc_logo_3} alt="Top Image" />
           <h2>合同会社DA研へようこそ。</h2>
         </div>
       </motion.div>
