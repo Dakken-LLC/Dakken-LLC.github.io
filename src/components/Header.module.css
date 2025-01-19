@@ -33,7 +33,7 @@
   height: 55px;
   width: 110px;
   margin-top: 4px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 nav ul {
@@ -173,7 +173,7 @@ nav ul li a:hover {
     margin-top: 70px;
     transition: all 0.5s;
     margin-right: 40px;
-    margin-left: 0px;
+    margin-left: -10px;
   }
 
   nav ul li{
@@ -200,7 +200,11 @@ nav ul li a:hover {
   .hamburger {
     display: block;
   }
+
+  .logo img {
+    margin-left: 5px;}
 }
+
 
 @keyframes fadeIn {
   0% {

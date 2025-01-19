@@ -139,11 +139,12 @@ h4 {
 
 .Home-top-title {
   font-size: 8vh;
-  font-family: "Roboto", serif;
-  font-weight: 600;
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
   color: #fff;
   margin-left: 40%;
   margin-bottom: 0;
+  letter-spacing: 4px;
 }
 
 .Home-top-text {
@@ -238,17 +239,21 @@ h4 {
   justify-content: space-between;
   align-items: center;
   margin: 5% 20%;
+  font-family: "Nova Cut", serif;;
 }
 
 .Home-sub-title {
-  display: flex;
-  font-size: 2rem;
-  font-family: ;
-  font-weight: 600;
-  color: black;
+  font-size: 2.5rem;
+  font-family: "Noto Sans JP", serif;;
+  font-weight: 800;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5svh;
+  background: linear-gradient(90deg,#0cb1c1, #3948b9, #224b8f);
+  animation: Grad 15s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ;
 }
 
 /* レスポンシブデザインのためのメディアクエリ */
@@ -286,14 +291,20 @@ h4 {
     margin-left: 0;
     margin-bottom: 0;
     font-size: 6svh;
+    text-align: center;
+
   }
   .Home-top-text {
   font-size: 2vh;
   }
   .Home-top-text {
     margin-left: 0;
+
   }
   .topic-container{
     flex-flow:column;
 
+  }
+  .Home-sub-title {
+  font-size: 2rem;
   }

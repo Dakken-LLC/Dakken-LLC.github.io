@@ -5,7 +5,7 @@ import PageMoveTransition from "../utils/PageMoveTransition";
 import { SlArrowDown } from "react-icons/sl";
 import dakken_llc_logo_3 from "../assets/dakken_llc_logo_3.png";
 
-const text = "IT for Everyone";
+const text = "Challenging the future";
 
 const letterAnimation = {
   hidden: { opacity: 0, y: 50 },
@@ -41,7 +41,6 @@ export default function HomePage() {
   }, []);
 
   const handleScroll = () => {
-
     const rootStyles = getComputedStyle(document.documentElement);
     const gradHeight = rootStyles.getPropertyValue("--height").trim();
     const headerHeight = rootStyles.getPropertyValue("--header-height").trim();
@@ -51,8 +50,6 @@ export default function HomePage() {
       top: gradHeightPx - headerHeightPx,
       behavior: "smooth",
     });
-
-
   };
 
   return (
@@ -85,7 +82,7 @@ export default function HomePage() {
               ease: "easeOut",
             }}
           >
-            学生による新しいITサービスを全ての人々へ
+            学生による新しいITサービスを提供します
           </motion.p>
           <div
             className={`scroll-arrow ${showArrow ? "visible" : ""}`}
@@ -95,12 +92,11 @@ export default function HomePage() {
           </div>
         </div>
         <div className="Home-sub-title">
-          <br></br>
-          <div>合同会社DA研へようこそ。</div>
+          <div>DXとデータ分析で企業・個人の問題を解決</div>
         </div>
         <div className="topic-container">
           <img src={dakken_llc_logo_3} alt="Top Image" />
-          <h2>合同会社DA研へようこそ。</h2>
+          <h2>WELCOME TO DAKKEN!!</h2>
         </div>
       </motion.div>
     </PageMoveTransition>
