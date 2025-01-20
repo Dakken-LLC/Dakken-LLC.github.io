@@ -3,7 +3,6 @@ import "../App.css";
 import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
 import { SlArrowDown } from "react-icons/sl";
-import dakken_llc_logo_3 from "../assets/dakken_llc_logo_3.png";
 
 const text = "Challenging the future";
 
@@ -23,6 +22,7 @@ const letterAnimation = {
 export default function HomePage() {
   const [showDot, setShowDot] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
+  const homeSubTitleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const totalDuration = text.length * 0.05; // 文字の描画が完了するまでの時間
@@ -32,11 +32,35 @@ export default function HomePage() {
 
     const timer2 = setTimeout(() => {
       setShowArrow(true);
-    }, (totalDuration + 3) * 1000); // 文字の描画が完了してから3秒後に矢印を表示
+    }, (totalDuration + 2) * 1000); // 文字の描画が完了してから3秒後に矢印を表示
 
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
+    };
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.5,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    if (homeSubTitleRef.current) observer.observe(homeSubTitleRef.current);
+    return () => {
+      if (homeSubTitleRef.current) observer.unobserve(homeSubTitleRef.current);
     };
   }, []);
 
@@ -77,7 +101,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: text.length * 0.1 + 0.2,
+              delay: text.length * 0.1 - 0.5,
               duration: 0.5,
               ease: "easeOut",
             }}
@@ -91,21 +115,20 @@ export default function HomePage() {
             <SlArrowDown />
           </div>
         </div>
-        <div className="Home-sub-title">
-          <div>
-            DXとデータ分析で
-            <wbr />
-            企業・個人の問題を解決
-          </div>
-        </div>
-        <div className="topic-container">
+
+        <p className="Home-sub-title" ref={homeSubTitleRef}>
+          DXとデータ分析で
+          <wbr />
+          毎日を効率的に
+        </p>
+        <p className="topic-container">
           <div>
             <h4>
-              合同会社DA研は、学生による新しいITサービスを提供します。<br></br>
+              合同会社DA研は、学生による新しいITサービスを提供します。
               DXとデータ分析で企業・個人の問題を解決します。
             </h4>
           </div>
-        </div>
+        </p>
       </motion.div>
     </PageMoveTransition>
   );

@@ -23,6 +23,11 @@
   font-size: 18px;
 }
 
+p {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
 .container {
   padding: 0; /* 余白を取り除く */
   margin: 0; /* 余白を取り除く */
@@ -121,7 +126,7 @@ h4 {
 }
 
 :root {
-  --height: 80svh;
+  --height: 100svh;
 }
 
 .Home-top-grad {
@@ -135,6 +140,8 @@ h4 {
   align-items: center;
   flex-direction: column;
 
+
+
 }
 
 .Home-top-title {
@@ -145,6 +152,7 @@ h4 {
   margin-left: 40%;
   margin-bottom: 0;
   letter-spacing: 4px;
+
 
 }
 
@@ -205,9 +213,10 @@ h4 {
 
 .scroll-arrow {
   position: absolute;
-  top: 70svh;
+  top: 90svh;
   transform: translateX(-50%);
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: bold;
   color: #fff;
   cursor: pointer;
   animation: bounce 2s infinite;
@@ -235,12 +244,34 @@ h4 {
   }
 }
 
+@keyframes wide {
+
+from {
+
+width:0%;
+}
+
+to {
+
+width:100%;
+}
+
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .topic-container {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Noto Sans JP", serif;
-  margin-top: 2%;
+  margin: 2% 2%;
 }
 
 .Home-sub-title {
@@ -251,10 +282,36 @@ h4 {
   text-align: center;
   margin-top: 5svh;
   background: linear-gradient(90deg,#0cb1c1, #3948b9, #224b8f);
-  animation: Grad 15s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: ;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  white-space:nowrap;
+  overflow:hidden;
+  opacity: 0;
+  transition: opacity 3s ease-in-out
+
+}
+
+.Home-sub-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* 上塗りする図形の色 */
+  transform: translateX(0%);
+  transition: transform 2s ease-in-out; /* トランジションを追加 */
+}
+
+.Home-sub-title.visible::before {
+  transform: translateX(100%); /* 上塗りする図形を下に移動して消す */
+}
+
+.Home-sub-title.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* レスポンシブデザインのためのメディアクエリ */
@@ -307,5 +364,9 @@ h4 {
 
   }
   .Home-sub-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   }
+  .scroll-arrow{
+    font-size: 2rem;
+  }
+}
