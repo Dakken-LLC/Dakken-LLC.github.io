@@ -92,11 +92,19 @@ export default function HomePage() {
           </div>
         </div>
         <div className="Home-sub-title">
-          <div>DXとデータ分析で企業・個人の問題を解決</div>
+          <div>
+            DXとデータ分析で
+            <wbr />
+            企業・個人の問題を解決
+          </div>
         </div>
         <div className="topic-container">
-          <img src={dakken_llc_logo_3} alt="Top Image" />
-          <h2>WELCOME TO DAKKEN!!</h2>
+          <div>
+            <h4>
+              合同会社DA研は、学生による新しいITサービスを提供します。<br></br>
+              DXとデータ分析で企業・個人の問題を解決します。
+            </h4>
+          </div>
         </div>
       </motion.div>
     </PageMoveTransition>
