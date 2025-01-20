@@ -64,7 +64,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 30px;
   height: 100vh;
   text-align: center;
   width: 100%;
@@ -270,12 +270,24 @@ width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-family: "Noto Sans JP", serif;
-  margin: 2% 2%;
+  margin: -3% 15% 5% 15%;
+  font-weight: 300;
+  font-size: 1.5rem;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-height: 2;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.topic-container.visible{
+  opacity: 1;
 }
 
 .Home-sub-title {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-family: "Noto Sans JP", serif;
   font-weight: 800;
   align-items: center;
@@ -306,12 +318,12 @@ width:100%;
 }
 
 .Home-sub-title.visible::before {
-  transform: translateX(100%); /* 上塗りする図形を下に移動して消す */
+  transform: translateX(100%);
 }
 
 .Home-sub-title.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0%);
 }
 
 /* レスポンシブデザインのためのメディアクエリ */
@@ -342,7 +354,7 @@ width:100%;
   }
 
   .scroll-arrow {
-  top: 90svh;
+  top: 85svh;
   }
 
   .Home-top-title {
@@ -364,9 +376,13 @@ width:100%;
 
   }
   .Home-sub-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   }
   .scroll-arrow{
     font-size: 2rem;
+  }
+  .topic-container {
+    margin: 2% 10%;
+    font-size: 1.2rem;
   }
 }

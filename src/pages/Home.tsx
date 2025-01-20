@@ -23,7 +23,19 @@ export default function HomePage() {
   const [showDot, setShowDot] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
   const homeSubTitleRef = useRef<HTMLDivElement>(null);
-
+  const topicContainerRef = useRef<HTMLDivElement>(null);
+  
+  const handleScroll = () => {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const gradHeight = rootStyles.getPropertyValue("--height").trim();
+    const headerHeight = rootStyles.getPropertyValue("--header-height").trim();
+    const headerHeightPx = parseFloat(headerHeight);
+    const gradHeightPx = (parseFloat(gradHeight) * window.innerHeight) / 100;
+    window.scrollTo({
+      top: gradHeightPx - headerHeightPx,
+      behavior: "smooth",
+    });
+  };
   useEffect(() => {
     const totalDuration = text.length * 0.05; // 文字の描画が完了するまでの時間
     const timer1 = setTimeout(() => {
@@ -42,7 +54,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.5,
+      threshold: 0.1,
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -59,22 +71,14 @@ export default function HomePage() {
     );
 
     if (homeSubTitleRef.current) observer.observe(homeSubTitleRef.current);
+    if (topicContainerRef.current) observer.observe(topicContainerRef.current);
+
     return () => {
       if (homeSubTitleRef.current) observer.unobserve(homeSubTitleRef.current);
+      if (topicContainerRef.current) observer.unobserve(topicContainerRef.current);
     };
   }, []);
 
-  const handleScroll = () => {
-    const rootStyles = getComputedStyle(document.documentElement);
-    const gradHeight = rootStyles.getPropertyValue("--height").trim();
-    const headerHeight = rootStyles.getPropertyValue("--header-height").trim();
-    const headerHeightPx = parseFloat(headerHeight);
-    const gradHeightPx = (parseFloat(gradHeight) * window.innerHeight) / 100;
-    window.scrollTo({
-      top: gradHeightPx - headerHeightPx,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <PageMoveTransition>
@@ -115,19 +119,27 @@ export default function HomePage() {
             <SlArrowDown />
           </div>
         </div>
-
         <p className="Home-sub-title" ref={homeSubTitleRef}>
           DXとデータ分析で
           <wbr />
-          毎日を効率的に
+          毎日に改革を
         </p>
-        <p className="topic-container">
-          <div>
-            <h4>
-              合同会社DA研は、学生による新しいITサービスを提供します。
-              DXとデータ分析で企業・個人の問題を解決します。
-            </h4>
-          </div>
+        <p className="topic-container" ref={topicContainerRef}>
+          合同会社DA研は最新技術を用いた
+          <wbr />
+          ITサービスを提供することで
+          <wbr />
+          今までの膨大な手作業を自動化し、
+          <wbr />
+          毎日の業務を価値ある効率的なものに。
+          <br></br>
+          分析では学術機関で学んだ
+          <wbr />
+          知識と若い発想力を活用し
+          <wbr />
+          データを何百倍もの価値のあるものに。
+          <wbr />
+          大学生の力でITフルを活用し皆様をサポートします。
         </p>
       </motion.div>
     </PageMoveTransition>
