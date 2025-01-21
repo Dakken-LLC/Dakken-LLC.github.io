@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
 import { SlArrowDown } from "react-icons/sl";
 
-const text = "Challenging the future";
+const text = "Challenge For The future";
 
 const letterAnimation = {
   hidden: { opacity: 0, y: 50 },
@@ -24,7 +24,7 @@ export default function HomePage() {
   const [showArrow, setShowArrow] = useState(false);
   const homeSubTitleRef = useRef<HTMLDivElement>(null);
   const topicContainerRef = useRef<HTMLDivElement>(null);
-  
+
   const handleScroll = () => {
     const rootStyles = getComputedStyle(document.documentElement);
     const gradHeight = rootStyles.getPropertyValue("--height").trim();
@@ -139,7 +139,9 @@ export default function HomePage() {
           <wbr />
           データを何百倍もの価値のあるものに。
           <wbr />
-          大学生の力でITフルを活用し皆様をサポートします。
+          大学生の力でITフルを活用し
+          <wbr />
+          皆様をサポートします。
         </p>
       </motion.div>
     </PageMoveTransition>

@@ -133,15 +133,12 @@ h4 {
   display: flex;
   width: 100%;
   height: var(--height);
-  background: linear-gradient(0deg,#0cb1c1, #3948b9, #224b8f);
+  background: linear-gradient(0deg, #0cb1c1, #3948b9, #224b8f);
   background-size: 200% 200%;
   animation: Grad 15s ease infinite;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-
-
 }
 
 .Home-top-title {
@@ -152,8 +149,6 @@ h4 {
   margin-left: 40%;
   margin-bottom: 0;
   letter-spacing: 4px;
-
-
 }
 
 .Home-top-text {
@@ -245,17 +240,13 @@ h4 {
 }
 
 @keyframes wide {
+  from {
+    width: 0%;
+  }
 
-from {
-
-width:0%;
-}
-
-to {
-
-width:100%;
-}
-
+  to {
+    width: 100%;
+  }
 }
 @keyframes fade {
   from {
@@ -282,7 +273,7 @@ width:100%;
   transition: opacity 2s ease-in-out;
 }
 
-.topic-container.visible{
+.topic-container.visible {
   opacity: 1;
 }
 
@@ -293,16 +284,15 @@ width:100%;
   align-items: center;
   text-align: center;
   margin-top: 5svh;
-  background: linear-gradient(90deg,#0cb1c1, #3948b9, #224b8f);
+  background: linear-gradient(90deg, #0cb1c1, #3948b9, #224b8f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   word-break: keep-all;
   overflow-wrap: anywhere;
-  white-space:nowrap;
-  overflow:hidden;
+  white-space: nowrap;
+  overflow: hidden;
   opacity: 0;
-  transition: opacity 3s ease-in-out
-
+  transition: opacity 3s ease-in-out;
 }
 
 .Home-sub-title::before {
@@ -328,7 +318,6 @@ width:100%;
 
 /* レスポンシブデザインのためのメディアクエリ */
 @media (max-width: 950px) {
-
   h1 {
     font-size: 2rem; /* デフォルトのフォントサイズ */
   }
@@ -346,7 +335,7 @@ width:100%;
   }
 
   :root {
-  --height: 100svh;
+    --height: 100svh;
   }
 
   .Home-top-grad {
@@ -354,7 +343,7 @@ width:100%;
   }
 
   .scroll-arrow {
-  top: 85svh;
+    top: 85svh;
   }
 
   .Home-top-title {
@@ -362,27 +351,24 @@ width:100%;
     margin-bottom: 0;
     font-size: 6svh;
     text-align: center;
-
   }
   .Home-top-text {
-  font-size: 2vh;
+    font-size: 2vh;
   }
   .Home-top-text {
     margin-left: 0;
-
   }
-  .topic-container{
-    flex-flow:column;
-
+  .topic-container {
+    flex-flow: column;
   }
   .Home-sub-title {
-  font-size: 3rem;
+    font-size: 2.5rem;
   }
-  .scroll-arrow{
+  .scroll-arrow {
     font-size: 2rem;
   }
   .topic-container {
-    margin: 2% 10%;
+    margin: 2% 5%;
     font-size: 1.2rem;
   }
 }
