@@ -309,11 +309,14 @@ h4 {
 
 .Home-sub-title.visible::before {
   transform: translateX(100%);
+
 }
 
 .Home-sub-title.visible {
   opacity: 1;
   transform: translateX(0%);
+  padding-bottom:1%;
+  border-bottom: 3px solid #3948b9;
 }
 
 /* レスポンシブデザインのためのメディアクエリ */
