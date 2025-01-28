@@ -1,3 +1,8 @@
+:root {
+  --font-family-primary: "Noto Sans JP", serif;
+  --height: 100svh;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -125,10 +130,6 @@ h4 {
   font-size: 1.5rem; /* 600px以上の画面幅の場合のフォントサイズ */
 }
 
-:root {
-  --height: 100svh;
-}
-
 .Home-top-grad {
   display: flex;
   width: 100%;
@@ -153,8 +154,9 @@ h4 {
 
 .Home-top-text {
   font-size: 3vh;
-  font-family: Arial;
-  font-weight: 600;
+  font-family: "Noto Sans JP", serif;
+  letter-spacing: 1px;
+  font-weight: 400;
   color: #fff;
   margin-left: 40%;
 }
@@ -263,7 +265,7 @@ h4 {
   align-items: center;
   text-align: center;
   font-family: "Noto Sans JP", serif;
-  margin: -3% 15% 5% 15%;
+  margin: 0% 15% 5% 15%;
   font-weight: 300;
   font-size: 1.5rem;
   word-break: keep-all;
@@ -278,12 +280,11 @@ h4 {
 }
 
 .Home-sub-title {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: "Noto Sans JP", serif;
   font-weight: 800;
   align-items: center;
   text-align: center;
-  margin-top: 5svh;
   background: linear-gradient(90deg, #0cb1c1, #3948b9, #224b8f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -292,7 +293,9 @@ h4 {
   white-space: nowrap;
   overflow: hidden;
   opacity: 0;
+  border-bottom: 3px solid #3948b9;
   transition: opacity 3s ease-in-out;
+  padding: 2svh 0;
 }
 
 .Home-sub-title::before {
@@ -309,14 +312,16 @@ h4 {
 
 .Home-sub-title.visible::before {
   transform: translateX(100%);
-
 }
 
 .Home-sub-title.visible {
   opacity: 1;
   transform: translateX(0%);
-  padding-bottom:1%;
-  border-bottom: 3px solid #3948b9;
+  margin: 10px 5%;
+}
+
+.Home-sub-title.visible::after {
+  width: 100%;
 }
 
 /* レスポンシブデザインのためのメディアクエリ */
@@ -357,6 +362,7 @@ h4 {
   }
   .Home-top-text {
     font-size: 2vh;
+    font-weight: 600;
   }
   .Home-top-text {
     margin-left: 0;

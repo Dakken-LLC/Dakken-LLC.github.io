@@ -105,7 +105,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: text.length * 0.1 - 0.5,
+              delay: text.length * 0.1 - 0.8,
               duration: 0.5,
               ease: "easeOut",
             }}
@@ -143,6 +143,7 @@ export default function HomePage() {
           <wbr />
           皆様をサポートします。
         </p>
+
       </motion.div>
     </PageMoveTransition>
   );
