@@ -41,19 +41,7 @@ p {
   justify-content: center;
 }
 
-.page-top-image {
-  width: 100%; /* 横幅を100%に設定 */
-  min-height: 300px; /* 最低限表示させる高さを設定 */
-  max-height: 500px;
-  position: relative; /* 相対位置に設定 */
-  height: auto; /* 高さを画面の高さに設定 */
-  display: block;
-  margin: 0; /* 余白を取り除く */
-  object-fit: cover; /* 画像をコンテナにフィットさせる */
-  background-size: cover; /* 画像をカバーする */
-  background-position: center; /* 画像を中央に配置 */
-  background-repeat: no-repeat; /* 画像を繰り返さない */
-}
+
 
 img {
   width: 300px;
@@ -153,32 +141,35 @@ h4 {
 
 .home-kawachi-animation {
   position: absolute;
-  width: 100%;
-  height: var(--height);
-  top: 0px;
-  left: 0;
-  z-index: -1;
-  opacity: 1;
-  filter: blur(2px);
+  height:auto;
+  width: 70vw;
+  max-height:100svh;
+  z-index:-2;
+  top: 50svh;
+  transform: translateY(-50%);
+  filter:blur(1px);
+  object-fit: contain;
 }
 
 .home-top-title {
-  font-size: 8vh;
+  font-size: 5vw;
   font-family: "Bebas Neue", serif;
   font-weight: 400;
   color: #fff;
-  margin-left: 40%;
+  margin-left: 40svw;
+  margin-right: 5svw;
   margin-bottom: 0;
   letter-spacing: 4px;
 }
 
 .home-top-text {
-  font-size: 3vh;
+  font-size: 2vw;
+
   font-family: "Noto Sans JP", serif;
   letter-spacing: 1px;
   font-weight: 400;
   color: #fff;
-  margin-left: 40%;
+  margin-left: 35svw;
 }
 
 @keyframes Grad {
@@ -286,7 +277,7 @@ h4 {
   text-align: center;
   font-family: "Noto Sans JP", serif;
   margin: 0% 15% 5% 15%;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.5rem;
   word-break: keep-all;
   overflow-wrap: anywhere;
@@ -346,7 +337,7 @@ h4 {
 }
 
 /* レスポンシブデザインのためのメディアクエリ */
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
   h1 {
     font-size: 2rem; /* デフォルトのフォントサイズ */
   }
@@ -376,7 +367,7 @@ h4 {
   }
 
   .home-top-title {
-    margin-left: 0;
+    margin: 0 10svw;
     margin-bottom: 0;
     font-size: 6svh;
     text-align: center;
@@ -400,5 +391,13 @@ h4 {
   .topic-container {
     margin: 2% 5%;
     font-size: 1.2rem;
+  }
+  .home-kawachi-animation {
+    width: 95vw;
+    margin:auto;
+    height: 100svh;
+    top: 50svh;
+    transform: translateY(-50%);
+    filter: blur(2px);
   }
 }

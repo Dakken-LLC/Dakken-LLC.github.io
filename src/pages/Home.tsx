@@ -20,11 +20,18 @@ const letterAnimation = {
   }),
 };
 
+const imageAnimation = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 1.5 } },
+  exit: { opacity: 0, transition: { duration: 1.5 } },
+};
+
 export default function HomePage() {
   const [showDot, setShowDot] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
   const homeSubTitleRef = useRef<HTMLDivElement>(null);
   const topicContainerRef = useRef<HTMLDivElement>(null);
+  const homeQuickMenuRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
     const rootStyles = getComputedStyle(document.documentElement);
@@ -72,15 +79,17 @@ export default function HomePage() {
     );
     const homeSubTitleElement = homeSubTitleRef.current;
     const topicContainerElement = topicContainerRef.current;
+    const homeQuickMenuElement = homeQuickMenuRef.current;
 
     if (homeSubTitleElement) observer.observe(homeSubTitleElement);
     if (topicContainerRef.current) observer.observe(topicContainerRef.current);
     if (topicContainerElement) observer.observe(topicContainerElement);
-
+    if (homeQuickMenuElement) observer.observe(homeQuickMenuElement);
 
     return () => {
-    if (homeSubTitleElement) observer.unobserve(homeSubTitleElement);
-    if (topicContainerElement) observer.unobserve(topicContainerElement);
+      if (homeSubTitleElement) observer.unobserve(homeSubTitleElement);
+      if (topicContainerElement) observer.unobserve(topicContainerElement);
+      if (homeQuickMenuElement) observer.unobserve(homeQuickMenuElement);
     };
   }, []);
 
@@ -88,7 +97,13 @@ export default function HomePage() {
     <PageMoveTransition>
       <motion.div className="container">
         <div className="home-grad-animation" />
-        <img src={kawachiBackgroundSrc} className="home-kawachi-animation" />
+        <motion.img
+          src={kawachiBackgroundSrc}
+          className="home-kawachi-animation"
+          initial="hidden"
+          animate="visible"
+          variants={imageAnimation}
+        />
         <div className="home-top-grad">
           <motion.p
             className="home-top-title"
@@ -148,6 +163,9 @@ export default function HomePage() {
           大学生の力でITをフル活用し
           <wbr />
           皆様をサポートします。
+        </p>
+        <p className="home-sub-title" ref={homeQuickMenuRef}>
+          QuickMenu
         </p>
       </motion.div>
     </PageMoveTransition>
