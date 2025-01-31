@@ -165,7 +165,7 @@ export default function HomePage() {
           皆様をサポートします。
         </p>
         <p className="home-sub-title" ref={homeQuickMenuRef}>
-          QuickMenu
+          AccessMenu
         </p>
       </motion.div>
     </PageMoveTransition>
