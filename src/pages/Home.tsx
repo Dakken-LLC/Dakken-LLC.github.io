@@ -3,8 +3,9 @@ import "../App.css";
 import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
 import { SlArrowDown } from "react-icons/sl";
+import kawachiBackgroundSrc from "../assets/Japan11.png";
 
-const text = "Challenge For The future";
+const HOME_TOP_TEXT = "Challenge For The future";
 
 const letterAnimation = {
   hidden: { opacity: 0, y: 50 },
@@ -37,7 +38,7 @@ export default function HomePage() {
     });
   };
   useEffect(() => {
-    const totalDuration = text.length * 0.05; // 文字の描画が完了するまでの時間
+    const totalDuration = HOME_TOP_TEXT.length * 0.05; // 文字の描画が完了するまでの時間
     const timer1 = setTimeout(() => {
       setShowDot(true);
     }, totalDuration * 1000); // ミリ秒に変換
@@ -75,21 +76,23 @@ export default function HomePage() {
 
     return () => {
       if (homeSubTitleRef.current) observer.unobserve(homeSubTitleRef.current);
-      if (topicContainerRef.current) observer.unobserve(topicContainerRef.current);
+      if (topicContainerRef.current)
+        observer.unobserve(topicContainerRef.current);
     };
   }, []);
 
-
   return (
     <PageMoveTransition>
-      <motion.div className="container,Home-top-grad">
+      <motion.div className="container">
+        <div className="Home-grad-animation" />
+        <img src={kawachiBackgroundSrc} className="Home-kawachi-animation" />
         <div className="Home-top-grad">
           <motion.p
             className="Home-top-title"
             initial="hidden"
             animate="visible"
           >
-            {text.split("").map((char, index) => (
+            {HOME_TOP_TEXT.split("").map((char, index) => (
               <motion.span
                 key={index}
                 custom={index}
@@ -105,7 +108,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: text.length * 0.1 - 0.8,
+              delay: HOME_TOP_TEXT.length * 0.1 - 0.8,
               duration: 0.5,
               ease: "easeOut",
             }}
@@ -143,7 +146,6 @@ export default function HomePage() {
           <wbr />
           皆様をサポートします。
         </p>
-
       </motion.div>
     </PageMoveTransition>
   );

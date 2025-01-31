@@ -134,12 +134,32 @@ h4 {
   display: flex;
   width: 100%;
   height: var(--height);
-  background: linear-gradient(0deg, #0cb1c1, #3948b9, #224b8f);
-  background-size: 200% 200%;
-  animation: Grad 15s ease infinite;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.Home-grad-animation {
+  position: absolute;
+  width: 100%;
+  height: var(--height);
+  background: linear-gradient(0deg, #0cb1c1, #3948b9, #224b8f);
+  background-size: 200% 200%;
+  animation: Grad 15s ease infinite;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.Home-kawachi-animation {
+  position: absolute;
+  width: 100%;
+  height: var(--height);
+  top: 0px;
+  left: 0;
+  z-index: -1;
+  opacity: 1;
+  filter: blur(2px);
 }
 
 .Home-top-title {
