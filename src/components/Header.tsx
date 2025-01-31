@@ -90,9 +90,9 @@ export default function HeaderLayout() {
         className={`${styles.hamburger} ${isOpen ? styles.isOpen : ""}`}
         onClick={toggleMenu}
       >
-        <div></div>
-        <div></div>
-        <div></div>
+        <div className={styles.hamburgerBar}></div>
+        <div className={styles.hamburgerBar}></div>
+        <div className={styles.hamburgerBar}></div>
       </div>
     </header>
   );

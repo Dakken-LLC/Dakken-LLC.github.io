@@ -70,25 +70,28 @@ export default function HomePage() {
       observerCallback,
       observerOptions
     );
+    const homeSubTitleElement = homeSubTitleRef.current;
+    const topicContainerElement = topicContainerRef.current;
 
-    if (homeSubTitleRef.current) observer.observe(homeSubTitleRef.current);
+    if (homeSubTitleElement) observer.observe(homeSubTitleElement);
     if (topicContainerRef.current) observer.observe(topicContainerRef.current);
+    if (topicContainerElement) observer.observe(topicContainerElement);
+
 
     return () => {
-      if (homeSubTitleRef.current) observer.unobserve(homeSubTitleRef.current);
-      if (topicContainerRef.current)
-        observer.unobserve(topicContainerRef.current);
+    if (homeSubTitleElement) observer.unobserve(homeSubTitleElement);
+    if (topicContainerElement) observer.unobserve(topicContainerElement);
     };
   }, []);
 
   return (
     <PageMoveTransition>
       <motion.div className="container">
-        <div className="Home-grad-animation" />
-        <img src={kawachiBackgroundSrc} className="Home-kawachi-animation" />
-        <div className="Home-top-grad">
+        <div className="home-grad-animation" />
+        <img src={kawachiBackgroundSrc} className="home-kawachi-animation" />
+        <div className="home-top-grad">
           <motion.p
-            className="Home-top-title"
+            className="home-top-title"
             initial="hidden"
             animate="visible"
           >
@@ -104,7 +107,7 @@ export default function HomePage() {
             {showDot && <span className="blink">.</span>}
           </motion.p>
           <motion.p
-            className="Home-top-text"
+            className="home-top-text"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -122,7 +125,7 @@ export default function HomePage() {
             <SlArrowDown />
           </div>
         </div>
-        <p className="Home-sub-title" ref={homeSubTitleRef}>
+        <p className="home-sub-title" ref={homeSubTitleRef}>
           DXとデータ分析で
           <wbr />
           毎日に改革を
@@ -142,7 +145,7 @@ export default function HomePage() {
           <wbr />
           データを何百倍もの価値のあるものに。
           <wbr />
-          大学生の力でITフルを活用し
+          大学生の力でITをフル活用し
           <wbr />
           皆様をサポートします。
         </p>
