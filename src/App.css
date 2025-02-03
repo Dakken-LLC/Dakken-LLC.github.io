@@ -38,47 +38,20 @@ p {
   margin: 0; /* 余白を取り除く */
   position: relative; /* 相対位置に設定 */
   align-items: center;
+  text-align: center;
   justify-content: center;
 }
 
-
-img {
-  width: 300px;
-  height: 500px;
+.main-content {
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  max-width: 1400px;
 }
 
 .section-subheading {
   font-size: 30px;
   margin-top: 40px;
-}
-
-.center-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  height: 100vh;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  font-size: 50px; /* フォントサイズを指定 */
-}
-
-.page-title {
-  text-align: center;
-  padding: 30px 5%;
-  font-family: Sawarabi Gothic;
-  width: auto;
-  letter-spacing: 3px;
-  border-bottom: 3px solid #000;
-}
-
-.page-content {
-  text-align: center;
-  padding: 30px 5%;
-  font-family: Sawarabi Gothic;
-  width: auto;
-  letter-spacing: 5px;
 }
 
 .blue-text {
@@ -140,18 +113,18 @@ h4 {
 
 .home-kawachi-animation {
   position: absolute;
-  height:auto;
+  height: auto;
   width: 70vw;
-  max-height:100svh;
-  z-index:-2;
+  max-height: 100svh;
+  z-index: -2;
   top: 50svh;
   transform: translateY(-50%);
-  filter:blur(1px);
+  filter: blur(1px);
   object-fit: contain;
 }
 
 .home-top-title {
-  font-size:  min(5vw, 6rem);
+  font-size: min(5vw, 6rem);
   font-family: "Bebas Neue", serif;
   font-weight: 400;
   color: #fff;
@@ -162,7 +135,7 @@ h4 {
 }
 
 .home-top-text {
-  font-size:  min(2vw, 2rem);
+  font-size: min(2vw, 2rem);
   font-family: "Noto Sans JP", serif;
   letter-spacing: 1px;
   font-weight: 400;
@@ -308,7 +281,6 @@ h4 {
   padding: 2svh 0;
 }
 
-
 .home-sub-title::before {
   content: "";
   position: absolute;
@@ -335,20 +307,78 @@ h4 {
   width: 100%;
 }
 
+.home-menu-container {
+  background-image: linear-gradient(
+    90deg,
+    rgba(103, 126, 250, 1),
+    rgba(142, 84, 219, 1)
+  );
+  padding: 20px;
+  animation: Grad 15s ease infinite;
+}
+
 /* 各メニュータイトル */
 
 .page-section-title {
-  font-family: "DM Sans", "Noto Sans JP";
-  color: #333;
-  font-weight: 900;
+  font-family: "Lato", serif;
+  color: #fff;
+  font-weight: 700;
   font-size: 4rem;
   align-items: center;
   text-align: center;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .page-subsection-title {
   font-family: "DM Sans", "Noto Sans JP";
+}
+
+/* ナビゲーションカード */
+.ng-card {
+  font-family: "Noto Sans JP", "serif";
+  margin: 30px auto;
+  width: 350px;
+  background: rgba(225,225,225,0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 3px;
+  box-shadow: 0 2px 5px #ccc;
+  
+}
+
+
+.ng-card-content {
+  padding: 10px;
+}
+
+.ng-card-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #333;
+}
+
+.ng-card-img {
+  border-radius: 2px 2px 0 0;
+  max-width: 100%;
+  width: 350px;
+  height: 200px;
+  height: auto;
+}
+
+.ng-card-botton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size:1.2rem;
+}
+
+.ng-card-botton:hover {
+  background: #224b8f;
+  transition: all 0.5s;
+  color:#fff
 }
 
 /* レスポンシブデザインのためのメディアクエリ */
@@ -409,10 +439,13 @@ h4 {
   }
   .home-kawachi-animation {
     width: 95vw;
-    margin:auto;
+    margin: auto;
     height: 100svh;
     top: 50svh;
     transform: translateY(-50%);
     filter: blur(2px);
+  }
+  .page-section-title {
+    font-size: 2.5rem;
   }
 }

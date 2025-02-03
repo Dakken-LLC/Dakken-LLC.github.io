@@ -147,7 +147,7 @@ export default function HomePage() {
               ease: "easeOut",
             }}
           >
-            学生による新しいITサービスを提供します
+            合同会社DA研へようこそ
           </motion.p>
           <div
             className={`scroll-arrow ${showArrow ? "visible" : ""}`}
@@ -156,67 +156,44 @@ export default function HomePage() {
             <SlArrowDown />
           </div>
         </div>
-        <p className="home-sub-title" ref={homeSubTitleRef}>
-          DXとデータ分析で
-          <wbr />
-          毎日に改革を
-        </p>
-        <p className="topic-container" ref={topicContainerRef}>
-          合同会社DA研は最新技術を用いた
-          <wbr />
-          ITサービスを提供することで
-          <wbr />
-          今までの膨大な手作業を自動化し、
-          <wbr />
-          毎日の業務を価値ある効率的なものに。
-          <br></br>
-          分析では学術機関で学んだ
-          <wbr />
-          知識と若い発想力を活用し
-          <wbr />
-          データを何百倍もの価値のあるものに。
-          <wbr />
-          大学生の力でITをフル活用し
-          <wbr />
-          皆様をサポートします。
-        </p>
-        <div className="page-section-title">AccessMenu</div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
-            marginBottom: "10px",
-          }}
-        >
-          <Stack gap="4" direction="row" wrap="wrap" justify="center">
-            {cards.map((card, index) => (
-              <Box
-                key={index}
-                width="200px"
-                height="200px"
-                overflow="hidden"
-                borderWidth="2px"
-                borderRadius="lg"
-                p={4}
-                bg="skyblue"
-              >
-                <Box mb={4}>
-                  <Text fontSize="xl" fontWeight="bold">
-                    {card.title}
-                  </Text>
-                </Box>
-                <Box mt="auto">
-                  <Button variant="solid" mr={2}>
-                    Buy now
-                  </Button>
-                  <Button variant="ghost">Add to cart</Button>
-                </Box>
-              </Box>
-            ))}
-          </Stack>
+        <div className="main-content">
+          <p className="home-sub-title" ref={homeSubTitleRef}>
+            DX×データ分析で
+            <wbr />
+            毎日に改革を
+          </p>
+          <p className="topic-container" ref={topicContainerRef}>
+            合同会社DA研は最新技術を用いた
+            <wbr />
+            ITサービスを提供することで
+            <wbr />
+            今までの膨大な手作業を自動化し、
+            <wbr />
+            毎日の業務を価値ある効率的なものに。
+            <br></br>
+            分析では学術機関で学んだ
+            <wbr />
+            新しい知識を活用し
+            <wbr />
+            データを何百倍もの価値のあるものに。
+            <wbr />
+            大学生の力でITをフル活用し
+            <wbr />
+            皆様をサポートします。
+          </p>
+        </div>
+        <div className="home-menu-container" ref={homeQuickMenuRef}>
+          <div className="page-section-title">Navigation Menu</div>
+          <section className="ng-card">
+            <img className="ng-card-image" src="https://picsum.photos/350/250" alt="company-about" />
+            <div className="ng-card-content">
+              <div className="ng-card-title">会社案内</div>
+              <p>合同会社DA研の概要をご紹介します</p>
+              <div className="ng-card-botton">
+                メンバー
+              </div>
+            </div>
+          </section>
         </div>
       </motion.div>
     </PageMoveTransition>
