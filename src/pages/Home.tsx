@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
 import { SlArrowDown } from "react-icons/sl";
 import kawachiBackgroundSrc from "../assets/Japan11.png";
-import { Box,Button, Card, Image, Text ,Stack } from "@chakra-ui/react";
+import { Box, Button, Card, Image, Text, Stack } from "@chakra-ui/react";
 const HOME_TOP_TEXT = "Challenge For The future";
 
 const letterAnimation = {
@@ -207,7 +207,6 @@ export default function HomePage() {
                   <Text fontSize="xl" fontWeight="bold">
                     {card.title}
                   </Text>
-                  <Text>{card.description}</Text>
                 </Box>
                 <Box mt="auto">
                   <Button variant="solid" mr={2}>
@@ -223,4 +222,3 @@ export default function HomePage() {
     </PageMoveTransition>
   );
 }
-
