@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
 import { SlArrowDown } from "react-icons/sl";
 import kawachiBackgroundSrc from "../assets/Japan11.png";
-
+import { Box,Button, Card, Image, Text ,Stack } from "@chakra-ui/react";
 const HOME_TOP_TEXT = "Challenge For The future";
 
 const letterAnimation = {
@@ -44,6 +44,22 @@ export default function HomePage() {
       behavior: "smooth",
     });
   };
+
+  const cards = [
+    {
+      title: "会社案内",
+    },
+    {
+      title: "事業内容",
+    },
+    {
+      title: "事業内容",
+    },
+    {
+      title: "事業内容",
+    },
+  ];
+
   useEffect(() => {
     const totalDuration = HOME_TOP_TEXT.length * 0.05; // 文字の描画が完了するまでの時間
     const timer1 = setTimeout(() => {
@@ -164,10 +180,47 @@ export default function HomePage() {
           <wbr />
           皆様をサポートします。
         </p>
-        <p className="home-sub-title" ref={homeQuickMenuRef}>
-          AccessMenu
-        </p>
+        <div className="page-section-title">AccessMenu</div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            marginBottom: "10px",
+          }}
+        >
+          <Stack gap="4" direction="row" wrap="wrap" justify="center">
+            {cards.map((card, index) => (
+              <Box
+                key={index}
+                width="200px"
+                height="200px"
+                overflow="hidden"
+                borderWidth="2px"
+                borderRadius="lg"
+                p={4}
+                bg="skyblue"
+              >
+                <Box mb={4}>
+                  <Text fontSize="xl" fontWeight="bold">
+                    {card.title}
+                  </Text>
+                  <Text>{card.description}</Text>
+                </Box>
+                <Box mt="auto">
+                  <Button variant="solid" mr={2}>
+                    Buy now
+                  </Button>
+                  <Button variant="ghost">Add to cart</Button>
+                </Box>
+              </Box>
+            ))}
+          </Stack>
+        </div>
       </motion.div>
     </PageMoveTransition>
   );
 }
+

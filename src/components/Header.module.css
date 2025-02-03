@@ -2,7 +2,6 @@
   --header-height: 70px;
 }
 
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -41,7 +40,7 @@ nav ul {
   display: flex;
   backdrop-filter: inherit;
   justify-content: center;
-  margin-right:20px;
+  margin: 15px 5px;
 }
 
 nav ul li {
@@ -114,13 +113,11 @@ nav ul li a:hover {
 .contactLink:hover {
   background-color: rgb(190, 65, 65);
   color: white;
-
 }
 
 .icon {
-  padding-top:3px;
+  padding-top: 3px;
   padding-left: 5px; /* アイコンとテキストの間にスペースを追加 */
-
 }
 
 @media (max-width: 950px) {
@@ -175,7 +172,7 @@ nav ul li a:hover {
     margin-left: -10px;
   }
 
-  nav ul li{
+  nav ul li {
     margin-left: 5px;
   }
 
@@ -201,9 +198,9 @@ nav ul li a:hover {
   }
 
   .logo img {
-    margin-left: 5px;}
+    margin-left: 5px;
+  }
 }
-
 
 @keyframes fadeIn {
   0% {
