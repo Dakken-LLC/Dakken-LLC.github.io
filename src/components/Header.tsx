@@ -74,8 +74,8 @@ export default function HeaderLayout() {
             }
           >
             <LinkItem title="ホーム" to="/" />
-            <LinkItem title="会社案内" to="/business" />
-            <LinkItem title="サービス" to="/business" />
+            <LinkItem title="会社案内" to="/about" />
+            <LinkItem title="サービス" to="/service" />
             <LinkItem title="ニュース" to="/news" />
             <LinkItem
               title="お問い合わせ"

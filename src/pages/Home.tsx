@@ -182,16 +182,42 @@ export default function HomePage() {
             皆様をサポートします。
           </p>
         </div>
+        <div className="page-section-title">Navigation Menu</div>
         <div className="home-menu-container" ref={homeQuickMenuRef}>
-          <div className="page-section-title">Navigation Menu</div>
           <section className="ng-card">
-            <img className="ng-card-image" src="https://picsum.photos/350/250" alt="company-about" />
+            <img
+              className="ng-card-image"
+              src="https://picsum.photos/300/250"
+              alt="company-about"
+            />
             <div className="ng-card-content">
               <div className="ng-card-title">会社案内</div>
               <p>合同会社DA研の概要をご紹介します</p>
-              <div className="ng-card-botton">
-                メンバー
-              </div>
+              <div className="ng-card-botton">メンバー</div>
+            </div>
+          </section>
+          <section className="ng-card">
+            <img
+              className="ng-card-image"
+              src="https://picsum.photos/300/250"
+              alt="company-about"
+            />
+            <div className="ng-card-content">
+              <div className="ng-card-title">会社案内</div>
+              <p>合同会社DA研の概要をご紹介します</p>
+              <div className="ng-card-botton">メンバー</div>
+            </div>
+          </section>
+          <section className="ng-card">
+            <img
+              className="ng-card-image"
+              src="https://picsum.photos/300/250"
+              alt="company-about"
+            />
+            <div className="ng-card-content">
+              <div className="ng-card-title">会社案内</div>
+              <p>合同会社DA研の概要をご紹介します</p>
+              <div className="ng-card-botton">メンバー</div>
             </div>
           </section>
         </div>
