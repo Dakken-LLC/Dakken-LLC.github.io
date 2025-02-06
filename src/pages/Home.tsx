@@ -45,21 +45,6 @@ export default function HomePage() {
     });
   };
 
-  const cards = [
-    {
-      title: "会社案内",
-    },
-    {
-      title: "事業内容",
-    },
-    {
-      title: "事業内容",
-    },
-    {
-      title: "事業内容",
-    },
-  ];
-
   useEffect(() => {
     const totalDuration = HOME_TOP_TEXT.length * 0.05; // 文字の描画が完了するまでの時間
     const timer1 = setTimeout(() => {

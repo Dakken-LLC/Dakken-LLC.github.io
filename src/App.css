@@ -308,7 +308,7 @@ h4 {
 }
 
 .home-menu-container {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -358,6 +358,7 @@ h4 {
       rgba(0, 0, 0, 0.2) 130px
     );
   padding: 20px;
+  border-top: 1mm solid rgba(0, 0, 0, 0.8);
   animation: Grad 15s ease infinite;
 }
 
@@ -388,13 +389,13 @@ h4 {
   background-color: rgba(255, 255, 255, 0.5);
   color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-  transition:
+  transition: all 0.5s;
 }
 
-.ng-card:hover{
+.ng-card:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
   transition: all 0.5s;
-  border: 2mm solid rgba(0, 0, 0, 0.8);
+  border: 1mm solid rgba(0, 0, 0, 0.8);
 }
 
 .ng-card-content {
