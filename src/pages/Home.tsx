@@ -141,70 +141,48 @@ export default function HomePage() {
             <SlArrowDown />
           </div>
         </div>
-        <div className="main-content">
-          <p className="home-sub-title" ref={homeSubTitleRef}>
-            DX×データ分析で
-            <wbr />
-            毎日に改革を
-          </p>
-          <p className="topic-container" ref={topicContainerRef}>
-            合同会社DA研は最新技術を用いた
-            <wbr />
-            ITサービスを提供することで
-            <wbr />
-            今までの膨大な手作業を自動化し、
-            <wbr />
-            毎日の業務を価値ある効率的なものに。
-            <br></br>
-            分析では学術機関で学んだ
-            <wbr />
-            新しい知識を活用し
-            <wbr />
-            データを何百倍もの価値のあるものに。
-            <wbr />
-            大学生の力でITをフル活用し
-            <wbr />
-            皆様をサポートします。
-          </p>
-        </div>
-        <div className="page-section-title">Navigation Menu</div>
-        <div className="home-menu-container" ref={homeQuickMenuRef}>
-          <section className="ng-card">
-            <img
-              className="ng-card-image"
-              src="https://picsum.photos/300/250"
-              alt="company-about"
-            />
-            <div className="ng-card-content">
-              <div className="ng-card-title">会社案内</div>
-              <p>合同会社DA研の概要をご紹介します</p>
-              <div className="ng-card-botton">メンバー</div>
+        <div className="home-main-background">
+          <div className="main-content">
+            <p className="home-sub-title" ref={homeSubTitleRef}>
+              DX×データ分析で
+              <wbr />
+              毎日に改革を
+            </p>
+            <p className="topic-container" ref={topicContainerRef}>
+              合同会社DA研は最新技術を用いた
+              <wbr />
+              ITサービスを提供することで
+              <wbr />
+              今までの膨大な手作業を自動化し、
+              <wbr />
+              毎日の業務を価値ある効率的なものに。
+              <br></br>
+              分析では学術機関で学んだ
+              <wbr />
+              新しい知識を活用し
+              <wbr />
+              データを何百倍もの価値のあるものに。
+              <wbr />
+              大学生の力でITをフル活用し
+              <wbr />
+              皆様をサポートします。
+            </p>
+            <div className="page-section-title" style={{ fontSize: '3rem' }}>Navigation Menu</div>
+            <div className="home-menu-container" ref={homeQuickMenuRef}>
+              <section className="ng-card">
+                <img
+                  className="ng-card-img"
+                  src="https://picsum.photos/1000/1000"
+
+                />
+                <div className="ng-card-content">
+                  <div className="ng-card-title">ABOUT</div>
+                  <div className="ng-card-title">会社案内</div>
+                  <div className="ng-card-botton">メンバー</div>
+                </div>
+              </section>
             </div>
-          </section>
-          <section className="ng-card">
-            <img
-              className="ng-card-image"
-              src="https://picsum.photos/300/250"
-              alt="company-about"
-            />
-            <div className="ng-card-content">
-              <div className="ng-card-title">会社案内</div>
-              <p>合同会社DA研の概要をご紹介します</p>
-              <div className="ng-card-botton">メンバー</div>
-            </div>
-          </section>
-          <section className="ng-card">
-            <img
-              className="ng-card-image"
-              src="https://picsum.photos/300/250"
-              alt="company-about"
-            />
-            <div className="ng-card-content">
-              <div className="ng-card-title">会社案内</div>
-              <p>合同会社DA研の概要をご紹介します</p>
-              <div className="ng-card-botton">メンバー</div>
-            </div>
-          </section>
+          </div>
         </div>
       </motion.div>
     </PageMoveTransition>

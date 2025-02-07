@@ -10,8 +10,8 @@ export default function PageMoveTransition({
 
   const pageMove = {
     initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 1.5 } },
-    exit: { opacity: 0, transition: { duration: 1.5 } },
+    animate: { opacity: 1, transition: { duration: 0.8 } },
+    exit: { opacity: 0, transition: { duration: 0.8 } },
   };
 
   return (

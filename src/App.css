@@ -1,6 +1,51 @@
 :root {
   --font-family-primary: "Noto Sans JP", serif;
   --height: 100svh;
+  --background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 25px,
+      rgba(0, 0, 0, 0.05) 26px,
+      rgba(0, 0, 0, 0.05) 26px,
+      transparent 27px,
+      transparent 51px,
+      rgba(0, 0, 0, 0.05) 52px,
+      rgba(0, 0, 0, 0.05) 52px,
+      transparent 53px,
+      transparent 77px,
+      rgba(0, 0, 0, 0.05) 78px,
+      rgba(0, 0, 0, 0.05) 78px,
+      transparent 79px,
+      transparent 103px,
+      rgba(0, 0, 0, 0.05) 104px,
+      rgba(0, 0, 0, 0.05) 104px,
+      transparent 105px,
+      transparent 129px,
+      rgba(0, 0, 0, 0.05) 130px,
+      rgba(0, 0, 0, 0.05) 130px
+    ),
+    repeating-linear-gradient(
+      to right,
+      transparent 25px,
+      rgba(0, 0, 0, 0.05) 26px,
+      rgba(0, 0, 0, 0.05) 26px,
+      transparent 27px,
+      transparent 51px,
+      rgba(0, 0, 0, 0.05) 52px,
+      rgba(0, 0, 0, 0.05) 52px,
+      transparent 53px,
+      transparent 77px,
+      rgba(0, 0, 0, 0.05) 78px,
+      rgba(0, 0, 0, 0.05) 78px,
+      transparent 79px,
+      transparent 103px,
+      rgba(0, 0, 0, 0.05) 104px,
+      rgba(0, 0, 0, 0.05) 104px,
+      transparent 105px,
+      transparent 129px,
+      rgba(0, 0, 0, 0.05) 130px,
+      rgba(0, 0, 0, 0.05) 130px
+    );
+  --max-width: 1400px;
 }
 
 @keyframes fadeIn {
@@ -46,7 +91,7 @@ p {
   width: 100%;
   margin: 0 auto;
   align-items: center;
-  max-width: 1400px;
+  max-width: var(--max-width);
 }
 
 .section-subheading {
@@ -241,6 +286,10 @@ h4 {
   }
 }
 
+.home-main-background{
+  background-image: var(--background-image);
+}
+
 .topic-container {
   display: flex;
   justify-content: center;
@@ -313,52 +362,7 @@ h4 {
   justify-content: center;
   align-items: center;
   gap: 16px;
-  background-image: repeating-linear-gradient(
-      to bottom,
-      transparent 25px,
-      rgba(0, 0, 0, 0.2) 26px,
-      rgba(0, 0, 0, 0.2) 26px,
-      transparent 27px,
-      transparent 51px,
-      rgba(0, 0, 0, 0.2) 52px,
-      rgba(0, 0, 0, 0.2) 52px,
-      transparent 53px,
-      transparent 77px,
-      rgba(0, 0, 0, 0.2) 78px,
-      rgba(0, 0, 0, 0.2) 78px,
-      transparent 79px,
-      transparent 103px,
-      rgba(0, 0, 0, 0.2) 104px,
-      rgba(0, 0, 0, 0.2) 104px,
-      transparent 105px,
-      transparent 129px,
-      rgba(0, 0, 0, 0.2) 130px,
-      rgba(0, 0, 0, 0.2) 130px
-    ),
-    repeating-linear-gradient(
-      to right,
-      transparent 25px,
-      rgba(0, 0, 0, 0.2) 26px,
-      rgba(0, 0, 0, 0.2) 26px,
-      transparent 27px,
-      transparent 51px,
-      rgba(0, 0, 0, 0.2) 52px,
-      rgba(0, 0, 0, 0.2) 52px,
-      transparent 53px,
-      transparent 77px,
-      rgba(0, 0, 0, 0.2) 78px,
-      rgba(0, 0, 0, 0.2) 78px,
-      transparent 79px,
-      transparent 103px,
-      rgba(0, 0, 0, 0.2) 104px,
-      rgba(0, 0, 0, 0.2) 104px,
-      transparent 105px,
-      transparent 129px,
-      rgba(0, 0, 0, 0.2) 130px,
-      rgba(0, 0, 0, 0.2) 130px
-    );
   padding: 20px;
-  border-top: 1mm solid rgba(0, 0, 0, 0.8);
   animation: Grad 15s ease infinite;
 }
 
@@ -380,26 +384,35 @@ h4 {
 
 /* ナビゲーションカード */
 .ng-card {
-  width: 300px;
-  height: 400px;
-  margin: 0 auto;
+  position: relative;
+  width: 40svw;
+  min-width: 400px;
+  max-width: 600px;
+  aspect-ratio: 2;
+  margin: 10px auto;
   font-family: "Noto Sans JP", "serif";
   overflow: hidden;
-  backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.5);
-  color: white;
+  color: black;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-  transition: all 0.5s;
+  backdrop-filter: blur(5px);
+  transition: border 0.5s;
+  display:flex;
+  text-align: center;
+  box-sizing:content-box;
+  justify-content: space-between;
 }
 
 .ng-card:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
   transition: all 0.5s;
-  border: 1mm solid rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(0, 0, 0, 0.8);
 }
 
 .ng-card-content {
   padding: 10px;
+  display:flex;
+  
 }
 
 .ng-card-title {
@@ -409,11 +422,14 @@ h4 {
 }
 
 .ng-card-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
   border-radius: 2px 2px 0 0;
-  max-width: 100%;
-  width: 350px;
-  height: 200px;
+  position: absolute;
   height: auto;
+  z-index: -1;
+  filter: blur(2px);
 }
 
 .ng-card-botton {
