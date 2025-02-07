@@ -16,6 +16,11 @@ jobs:
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Approve Dependabot PRs
+        run: gh pr review --approve --body "Auto-approve by Dependabot" "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Enable auto-merge for Dependabot PRs with minor or patch updates
         if:
           steps.metadata.outputs.update-type == 'version-update:semver-minor' ||
