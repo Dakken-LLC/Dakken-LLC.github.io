@@ -1,0 +1,22 @@
+.container {
+
+  padding: 0; /* 余白を取り除く */
+  margin: 0; /* 余白を取り除く */
+  position: relative; /* 相対位置に設定 */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.topImage {
+  width: 100%;
+  height: 40svh;
+  object-fit: cover;
+}
+
+.contactContainer {
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  min-height: "100vh";
+}

@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
 import { SlArrowDown } from "react-icons/sl";
 import kawachiBackgroundSrc from "../assets/Japan11.png";
+import testCompany from "../assets/test_company.jpg";
+import { GoChevronRight } from "react-icons/go";
 
 const HOME_TOP_TEXT = "Challenge For The future";
 
@@ -155,30 +157,109 @@ export default function HomePage() {
               <wbr />
               今までの膨大な手作業を自動化し、
               <wbr />
-              毎日の業務を価値ある効率的なものに。
+              毎日の業務を価値ある
+              <wbr />
+              効率的なものに。
               <br></br>
               分析では学術機関で学んだ
               <wbr />
               新しい知識を活用し
               <wbr />
-              データを何百倍もの価値のあるものに。
+              データを何百倍もの
               <wbr />
-              大学生の力でITをフル活用し
+              価値のあるものに。
+              <wbr />
+              DX(アプリ開発)×データ分析で
               <wbr />
               皆様をサポートします。
             </p>
-            <div className="page-section-title" style={{ fontSize: '3rem' }}>Navigation Menu</div>
             <div className="home-menu-container" ref={homeQuickMenuRef}>
               <section className="ng-card">
-                <img
-                  className="ng-card-img"
-                  src="https://picsum.photos/1000/1000"
-
-                />
+                <img src={testCompany} className="ng-card-img" />
                 <div className="ng-card-content">
                   <div className="ng-card-title">ABOUT</div>
-                  <div className="ng-card-title">会社案内</div>
-                  <div className="ng-card-botton">メンバー</div>
+                  <div className="ng-card-button">
+                    <button>
+                      企業理念
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      メンバー
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      沿革
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      会社概要
+                      <GoChevronRight />
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <section className="ng-card">
+                <img src={testCompany} className="ng-card-img" />
+                <div className="ng-card-content">
+                  <div className="ng-card-title">Service</div>
+                  <div className="ng-card-button">
+                    <button>
+                      事業概要
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      WEBアプリ開発
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      データ分析
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      3Dモデル製作
+                      <GoChevronRight />
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <section className="ng-card">
+                <img src={testCompany} className="ng-card-img" />
+                <div className="ng-card-content">
+                  <div className="ng-card-title">NEWS</div>
+                  <div className="ng-card-button">
+                    <button>
+                      新着情報
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      DA研のブログ
+                      <GoChevronRight />
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <section className="ng-card">
+                <img src={testCompany} className="ng-card-img" />
+                <div className="ng-card-content">
+                  <div className="ng-card-title">CONTACT</div>
+                  <div className="ng-card-button">
+                    <button>
+                      お問い合わせ
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      資料請求
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      リンク集
+                      <GoChevronRight />
+                    </button>
+                    <button>
+                      部活動へ
+                      <GoChevronRight />
+                    </button>
+                  </div>
                 </div>
               </section>
             </div>
