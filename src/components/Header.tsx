@@ -13,7 +13,7 @@ const LinkItem = ({
   title: string;
   to: string;
   className?: string;
-  icon?: TSX.Element;
+  icon?: React.ReactNode;
 }) => {
   return (
     <li>
