@@ -168,7 +168,7 @@ export default function HomePage() {
               データを何百倍もの
               <wbr />
               価値のあるものに。
-              <wbr />
+              <br/>
               DX(アプリ開発)×データ分析で
               <wbr />
               皆様をサポートします。

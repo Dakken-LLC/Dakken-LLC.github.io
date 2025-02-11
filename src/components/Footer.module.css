@@ -1,4 +1,5 @@
 .footer {
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +13,6 @@
   opacity: 0.9;
   z-index: 10;
   box-sizing: border-box; /* パディングとボーダーを含めた全体の幅を指定 */
-  font-family:"Nunito Sans", serif;
+  font-family: "Nunito Sans", serif;
   font-weight: lighter;
 }
-
