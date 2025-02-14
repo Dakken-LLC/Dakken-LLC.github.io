@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import "../App.css";
+import commonStyle from "../utils/common.module.css";
+import homeStyle from "./Home.module.css";
+
 import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
 import { SlArrowDown } from "react-icons/sl";
@@ -98,18 +100,18 @@ export default function HomePage() {
 
   return (
     <PageMoveTransition>
-      <motion.div className="container">
-        <div className="home-grad-animation" />
+      <motion.div className={commonStyle.container}>
+        <div className={homeStyle.homeGradAnimation} />
         <motion.img
           src={kawachiBackgroundSrc}
-          className="home-kawachi-animation"
+          className={homeStyle.homeKawachiAnimation}
           initial="hidden"
           animate="visible"
           variants={imageAnimation}
         />
-        <div className="home-top-grad">
+        <div className={homeStyle.homeTopTitle}>
           <motion.p
-            className="home-top-title"
+            className={homeStyle.homeTopTitle}
             initial="hidden"
             animate="visible"
           >
@@ -122,10 +124,10 @@ export default function HomePage() {
                 {char}
               </motion.span>
             ))}
-            {showDot && <span className="blink">.</span>}
+            {showDot && <span className={homeStyle.blink}>.</span>}
           </motion.p>
           <motion.p
-            className="home-top-text"
+            className={homeStyle.homeTopText}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -143,7 +145,7 @@ export default function HomePage() {
             <SlArrowDown />
           </div>
         </div>
-        <div className="home-main-background">
+        <div className={homeStyle.homeMainContent}>
           <div className="main-content">
             <p className="home-sub-title" ref={homeSubTitleRef}>
               DX×データ分析で
@@ -168,7 +170,7 @@ export default function HomePage() {
               データを何百倍もの
               <wbr />
               価値のあるものに。
-              <br/>
+              <br />
               DX(アプリ開発)×データ分析で
               <wbr />
               皆様をサポートします。

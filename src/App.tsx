@@ -8,12 +8,13 @@ import ContactPage from "./pages/Contact";
 import ServicePage from "./pages/Service";
 import NewsPage from "./pages/News";
 import { AnimatePresence } from "framer-motion";
-import "./App.css";
+
 
 export default function App() {
 
+
   return (
-    <div className="App">
+    <div className>
       <AnimatePresence>
         <Header />
         <Layout>
