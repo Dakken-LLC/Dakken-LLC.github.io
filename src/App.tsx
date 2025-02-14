@@ -14,7 +14,7 @@ export default function App() {
 
 
   return (
-    <div className>
+    <div className="App">
       <AnimatePresence>
         <Header />
         <Layout>

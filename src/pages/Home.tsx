@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import commonStyle from "../utils/common.module.css";
+import commonStyle from "../utils/Common.module.css";
 import homeStyle from "./Home.module.css";
 
 import { motion } from "framer-motion";
@@ -139,20 +139,20 @@ export default function HomePage() {
             合同会社DA研へようこそ
           </motion.p>
           <div
-            className={`scroll-arrow ${showArrow ? "visible" : ""}`}
+            className={`${homeStyle.scrollArrow} ${showArrow ? homeStyle.visible : ""}`}
             onClick={handleScroll}
           >
             <SlArrowDown />
           </div>
         </div>
-        <div className={homeStyle.homeMainContent}>
-          <div className="main-content">
-            <p className="home-sub-title" ref={homeSubTitleRef}>
+        <div className={homeStyle.homeMainBackground}>
+          <div className={commonStyle.mainContent}>
+            <p className={homeStyle.homeSubTitle} ref={homeSubTitleRef}>
               DX×データ分析で
               <wbr />
               毎日に改革を
             </p>
-            <p className="topic-container" ref={topicContainerRef}>
+            <p className={homeStyle.topicContainer} ref={topicContainerRef}>
               合同会社DA研は最新技術を用いた
               <wbr />
               ITサービスを提供することで
@@ -175,12 +175,12 @@ export default function HomePage() {
               <wbr />
               皆様をサポートします。
             </p>
-            <div className="home-menu-container" ref={homeQuickMenuRef}>
-              <section className="ng-card">
-                <img src={testCompany} className="ng-card-img" />
-                <div className="ng-card-content">
-                  <div className="ng-card-title">ABOUT</div>
-                  <div className="ng-card-button">
+            <div className={homeStyle.homeMenuContainer} ref={homeQuickMenuRef}>
+              <section className={homeStyle.ngCard}>
+                <img src={testCompany} className={homeStyle.ngCardImg} />
+                <div className={homeStyle.ngCardContent}>
+                  <div className={homeStyle.ngCardTitle}>ABOUT</div>
+                  <div className={homeStyle.ngCardButton}>
                     <button>
                       企業理念
                       <GoChevronRight />
@@ -200,11 +200,11 @@ export default function HomePage() {
                   </div>
                 </div>
               </section>
-              <section className="ng-card">
-                <img src={testCompany} className="ng-card-img" />
-                <div className="ng-card-content">
-                  <div className="ng-card-title">Service</div>
-                  <div className="ng-card-button">
+              <section className={homeStyle.ngCard}>
+                <img src={testCompany} className={homeStyle.ngCardImg} />
+                <div className={homeStyle.ngCardContent}>
+                  <div className={homeStyle.ngCardTitle}>Service</div>
+                  <div className={homeStyle.ngCardButton}>
                     <button>
                       事業概要
                       <GoChevronRight />
@@ -224,11 +224,11 @@ export default function HomePage() {
                   </div>
                 </div>
               </section>
-              <section className="ng-card">
-                <img src={testCompany} className="ng-card-img" />
-                <div className="ng-card-content">
-                  <div className="ng-card-title">NEWS</div>
-                  <div className="ng-card-button">
+              <section className={homeStyle.ngCard}>
+                <img src={testCompany} className={homeStyle.ngCardImg} />
+                <div className={homeStyle.ngCardContent}>
+                  <div className={homeStyle.ngCardTitle}>NEWS</div>
+                  <div className={homeStyle.ngCardButton}>
                     <button>
                       新着情報
                       <GoChevronRight />
@@ -240,11 +240,11 @@ export default function HomePage() {
                   </div>
                 </div>
               </section>
-              <section className="ng-card">
-                <img src={testCompany} className="ng-card-img" />
-                <div className="ng-card-content">
-                  <div className="ng-card-title">CONTACT</div>
-                  <div className="ng-card-button">
+              <section className={homeStyle.ngCard}>
+                <img src={testCompany} className={homeStyle.ngCardImg} />
+                <div className={homeStyle.ngCardContent}>
+                  <div className={homeStyle.ngCardTitle}>CONTACT</div>
+                  <div className={homeStyle.ngCardButton}>
                     <button>
                       お問い合わせ
                       <GoChevronRight />

@@ -1,9 +1,9 @@
 import styles from "./Contact.module.css";
 import { useForm } from "react-hook-form";
-import { notify } from "@/utils/notify";
+import { notify } from "../utils/notify";
 import PageMoveTransition from "../utils/PageMoveTransition";
 import { Button, Fieldset, Input, Textarea, Stack } from "@chakra-ui/react";
-import { Field } from "@/components/ui/field";
+import { Field } from "../components/ui/field";
 import {
   NativeSelectField,
   NativeSelectRoot,
