@@ -5,8 +5,7 @@ export default function PageMoveTransition({
   children,
 }: {
   children: ReactNode;
-  }) {
-
+}) {
   const pageMove = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { duration: 0.8 } },
@@ -26,4 +25,3 @@ export default function PageMoveTransition({
     </div>
   );
 }
-

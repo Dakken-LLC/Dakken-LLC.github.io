@@ -12,6 +12,7 @@ import {
   VStack,
   Button,
   Card,
+  Container,
 } from "@chakra-ui/react";
 
 import kawachiBackgroundSrc from "../assets/Japan11.png";

@@ -7,10 +7,7 @@ export default function MemberPage() {
     <PageMoveTransition>
       <div className={styles.container}>
         <img className={styles.topImage} src={test} alt="company-about" />
-        <div className={styles.topTitle}>
-          会社案内
-        </div>
-
+        <div className={styles.topTitle}>会社案内</div>
       </div>
     </PageMoveTransition>
   );
