@@ -2,10 +2,23 @@ import { useState, useEffect, useRef } from "react";
 import "../App.css";
 import { motion } from "framer-motion";
 import PageMoveTransition from "../utils/PageMoveTransition";
-import { SlArrowDown } from "react-icons/sl";
+import { Link } from "react-router";
+import {
+  Box,
+  Text,
+  Heading,
+  SimpleGrid,
+  Stack,
+  VStack,
+  Button,
+  Card,
+} from "@chakra-ui/react";
+
 import kawachiBackgroundSrc from "../assets/Japan11.png";
 import testCompany from "../assets/test_company.jpg";
+
 import { GoChevronRight } from "react-icons/go";
+import { SlArrowDown } from "react-icons/sl";
 
 const HOME_TOP_TEXT = "Challenge For The future";
 
@@ -85,7 +98,6 @@ export default function HomePage() {
     const homeQuickMenuElement = homeQuickMenuRef.current;
 
     if (homeSubTitleElement) observer.observe(homeSubTitleElement);
-    if (topicContainerRef.current) observer.observe(topicContainerRef.current);
     if (topicContainerElement) observer.observe(topicContainerElement);
     if (homeQuickMenuElement) observer.observe(homeQuickMenuElement);
 
@@ -99,7 +111,7 @@ export default function HomePage() {
   return (
     <PageMoveTransition>
       <motion.div className="container">
-        <div className="home-grad-animation" />
+        <Box className="home-grad-animation" />
         <motion.img
           src={kawachiBackgroundSrc}
           className="home-kawachi-animation"
@@ -107,7 +119,7 @@ export default function HomePage() {
           animate="visible"
           variants={imageAnimation}
         />
-        <div className="home-top-grad">
+        <Box className="home-top-grad">
           <motion.p
             className="home-top-title"
             initial="hidden"
@@ -136,15 +148,15 @@ export default function HomePage() {
           >
             合同会社DA研へようこそ
           </motion.p>
-          <div
+          <Box
             className={`scroll-arrow ${showArrow ? "visible" : ""}`}
             onClick={handleScroll}
           >
             <SlArrowDown />
-          </div>
-        </div>
-        <div className="home-main-background">
-          <div className="main-content">
+          </Box>
+        </Box>
+        <Box className="home-main-background">
+          <Box className="main-content">
             <p className="home-sub-title" ref={homeSubTitleRef}>
               DX×データ分析で
               <wbr />
@@ -168,17 +180,43 @@ export default function HomePage() {
               データを何百倍もの
               <wbr />
               価値のあるものに。
-              <br/>
+              <br />
               DX(アプリ開発)×データ分析で
               <wbr />
               皆様をサポートします。
             </p>
-            <div className="home-menu-container" ref={homeQuickMenuRef}>
+
+            <SimpleGrid minChildWidth={400} gap={4}>
+              <MyCard title="ABOUT">
+                <LinkButton name="企業理念" href="#"></LinkButton>
+                <LinkButton name="メンバー" href="#"></LinkButton>
+                <LinkButton name="沿革" href="#"></LinkButton>
+                <LinkButton name="会社概要" href="#"></LinkButton>
+              </MyCard>
+              <MyCard title="Service">
+                <LinkButton name="事業概要" href="#"></LinkButton>
+                <LinkButton name="WEBアプリ開発" href="#"></LinkButton>
+                <LinkButton name="データ分析" href="#"></LinkButton>
+                <LinkButton name="3Dモデル製作" href="#"></LinkButton>
+              </MyCard>
+              <MyCard title="NEWS">
+                <LinkButton name="新着情報" href="#"></LinkButton>
+                <LinkButton name="DA研のブログ" href="#"></LinkButton>
+              </MyCard>
+              <MyCard title="CONTACT">
+                <LinkButton name="お問い合わせ" href="#"></LinkButton>
+                <LinkButton name="資料請求" href="#"></LinkButton>
+                <LinkButton name="リンク集" href="#"></LinkButton>
+                <LinkButton name="部活動へ" href="#"></LinkButton>
+              </MyCard>
+            </SimpleGrid>
+
+            <Box className="home-menu-container" ref={homeQuickMenuRef}>
               <section className="ng-card">
                 <img src={testCompany} className="ng-card-img" />
-                <div className="ng-card-content">
-                  <div className="ng-card-title">ABOUT</div>
-                  <div className="ng-card-button">
+                <Box className="ng-card-content">
+                  <Box className="ng-card-title">ABOUT</Box>
+                  <Box className="ng-card-button">
                     <button>
                       企業理念
                       <GoChevronRight />
@@ -195,14 +233,14 @@ export default function HomePage() {
                       会社概要
                       <GoChevronRight />
                     </button>
-                  </div>
-                </div>
+                  </Box>
+                </Box>
               </section>
               <section className="ng-card">
                 <img src={testCompany} className="ng-card-img" />
-                <div className="ng-card-content">
-                  <div className="ng-card-title">Service</div>
-                  <div className="ng-card-button">
+                <Box className="ng-card-content">
+                  <Box className="ng-card-title">Service</Box>
+                  <Box className="ng-card-button">
                     <button>
                       事業概要
                       <GoChevronRight />
@@ -219,14 +257,14 @@ export default function HomePage() {
                       3Dモデル製作
                       <GoChevronRight />
                     </button>
-                  </div>
-                </div>
+                  </Box>
+                </Box>
               </section>
               <section className="ng-card">
                 <img src={testCompany} className="ng-card-img" />
-                <div className="ng-card-content">
-                  <div className="ng-card-title">NEWS</div>
-                  <div className="ng-card-button">
+                <Box className="ng-card-content">
+                  <Box className="ng-card-title">NEWS</Box>
+                  <Box className="ng-card-button">
                     <button>
                       新着情報
                       <GoChevronRight />
@@ -235,14 +273,14 @@ export default function HomePage() {
                       DA研のブログ
                       <GoChevronRight />
                     </button>
-                  </div>
-                </div>
+                  </Box>
+                </Box>
               </section>
               <section className="ng-card">
                 <img src={testCompany} className="ng-card-img" />
-                <div className="ng-card-content">
-                  <div className="ng-card-title">CONTACT</div>
-                  <div className="ng-card-button">
+                <Box className="ng-card-content">
+                  <Box className="ng-card-title">CONTACT</Box>
+                  <Box className="ng-card-button">
                     <button>
                       お問い合わせ
                       <GoChevronRight />
@@ -259,13 +297,43 @@ export default function HomePage() {
                       部活動へ
                       <GoChevronRight />
                     </button>
-                  </div>
-                </div>
+                  </Box>
+                </Box>
               </section>
-            </div>
-          </div>
-        </div>
+            </Box>
+          </Box>
+        </Box>
       </motion.div>
     </PageMoveTransition>
+  );
+}
+
+type LinkButtonProps = {
+  name: string;
+  href: string;
+};
+
+function LinkButton({ name, href }: LinkButtonProps) {
+  return (
+    <Link to={href}>
+      <Button as="a">
+        {name}
+        <GoChevronRight />
+      </Button>
+    </Link>
+  );
+}
+
+type MyCardProps = {
+  title: string;
+  children: React.ReactNode;
+};
+
+function MyCard({ title, children }: MyCardProps) {
+  return (
+    <Stack align="start">
+      <Heading>{title}</Heading>
+      <Stack align="start">{children}</Stack>
+    </Stack>
   );
 }
