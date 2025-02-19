@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Layout from "./components/Layout";
+import BasePageLayout from "./layouts/BasePage";
+import BackgroundLayout from "./layouts/Background";
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
@@ -12,15 +13,22 @@ export default function App() {
   return (
     <>
       <Header />
-      <Layout>
+      <BasePageLayout>
         <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="/About" element={<AboutPage />} />
-          <Route path="/Service" element={<ServicePage />} />
+          <Route
+            index
+            element={
+              <BackgroundLayout>
+                <HomePage />
+              </BackgroundLayout>
+            }
+          />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/service" element={<ServicePage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
-      </Layout>
+      </BasePageLayout>
       <Footer />
     </>
   );

@@ -73,7 +73,6 @@ export default function HeaderLayout() {
                 : styles.linkContainer
             }
           >
-            <LinkItem title="ホーム" to="/" />
             <LinkItem title="会社案内" to="/about" />
             <LinkItem title="サービス" to="/service" />
             <LinkItem title="ニュース" to="/news" />
