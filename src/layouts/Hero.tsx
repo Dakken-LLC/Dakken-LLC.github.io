@@ -1,6 +1,6 @@
 import { Box, Portal, Spacer } from "@chakra-ui/react";
 import { Outlet } from "react-router";
-import heroImageSrc from "@/assets/test_company.jpg";
+import heroImageSrc from "@/assets/hero.webp";
 
 export default function HeroLayout() {
   return (

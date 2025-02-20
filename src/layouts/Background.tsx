@@ -1,5 +1,5 @@
 import { Box, Portal } from "@chakra-ui/react";
-import backgroundImageSrc from "@/assets/Japan11.png";
+import backgroundImageSrc from "@/assets/background.webp";
 
 export default function BackgroundLayout({
   children,

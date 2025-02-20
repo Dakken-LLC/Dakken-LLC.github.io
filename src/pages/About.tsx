@@ -47,7 +47,9 @@ export default function AboutPage() {
       <Heading size="4xl">About Us</Heading>
 
       <Stack my={12} gap={8}>
-        <Heading size="xl">会社概要</Heading>
+        <Heading size="xl" id="profile">
+          会社概要
+        </Heading>
         <DataList.Root orientation="horizontal">
           {stats.map((item) => (
             <DataList.Item key={item.label}>
@@ -59,7 +61,9 @@ export default function AboutPage() {
       </Stack>
 
       <Stack my={6} gap={8}>
-        <Heading size="xl">沿革</Heading>
+        <Heading size="xl" id="history">
+          沿革
+        </Heading>
         <TimelineRoot maxW="400px">
           {timelineItems.map((item) => (
             <TimelineItem key={item.title}>

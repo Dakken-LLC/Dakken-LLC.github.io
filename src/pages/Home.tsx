@@ -32,9 +32,9 @@ export default function HomePage() {
         <Center>
           <Text
             fontSize="3xl"
-            textUnderlinePosition={"under"}
-            textUnderlineOffset={"0.2em"}
-            textDecoration={"underline"}
+            textUnderlinePosition="under"
+            textUnderlineOffset="0.2em"
+            textDecoration="underline"
           >
             データの力で未来を切り拓く
           </Text>
@@ -51,24 +51,29 @@ export default function HomePage() {
 
       <SimpleGrid gap={4} my={8} minChildWidth={{ base: "100%", lg: "500px" }}>
         <MyCard title="ABOUT" description="合同会社DA研について">
-          <LinkButton name="会社概要" href="#"></LinkButton>
-          <LinkButton name="沿革" href="#"></LinkButton>
-          <LinkButton name="事業概要" href="#"></LinkButton>
+          <LinkButton name="会社概要" href="/about#profile"></LinkButton>
+          <LinkButton name="沿革" href="/about#history"></LinkButton>
+          <LinkButton name="事業概要" href="/about/#business"></LinkButton>
         </MyCard>
         <MyCard title="SERVICE" description="合同会社DA研のサービス">
-          <LinkButton name="WEBアプリ開発" href="#"></LinkButton>
-          <LinkButton name="データ分析" href="#"></LinkButton>
-          <LinkButton name="動画編集・3Dモデリング" href="#"></LinkButton>
+          <LinkButton name="WEBアプリ開発" href="/service#webapp"></LinkButton>
+          <LinkButton
+            name="データ分析"
+            href="/service#data-analysis"
+          ></LinkButton>
+          <LinkButton
+            name="動画編集・3Dモデリング"
+            href="/service#modeling"
+          ></LinkButton>
         </MyCard>
         <MyCard title="NEWS" description="新着情報">
-          <LinkButton name="新着情報" href="#"></LinkButton>
-          <LinkButton name="DA研のブログ" href="#"></LinkButton>
+          <LinkButton name="新着情報" href="/news"></LinkButton>
+          <LinkButton name="ブログ" href="/news"></LinkButton>
         </MyCard>
         <MyCard title="CONTACT" description="お問い合わせ">
           <LinkButton name="お問い合わせ" href="/contact"></LinkButton>
-          <LinkButton name="資料請求" href="/contact"></LinkButton>
           <LinkButton
-            name="部活動へ"
+            name="部活動HP"
             href="https://uoh-dakken.com"
             target="_blank"
           ></LinkButton>
