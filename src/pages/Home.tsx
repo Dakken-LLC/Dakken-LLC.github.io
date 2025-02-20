@@ -49,7 +49,7 @@ export default function HomePage() {
         </Center>
       </VStack>
 
-      <SimpleGrid minChildWidth={500} gap={4} my={8}>
+      <SimpleGrid gap={4} my={8} minChildWidth={{ base: "100%", lg: "500px" }}>
         <MyCard title="ABOUT" description="合同会社DA研について">
           <LinkButton name="会社概要" href="#"></LinkButton>
           <LinkButton name="沿革" href="#"></LinkButton>
