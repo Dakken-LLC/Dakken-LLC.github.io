@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import BasePageLayout from "./layouts/BasePage";
 import BackgroundLayout from "./layouts/Background";
+import HeroLayout from "./layouts/Hero";
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
@@ -23,10 +24,12 @@ export default function App() {
               </BackgroundLayout>
             }
           />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/service" element={<ServicePage />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/" element={<HeroLayout />}>
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/service" element={<ServicePage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Route>
         </Routes>
       </BasePageLayout>
       <Footer />

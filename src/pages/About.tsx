@@ -43,7 +43,7 @@ const timelineItems = [
 
 export default function AboutPage() {
   return (
-    <Stack py={24}>
+    <Stack py={8}>
       <Heading size="4xl">About Us</Heading>
 
       <Stack my={12} gap={8}>

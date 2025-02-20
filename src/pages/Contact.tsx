@@ -1,6 +1,14 @@
 import { useForm } from "react-hook-form";
 import { notify } from "@/utils/notify";
-import { Button, Fieldset, Input, Textarea, Stack } from "@chakra-ui/react";
+import {
+  Button,
+  Fieldset,
+  Input,
+  Textarea,
+  Stack,
+  VStack,
+  Box,
+} from "@chakra-ui/react";
 import { Field } from "@/components/ui/field";
 import {
   NativeSelectField,
@@ -25,24 +33,13 @@ export default function Contact() {
   };
 
   return (
-    <div
-      // TODO: ここのインラインスタイルは将来的に削除してください
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh",
-      }}
-    >
-      <form
+    <VStack py={8}>
+      <Box
+        as="form"
         onSubmit={handleSubmit(_handleSubmit)}
-        style={{ width: "min(100%, 800px)" }}
+        w="min(100%, 800px)"
       >
-        <Fieldset.Root
-          size="lg"
-          padding={6}
-          invalid={Object.keys(errors).length > 0}
-        >
+        <Fieldset.Root size="lg" p={6} invalid={Object.keys(errors).length > 0}>
           <Stack gap={8}>
             <Fieldset.Legend fontSize={"4xl"}>Contact</Fieldset.Legend>
             <Fieldset.HelperText>
@@ -98,8 +95,8 @@ export default function Contact() {
             送信
           </Button>
         </Fieldset.Root>
-      </form>
-    </div>
+      </Box>
+    </VStack>
   );
 }
 
