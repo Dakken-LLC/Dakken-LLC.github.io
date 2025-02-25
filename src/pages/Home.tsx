@@ -1,14 +1,14 @@
-import { Link } from "react-router";
 import {
-  Text,
-  Heading,
-  Center,
-  SimpleGrid,
-  Stack,
-  VStack,
   Button,
   Card,
+  Center,
+  Heading,
+  SimpleGrid,
+  Stack,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
+import { Link } from "react-router";
 
 import { GoChevronRight } from "react-icons/go";
 import { SlArrowDown } from "react-icons/sl";
@@ -31,10 +31,15 @@ export default function HomePage() {
       <VStack my={8} gap={8}>
         <Center>
           <Text
-            fontSize="3xl"
-            textUnderlinePosition="under"
-            textUnderlineOffset="0.2em"
+            fontSize={{ base: "3xl", md: "5xl" }}
+            fontWeight="bold"
+            textUnderlineOffset="0.3em"
             textDecoration="underline"
+            bgGradient="to-r"
+            bgClip="text"
+            gradientFrom="cyan.400"
+            gradientVia="blue.500"
+            gradientTo="purple.500"
           >
             データの力で未来を切り拓く
           </Text>
