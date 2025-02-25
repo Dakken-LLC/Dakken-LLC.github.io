@@ -7,13 +7,5 @@
   "editor.codeActionsOnSave": {
     "source.addMissingImports.ts": "explicit",
     "source.organizeImports": "always"
-  },
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
-  },
-  "emmet.syntaxProfiles": {
-    "javascript": "jsx",
-    "typescript": "tsx"
   }
 }

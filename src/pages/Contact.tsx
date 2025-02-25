@@ -1,21 +1,21 @@
-import { useForm } from "react-hook-form";
-import { notify } from "@/utils/notify";
-import {
-  Button,
-  Fieldset,
-  Input,
-  Textarea,
-  Stack,
-  VStack,
-  Box,
-} from "@chakra-ui/react";
+import SectionHeader from "@/components/SectionHeader";
 import { Field } from "@/components/ui/field";
 import {
   NativeSelectField,
   NativeSelectRoot,
 } from "@/components/ui/native-select";
+import { notify } from "@/utils/notify";
+import {
+  Box,
+  Button,
+  Fieldset,
+  Input,
+  Stack,
+  Textarea,
+} from "@chakra-ui/react";
+import { useForm } from "react-hook-form";
 
-export default function Contact() {
+export default function ContactPage() {
   const {
     register,
     handleSubmit,
@@ -33,7 +33,8 @@ export default function Contact() {
   };
 
   return (
-    <VStack py={8}>
+    <Stack my={8}>
+      <SectionHeader title="お問い合わせ" titleEn="Contact" />
       <Box
         as="form"
         onSubmit={handleSubmit(_handleSubmit)}
@@ -41,7 +42,9 @@ export default function Contact() {
       >
         <Fieldset.Root size="lg" p={6} invalid={Object.keys(errors).length > 0}>
           <Stack gap={8}>
-            <Fieldset.Legend fontSize={"4xl"}>Contact</Fieldset.Legend>
+            <Fieldset.Legend fontSize={"3xl"}>
+              お問い合わせフォーム
+            </Fieldset.Legend>
             <Fieldset.HelperText>
               お仕事の依頼やご質問など、お気軽にお問い合わせください。
               <br />
@@ -96,7 +99,7 @@ export default function Contact() {
           </Button>
         </Fieldset.Root>
       </Box>
-    </VStack>
+    </Stack>
   );
 }
 

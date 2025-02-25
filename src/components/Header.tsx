@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router";
+import { useEffect, useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
+import { Link, useLocation } from "react-router";
 import dakken_llc_logo_3_w from "../assets/dakken_llc_logo_3_w.png";
 import styles from "./Header.module.css";
 
@@ -74,7 +74,7 @@ export default function HeaderLayout() {
             }
           >
             <LinkItem title="会社案内" to="/about" />
-            <LinkItem title="サービス" to="/service" />
+            <LinkItem title="サービス" to="/services" />
             <LinkItem title="ニュース" to="/news" />
             <LinkItem
               title="お問い合わせ"
