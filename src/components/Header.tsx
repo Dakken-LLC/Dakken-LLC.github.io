@@ -26,9 +26,9 @@ const LinkItem = ({
 };
 
 export default function HeaderLayout() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isTop, setIsTop] = useState(true);
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isTop, setIsTop] = useState(!location.pathname.startsWith("/blog/"));
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -40,6 +40,9 @@ export default function HeaderLayout() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (location.pathname.startsWith("/blog")) {
+        return setIsTop(false);
+      }
       setIsTop(window.scrollY === 0);
     };
 
@@ -47,7 +50,7 @@ export default function HeaderLayout() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [location]);
 
   return (
     <header
@@ -74,8 +77,8 @@ export default function HeaderLayout() {
             }
           >
             <LinkItem title="会社案内" to="/about" />
-            <LinkItem title="サービス" to="/services" />
-            <LinkItem title="ニュース" to="/news" />
+            <LinkItem title="サービス" to="/service" />
+            <LinkItem title="ニュース" to="/blog" />
             <LinkItem
               title="お問い合わせ"
               to="/contact"

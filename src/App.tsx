@@ -5,9 +5,10 @@ import BackgroundLayout from "./layouts/Background";
 import BasePageLayout from "./layouts/BasePage";
 import HeroLayout from "./layouts/Hero";
 import AboutPage from "./pages/About";
+import BlogPage from "./pages/Blog";
+import BlogIndexPage from "./pages/BlogIndex";
 import ContactPage from "./pages/Contact";
 import HomePage from "./pages/Home";
-import NewsPage from "./pages/News";
 import ServicePage from "./pages/Service";
 
 export default function App() {
@@ -24,11 +25,14 @@ export default function App() {
               </BackgroundLayout>
             }
           />
-          <Route path="/" element={<HeroLayout />}>
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicePage />} />
-            <Route path="/news" element={<NewsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
+          <Route element={<HeroLayout />}>
+            <Route path="about" element={<AboutPage />} />
+            <Route path="service" element={<ServicePage />} />
+            <Route path="blog" element={<BlogIndexPage />} />
+            <Route path="contact" element={<ContactPage />} />
+          </Route>
+          <Route path="blog">
+            <Route path=":slug" element={<BlogPage />} />
           </Route>
         </Routes>
       </BasePageLayout>

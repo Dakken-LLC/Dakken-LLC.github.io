@@ -24,7 +24,7 @@ const footerContents = [
     items: ["企業理念", "メンバー", "沿革", "会社概要"],
   },
   {
-    title: "Services",
+    title: "service",
     items: ["事業概要", "Web開発", "データ分析", "動画編集"],
   },
   {

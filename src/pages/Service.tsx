@@ -22,7 +22,7 @@ const businessData = [
     imageSrc:
       "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
     keywords: ["AWS", "Python", "TypeScript", "Next.js", "Quasar"],
-    href: "/services#webapp",
+    href: "/service#webapp",
   },
   {
     title: "データ分析",
@@ -39,7 +39,7 @@ const businessData = [
       "Keras",
       "PyTorch",
     ],
-    href: "/services#data-analysis",
+    href: "/service#data-analysis",
   },
   {
     title: "教育",
@@ -47,7 +47,7 @@ const businessData = [
     imageSrc:
       "https://plus.unsplash.com/premium_photo-1682125773446-259ce64f9dd7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWR1Y2F0aW9ufGVufDB8fDB8fHww",
     keywords: ["Python", "scikit-learn"],
-    href: "/services#education",
+    href: "/service#education",
   },
   {
     title: "動画編集",
@@ -55,7 +55,7 @@ const businessData = [
     imageSrc:
       "https://plus.unsplash.com/premium_photo-1663040316559-8684ca45d7e9?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWUlMjBlZGl0aW5nfGVufDB8fDB8fHww",
     keywords: ["Premiere Pro", "After Effects"],
-    href: "/services#video-editing",
+    href: "/service#video-editing",
   },
 ];
 
@@ -65,10 +65,10 @@ export default function ServicePage() {
       <SectionHeader title="サービス" titleEn="Service" />
       <SectionNav
         items={[
-          { label: "事業概要", href: "/services#about" },
-          { label: "アプリ開発", href: "/services#webapp" },
-          { label: "データ分析", href: "/services#data-analysis" },
-          { label: "教育", href: "/services#education" },
+          { label: "事業概要", href: "/service#about" },
+          { label: "アプリ開発", href: "/service#webapp" },
+          { label: "データ分析", href: "/service#data-analysis" },
+          { label: "教育", href: "/service#education" },
         ]}
       ></SectionNav>
 
