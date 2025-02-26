@@ -7,20 +7,18 @@ export default function SectionNav({
 }) {
   return (
     <VStack>
-      <Separator w="full" />
+      <Separator w="full" key="top" />
       <HStack gap={{ base: 4, lg: 8 }}>
-        {items.map((item) => (
-          <>
-            {items.indexOf(item) > 0 && (
-              <Separator orientation="vertical" h="4" />
-            )}
+        {items
+          .flatMap((item, i) => [
             <Link key={item.label} href={item.href}>
               {item.label}
-            </Link>
-          </>
-        ))}
+            </Link>,
+            <Separator orientation="vertical" h="4" key={i} />,
+          ])
+          .slice(0, -1)}
       </HStack>
-      <Separator w="full" />
+      <Separator w="full" key="bottom" />
     </VStack>
   );
 }

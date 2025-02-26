@@ -81,7 +81,7 @@ export default function Footer() {
                 <AccordionItemContent>
                   <VStack align="start" fontSize={14} p={2}>
                     {content.items.map((item) => (
-                      <Link href="#" color="fg.inverted">
+                      <Link href="#" color="fg.inverted" key={item}>
                         {item}
                       </Link>
                     ))}
@@ -103,7 +103,11 @@ export default function Footer() {
             }}
           >
             {footerContents.map((content) => (
-              <Row title={content.title} items={content.items} />
+              <Row
+                title={content.title}
+                items={content.items}
+                key={content.title}
+              />
             ))}
           </HStack>
         </>
@@ -160,7 +164,7 @@ function Row({ title, items }: { title: string; items: string[] }) {
       <Heading size="2xl">{title}</Heading>
       <VStack align="center" fontSize={13}>
         {items.map((item) => (
-          <Link href="#" color="fg.inverted">
+          <Link href="#" color="fg.inverted" key={item}>
             {item}
           </Link>
         ))}
