@@ -33,6 +33,9 @@
   width: 110px;
   margin-top: 4px;
   margin-left: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 nav ul {
@@ -56,7 +59,6 @@ nav ul li a {
   align-items: center;
   transition: color 0.3s;
   justify-content: center;
-  font-family: "Noto Sans JP", serif;
   position: relative; /* アンダーラインの位置を相対的に設定 */
   padding: 6px 10px;
 }
