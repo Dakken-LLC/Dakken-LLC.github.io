@@ -4,12 +4,12 @@ import {
   Center,
   Heading,
   SimpleGrid,
-  Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import { Link } from "react-router";
 
+import { navigationItems } from "@/constants";
 import { GoChevronRight } from "react-icons/go";
 import { SlArrowDown } from "react-icons/sl";
 
@@ -55,34 +55,17 @@ export default function HomePage() {
       </VStack>
 
       <SimpleGrid gap={4} my={8} minChildWidth={{ base: "100%", lg: "500px" }}>
-        <MyCard title="ABOUT" description="合同会社DA研について">
-          <LinkButton name="会社概要" href="/about#profile"></LinkButton>
-          <LinkButton name="沿革" href="/about#history"></LinkButton>
-          <LinkButton name="事業概要" href="/about/#business"></LinkButton>
-        </MyCard>
-        <MyCard title="SERVICE" description="合同会社DA研のサービス">
-          <LinkButton name="WEBアプリ開発" href="/service#webapp"></LinkButton>
-          <LinkButton
-            name="データ分析"
-            href="/service#data-analysis"
-          ></LinkButton>
-          <LinkButton
-            name="動画編集・3Dモデリング"
-            href="/service#modeling"
-          ></LinkButton>
-        </MyCard>
-        <MyCard title="NEWS" description="新着情報">
-          <LinkButton name="新着情報" href="/news"></LinkButton>
-          <LinkButton name="ブログ" href="/news"></LinkButton>
-        </MyCard>
-        <MyCard title="CONTACT" description="お問い合わせ">
-          <LinkButton name="お問い合わせ" href="/contact"></LinkButton>
-          <LinkButton
-            name="部活動HP"
-            href="https://uoh-dakken.com"
-            target="_blank"
-          ></LinkButton>
-        </MyCard>
+        {navigationItems.map((content) => (
+          <MyCard
+            key={content.title}
+            title={content.title}
+            description={content.description}
+          >
+            {content.items.map((item) => (
+              <LinkButton key={item.title} name={item.title} href={item.href} />
+            ))}
+          </MyCard>
+        ))}
       </SimpleGrid>
     </>
   );
@@ -119,7 +102,7 @@ function MyCard({ title, description, children }: MyCardProps) {
         <Card.Description>{description}</Card.Description>
       </Card.Body>
       <Card.Footer>
-        <Stack align="start">{children}</Stack>
+        <VStack align="start">{children}</VStack>
       </Card.Footer>
     </Card.Root>
   );

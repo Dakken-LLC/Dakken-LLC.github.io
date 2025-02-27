@@ -8,7 +8,11 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import { Prose } from "./ui/prose";
 
-export default function Markup({ markdownText }: { markdownText: string }) {
+export default async function Markup({
+  markdownText,
+}: {
+  markdownText: string;
+}) {
   return (
     <Prose>
       <Markdown

@@ -1,5 +1,6 @@
 import dakkenLogoSource from "@/assets/dakken_llc_logo_3_w.png";
 import { ColorModeButton } from "@/components/ui/color-mode";
+import { navigationItems } from "@/constants";
 import {
   Accordion,
   AccordionItem,
@@ -17,25 +18,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { RiGithubLine, RiInstagramLine, RiTwitterXLine } from "react-icons/ri";
-
-const footerContents = [
-  {
-    title: "About",
-    items: ["企業理念", "メンバー", "沿革", "会社概要"],
-  },
-  {
-    title: "service",
-    items: ["事業概要", "Web開発", "データ分析", "動画編集"],
-  },
-  {
-    title: "News",
-    items: ["新着情報", "ブログ"],
-  },
-  {
-    title: "Contact",
-    items: ["お問い合わせ", "資料請求", "リンク集", "部活動へ"],
-  },
-];
 
 export default function Footer() {
   return (
@@ -75,14 +57,18 @@ export default function Footer() {
               md: 0,
             }}
           >
-            {footerContents.map((content) => (
+            {navigationItems.map((content) => (
               <AccordionItem key={content.title} value={content.title} p={2}>
-                <AccordionItemTrigger>{content.title}</AccordionItemTrigger>
+                <AccordionItemTrigger>{content.titleEn}</AccordionItemTrigger>
                 <AccordionItemContent>
                   <VStack align="start" fontSize={14} p={2}>
                     {content.items.map((item) => (
-                      <Link href="#" color="fg.inverted" key={item}>
-                        {item}
+                      <Link
+                        href={item.href}
+                        color="fg.inverted"
+                        key={item.title}
+                      >
+                        {item.title}
                       </Link>
                     ))}
                   </VStack>
@@ -102,9 +88,9 @@ export default function Footer() {
               md: "flex",
             }}
           >
-            {footerContents.map((content) => (
+            {navigationItems.map((content) => (
               <Row
-                title={content.title}
+                title={content.titleEn}
                 items={content.items}
                 key={content.title}
               />
@@ -158,14 +144,20 @@ export default function Footer() {
   );
 }
 
-function Row({ title, items }: { title: string; items: string[] }) {
+function Row({
+  title,
+  items,
+}: {
+  title: string;
+  items: { title: string; href: string }[];
+}) {
   return (
-    <VStack align="center">
+    <VStack align="center" flex={1}>
       <Heading size="2xl">{title}</Heading>
       <VStack align="center" fontSize={13}>
         {items.map((item) => (
-          <Link href="#" color="fg.inverted" key={item}>
-            {item}
+          <Link href={item.href} color="fg.inverted" key={item.title}>
+            {item.title}
           </Link>
         ))}
       </VStack>

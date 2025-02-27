@@ -24,14 +24,14 @@ import { useState } from "react";
 const MAX_PAGE_SIZE = 6;
 const MAX_AUTHOR_DISPLAY = 2;
 
-export default function BlogIndexPage() {
+export default function ArticleIndexPage() {
   const [page, setPage] = useState(1);
 
   return (
     <Stack my={8}>
-      <SectionHeader title="ブログ" titleEn="Blog" />
+      <SectionHeader title="記事一覧" titleEn="Article" />
 
-      <SimpleGrid id="latest" minChildWidth={330} gap={4}>
+      <SimpleGrid minChildWidth={330} gap={4}>
         {articles
           .slice(page * MAX_PAGE_SIZE - MAX_PAGE_SIZE, page * MAX_PAGE_SIZE)
           .map((article) => (
@@ -118,7 +118,7 @@ function ArticleCard({
         </HStack>
       </Card.Body>
       <Card.Footer>
-        <Link href={`/blog/${slug}`} w="full">
+        <Link href={`/article/${slug}`} w="full">
           <Button w="full">Read more</Button>
         </Link>
       </Card.Footer>

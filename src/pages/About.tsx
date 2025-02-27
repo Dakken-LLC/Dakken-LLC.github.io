@@ -22,21 +22,13 @@ import {
 } from "@chakra-ui/react";
 
 import representativeImageSource from "@/assets/representative.gif";
-import { historyData, memberData, profileData } from "@/constants";
+import { aboutItems, historyData, memberData, profileData } from "@/constants";
 
 export default function AboutPage() {
   return (
     <Stack my={8}>
       <SectionHeader title="会社案内" titleEn="About Us" />
-      <SectionNav
-        items={[
-          { label: "企業理念", href: "/about#vision" },
-          { label: "メンバー", href: "/about#member" },
-          { label: "沿革", href: "/about#history" },
-          { label: "会社概要", href: "/about#profile" },
-        ]}
-      ></SectionNav>
-
+      <SectionNav items={aboutItems}></SectionNav>
       <Stack gap={16} my={16}>
         <Stack id="vision" gap={8}>
           <Heading size="3xl">企業理念</Heading>
@@ -94,7 +86,7 @@ export default function AboutPage() {
         </Stack>
 
         <Stack id="profile" gap={8}>
-          <Heading size="3xl">会社概要</Heading>
+          <Heading size="3xl">企業概要</Heading>
           <DataList.Root orientation="horizontal">
             {profileData.map((item) => (
               <DataList.Item key={item.label}>

@@ -3,7 +3,7 @@ import { HStack, Link, Separator, VStack } from "@chakra-ui/react";
 export default function SectionNav({
   items,
 }: {
-  items: { label: string; href: string }[];
+  items: { title: string; href: string }[];
 }) {
   return (
     <VStack>
@@ -11,8 +11,8 @@ export default function SectionNav({
       <HStack gap={{ base: 4, lg: 8 }}>
         {items
           .flatMap((item, i) => [
-            <Link key={item.label} href={item.href}>
-              {item.label}
+            <Link key={item.title} href={item.href}>
+              {item.title}
             </Link>,
             <Separator orientation="vertical" h="4" key={i} />,
           ])

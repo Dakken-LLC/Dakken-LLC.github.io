@@ -1,6 +1,7 @@
 import SectionHeader from "@/components/SectionHeader";
 import SectionNav from "@/components/SectionNav";
 import { SkeletonText } from "@/components/ui/skeleton";
+import { businessData, serviceItems } from "@/constants";
 import {
   Badge,
   Box,
@@ -15,62 +16,11 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router";
 
-const businessData = [
-  {
-    title: "アプリ開発",
-    description: "Webアプリケーションの受注開発を行います。",
-    imageSrc:
-      "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
-    keywords: ["AWS", "Python", "TypeScript", "Next.js", "Quasar"],
-    href: "/service#webapp",
-  },
-  {
-    title: "データ分析",
-    description: "データ分析業務を請け負います。",
-    imageSrc:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGF0YSUyMGFuYWx5c2lzfGVufDB8fDB8fHww",
-    keywords: [
-      "Python",
-      "Pandas",
-      "Matplotlib",
-      "scikit-learn",
-      "Jupyter",
-      "TensorFlow",
-      "Keras",
-      "PyTorch",
-    ],
-    href: "/service#data-analysis",
-  },
-  {
-    title: "教育",
-    description: "プログラミング / データ分析教育を行います。",
-    imageSrc:
-      "https://plus.unsplash.com/premium_photo-1682125773446-259ce64f9dd7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWR1Y2F0aW9ufGVufDB8fDB8fHww",
-    keywords: ["Python", "scikit-learn"],
-    href: "/service#education",
-  },
-  {
-    title: "動画編集",
-    description: "字幕起こし、編集、動画制作を行います。",
-    imageSrc:
-      "https://plus.unsplash.com/premium_photo-1663040316559-8684ca45d7e9?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWUlMjBlZGl0aW5nfGVufDB8fDB8fHww",
-    keywords: ["Premiere Pro", "After Effects"],
-    href: "/service#video-editing",
-  },
-];
-
 export default function ServicePage() {
   return (
     <Stack my={8}>
       <SectionHeader title="サービス" titleEn="Service" />
-      <SectionNav
-        items={[
-          { label: "事業概要", href: "/service#about" },
-          { label: "アプリ開発", href: "/service#webapp" },
-          { label: "データ分析", href: "/service#data-analysis" },
-          { label: "教育", href: "/service#education" },
-        ]}
-      ></SectionNav>
+      <SectionNav items={serviceItems}></SectionNav>
 
       <Stack gap={16} my={16}>
         <Stack id="about" gap={8}>
@@ -93,12 +43,12 @@ export default function ServicePage() {
           </SimpleGrid>
         </Stack>
 
-        <Stack id="webapp" gap={8}>
+        <Stack id="app" gap={8}>
           <Heading size="3xl">アプリ開発</Heading>
           <SkeletonText noOfLines={10}></SkeletonText>
         </Stack>
 
-        <Stack id="data-analysis" gap={8}>
+        <Stack id="data" gap={8}>
           <Heading size="3xl">データ分析</Heading>
           <SkeletonText noOfLines={10}></SkeletonText>
         </Stack>
@@ -108,7 +58,7 @@ export default function ServicePage() {
           <SkeletonText noOfLines={10}></SkeletonText>
         </Stack>
 
-        <Stack id="video-editing" gap={8}>
+        <Stack id="video" gap={8}>
           <Heading size="3xl">動画編集</Heading>
           <SkeletonText noOfLines={10}></SkeletonText>
         </Stack>

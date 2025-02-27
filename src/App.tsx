@@ -5,8 +5,8 @@ import BackgroundLayout from "./layouts/Background";
 import BasePageLayout from "./layouts/BasePage";
 import HeroLayout from "./layouts/Hero";
 import AboutPage from "./pages/About";
-import BlogPage from "./pages/Blog";
-import BlogIndexPage from "./pages/BlogIndex";
+import ArticlePage from "./pages/Article";
+import ArticleIndexPage from "./pages/ArticleIndex";
 import ContactPage from "./pages/Contact";
 import HomePage from "./pages/Home";
 import ServicePage from "./pages/Service";
@@ -28,11 +28,9 @@ export default function App() {
           <Route element={<HeroLayout />}>
             <Route path="about" element={<AboutPage />} />
             <Route path="service" element={<ServicePage />} />
-            <Route path="blog" element={<BlogIndexPage />} />
             <Route path="contact" element={<ContactPage />} />
-          </Route>
-          <Route path="blog">
-            <Route path=":slug" element={<BlogPage />} />
+            <Route path="article" element={<ArticleIndexPage />} />
+            <Route path="article/:slug" element={<ArticlePage />} />
           </Route>
         </Routes>
       </BasePageLayout>

@@ -1,9 +1,10 @@
 import Markup from "@/components/Markup";
-import { Breadcrumb, Spacer, Stack } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { SkeletonText } from "@/components/ui/skeleton";
+import { Breadcrumb, Stack } from "@chakra-ui/react";
+import { Suspense, useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-export default function BlogPage() {
+export default function ArticlePage() {
   const { slug } = useParams();
   const [markdownText, setMarkdownText] = useState("");
 
@@ -16,7 +17,6 @@ export default function BlogPage() {
 
   return (
     <>
-      <Spacer h="16" />
       <Stack my={16} gap={4}>
         <Breadcrumb.Root>
           <Breadcrumb.List>
@@ -25,7 +25,7 @@ export default function BlogPage() {
             </Breadcrumb.Item>
             <Breadcrumb.Separator />
             <Breadcrumb.Item>
-              <Breadcrumb.Link href="/blog">Blog</Breadcrumb.Link>
+              <Breadcrumb.Link href="/article">Article</Breadcrumb.Link>
             </Breadcrumb.Item>
             <Breadcrumb.Separator />
             <Breadcrumb.Item>
@@ -33,7 +33,9 @@ export default function BlogPage() {
             </Breadcrumb.Item>
           </Breadcrumb.List>
         </Breadcrumb.Root>
-        <Markup markdownText={markdownText} />
+        <Suspense fallback={<SkeletonText noOfLines={20} />}>
+          <Markup markdownText={markdownText} />
+        </Suspense>
       </Stack>
     </>
   );
