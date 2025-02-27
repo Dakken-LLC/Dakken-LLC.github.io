@@ -10,7 +10,7 @@ export default function ArticlePage() {
   const [markdownText, setMarkdownText] = useState("");
 
   useEffect(() => {
-    fetch(`/src/articles/${slug}.md`)
+    fetch(`/articles/${slug}.md`)
       .then((res) => res.text())
       .then((res) => setMarkdownText(res))
       .catch((err) => console.error(err));

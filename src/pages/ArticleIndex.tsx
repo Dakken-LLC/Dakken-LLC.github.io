@@ -1,4 +1,3 @@
-import articles from "@/articles/meta.json";
 import SectionBreadcrumb from "@/components/SectionBreadcrumb";
 import SectionHeader from "@/components/SectionHeader";
 import {
@@ -21,6 +20,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import articles from "../../public/articles/meta.json";
 
 const MAX_PAGE_SIZE = 6;
 const MAX_AUTHOR_DISPLAY = 2;
