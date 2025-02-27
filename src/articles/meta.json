@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Markdown Cheatsheet",
+    "description": "A cheatsheet for markdown syntax",
+    "icon": "📝",
+    "author": [
+      {
+        "name": "Daiki Okayama",
+        "avatar": "https://avatars.githubusercontent.com/u/93463965?v=4"
+      }
+    ],
+    "tags": ["markdown", "cheatsheet"],
+    "publishedData": "2025-02-27",
+    "editedData": "2025-02-27",
+    "slug": "markdown-cheatsheet"
+  }
+]

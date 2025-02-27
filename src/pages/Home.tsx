@@ -1,46 +1,123 @@
-import dakkenHome from "../assets/dakken_home_12.png";
-import "../App.css";
+import {
+  Box,
+  Button,
+  Card,
+  Center,
+  Heading,
+  SimpleGrid,
+  Spacer,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import { Link } from "react-router";
+
+import { navigationItems } from "@/constants";
+import { GoChevronRight } from "react-icons/go";
+import { SlArrowDown } from "react-icons/sl";
 
 export default function HomePage() {
   return (
-    <div className="container text-center">
-      <img src={dakkenHome} className="page-top-image" alt="Top Image" />
-      <div className="page-title">
-        <h1>合同会社DA研へようこそ</h1>
-      </div>
-      <div className="page-content">
-        <h3>WEBアプリ開発・データ加工分析 etc...</h3>
-        <br></br>
-        <br></br>
-        <br></br>
-        <h4>
-          兵庫県立大学 社会情報科学部
-          DA研メンバーの学生たちによって設立されています。
-          <br></br>
-          主に兵庫県内の企業や自治体を中心にシステム開発やデータ分析を行っています。
-        </h4>
-        <br></br>
-        <br></br>
-        <h3>
-          <div className="fade-effect">
-            <span className="red-text">
-              ※只今Webサイトのリニューアル中です。
-            </span>
-          </div>
-        </h3>
-        <br></br>
-        <br></br>
-        <h4>完成まで下部のサイトをご覧ください</h4>
-        <br></br>
-        <br></br>
-        <a
-          href="https://www.uoh-dakken.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          部活動DA研の公式ページ
-        </a>
-      </div>
-    </div>
+    <>
+      <VStack h="100vh" justify="center">
+        <Spacer />
+        <VStack w="100%" align={{ base: "center", lg: "end" }}>
+          <Heading size="5xl" color="gray.50">
+            CHALLENGE FOR THE FUTURE
+          </Heading>
+          <Text fontSize="lg" color="gray.50">
+            合同会社DA研
+          </Text>
+        </VStack>
+        <Spacer />
+        <Box position="relative">
+          <Box
+            position="absolute"
+            bottom="100px"
+            left="50%"
+            transform="translateX(-50%)"
+            animation="bounce 1.5s infinite"
+          >
+            <SlArrowDown color="whitesmoke" size="30px" />
+          </Box>
+        </Box>
+      </VStack>
+
+      <VStack my={8} gap={8}>
+        <Center>
+          <Text
+            fontSize={{ base: "3xl", md: "5xl" }}
+            fontWeight="bold"
+            textUnderlineOffset="0.3em"
+            textDecoration="underline"
+            bgGradient="to-r"
+            bgClip="text"
+            gradientFrom="cyan.400"
+            gradientVia="blue.500"
+            gradientTo="purple.500"
+          >
+            データの力で未来を切り拓く
+          </Text>
+        </Center>
+        <Center>
+          <Text fontSize="md">
+            合同会社DA研は、兵庫県立大学発のベンチャー企業です。
+            大学の講義で学んだデータ分析手法やプログラミング技術、AI・機械学習の知識を応用し、皆様のビジネス課題を解決します。
+            データ分析に留まらず、Web アプリ開発や動画編集・3D
+            モデリングなどを通じて、幅広いサービスを提供します。
+          </Text>
+        </Center>
+      </VStack>
+
+      <SimpleGrid gap={4} my={8} minChildWidth={{ base: "100%", lg: "500px" }}>
+        {navigationItems.map((content) => (
+          <MyCard
+            key={content.title}
+            title={content.title}
+            description={content.description}
+          >
+            {content.items.map((item) => (
+              <LinkButton key={item.title} name={item.title} href={item.href} />
+            ))}
+          </MyCard>
+        ))}
+      </SimpleGrid>
+    </>
+  );
+}
+
+type LinkButtonProps = {
+  name: string;
+  href: string;
+  target?: string;
+};
+
+function LinkButton({ name, href, target }: LinkButtonProps) {
+  return (
+    <Link to={href} target={target}>
+      <Button>
+        {name}
+        <GoChevronRight />
+      </Button>
+    </Link>
+  );
+}
+
+type MyCardProps = {
+  title: string;
+  description: string;
+  children: React.ReactNode;
+};
+
+function MyCard({ title, description, children }: MyCardProps) {
+  return (
+    <Card.Root>
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Description>{description}</Card.Description>
+      </Card.Body>
+      <Card.Footer>
+        <VStack align="start">{children}</VStack>
+      </Card.Footer>
+    </Card.Root>
   );
 }

@@ -1,28 +1,40 @@
 import { Route, Routes } from "react-router";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Layout from "./components/Layout";
-import BusinessPage from "./pages/Business";
-import HomePage from "./pages/Home";
-import VisionPage from "./pages/Vision";
+import Header from "./components/Header";
+import BackgroundLayout from "./layouts/Background";
+import BasePageLayout from "./layouts/BasePage";
+import HeroLayout from "./layouts/Hero";
+import AboutPage from "./pages/About";
+import ArticlePage from "./pages/Article";
+import ArticleIndexPage from "./pages/ArticleIndex";
 import ContactPage from "./pages/Contact";
-import MemberPage from "./pages/Member";
-import "./App.css";
+import HomePage from "./pages/Home";
+import ServicePage from "./pages/Service";
 
 export default function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-      <Layout>
+      <BasePageLayout>
         <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="/vision" element={<VisionPage />} />
-          <Route path="/business" element={<BusinessPage />} />
-          <Route path="/member" element={<MemberPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route
+            index
+            element={
+              <BackgroundLayout>
+                <HomePage />
+              </BackgroundLayout>
+            }
+          />
+          <Route element={<HeroLayout />}>
+            <Route path="about" element={<AboutPage />} />
+            <Route path="service" element={<ServicePage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="article" element={<ArticleIndexPage />} />
+            <Route path="article/:slug" element={<ArticlePage />} />
+          </Route>
         </Routes>
-      </Layout>
+      </BasePageLayout>
       <Footer />
-    </div>
+    </>
   );
 }
