@@ -5,6 +5,7 @@ import {
   NativeSelectField,
   NativeSelectRoot,
 } from "@/components/ui/native-select";
+import { challenge } from "@/utils/challenge";
 import { notify } from "@/utils/notify";
 import { notifyError, notifySending, notifySuccess } from "@/utils/toaster";
 import {
@@ -25,6 +26,11 @@ export default function ContactPage() {
   } = useForm();
 
   const _handleSubmit = async (data: Record<string, string>) => {
+    if (!challenge(data.message)) {
+      notifyError("At least one Japanese character is required.");
+      return;
+    }
+
     notifySending();
     const text = format(data);
     try {
@@ -34,7 +40,7 @@ export default function ContactPage() {
       }
       notifySuccess();
     } catch {
-      notifyError();
+      notifyError("Failed to send message.");
     }
   };
 

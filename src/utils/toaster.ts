@@ -24,10 +24,10 @@ export function notifySuccess() {
   });
 }
 
-export function notifyError() {
+export function notifyError(text?: string) {
   toaster.create({
     title: "Error",
-    description: "Failed to send your message.",
+    description: text,
     type: "error",
   });
 }
