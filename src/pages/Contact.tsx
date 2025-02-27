@@ -22,6 +22,7 @@ export default function ContactPage() {
   const {
     register,
     handleSubmit,
+    resetField,
     formState: { errors },
   } = useForm();
 
@@ -39,6 +40,9 @@ export default function ContactPage() {
         throw new Error("Failed to send message");
       }
       notifySuccess();
+      ["name", "email", "company", "message", "type"].forEach((key) =>
+        resetField(key)
+      );
     } catch {
       notifyError("Failed to send message.");
     }
