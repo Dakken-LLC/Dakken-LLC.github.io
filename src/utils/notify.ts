@@ -7,7 +7,7 @@ if (!ENDPOINT) {
 }
 
 export async function notify(text: string) {
-  return fetch(ENDPOINT, {
+  return await fetch(ENDPOINT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

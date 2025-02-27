@@ -1,3 +1,4 @@
+import SectionBreadcrumb from "@/components/SectionBreadcrumb";
 import SectionHeader from "@/components/SectionHeader";
 import { Field } from "@/components/ui/field";
 import {
@@ -5,6 +6,7 @@ import {
   NativeSelectRoot,
 } from "@/components/ui/native-select";
 import { notify } from "@/utils/notify";
+import { notifyError, notifySending, notifySuccess } from "@/utils/toaster";
 import {
   Box,
   Button,
@@ -23,18 +25,24 @@ export default function ContactPage() {
   } = useForm();
 
   const _handleSubmit = async (data: Record<string, string>) => {
+    notifySending();
     const text = format(data);
     try {
-      await notify(text);
-      alert("送信しました");
+      const res = await notify(text);
+      if (!res.ok) {
+        throw new Error("Failed to send message");
+      }
+      notifySuccess();
     } catch {
-      alert("送信に失敗しました");
+      notifyError();
     }
   };
 
   return (
     <Stack my={8}>
+      <SectionBreadcrumb items={[{ title: "Contact", href: "/contact" }]} />
       <SectionHeader title="お問い合わせ" titleEn="Contact" />
+
       <Box
         as="form"
         onSubmit={handleSubmit(_handleSubmit)}
@@ -87,7 +95,12 @@ export default function ContactPage() {
             <NativeSelectRoot>
               <NativeSelectField
                 {...register("type")}
-                items={["お仕事の依頼", "弊社へのご質問", "その他"]}
+                items={[
+                  "お仕事のご依頼",
+                  "弊社へのご質問",
+                  "資料請求",
+                  "その他",
+                ]}
               />
             </NativeSelectRoot>
           </Field>
@@ -105,17 +118,16 @@ export default function ContactPage() {
 
 const format = (data: Record<string, string>) => {
   return `
-**HP よりお問い合わせがありました**
-
 - お問い合わせ日時: ${new Date().toLocaleString("ja-JP", {
     timeZone: "Asia/Tokyo",
   })}
 - お名前: ${data.name}
 - メールアドレス: ${data.email}
 - 会社名: ${data.company || "未入力"}
+- お問い合わせ種別: ${data.type}
 - お問い合わせ内容:
 ${data.message}
-- お問い合わせ種別: ${data.type}
 
+---
 `;
 };

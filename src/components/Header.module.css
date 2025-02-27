@@ -122,7 +122,7 @@ nav ul li a:hover {
 
 @media (max-width: 950px) {
   .header.isOpen {
-    height: 315px;
+    height: 300px;
     display: flex;
     transition: all 0.4s;
     background-color: rgba(40, 40, 40, 0.6);

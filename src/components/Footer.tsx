@@ -1,6 +1,7 @@
 import dakkenLogoSource from "@/assets/dakken_llc_logo_3_w.png";
 import { ColorModeButton } from "@/components/ui/color-mode";
 import { navigationItems } from "@/constants";
+import { notifyNotImplemented } from "@/utils/toaster";
 import {
   Accordion,
   AccordionItem,
@@ -58,7 +59,7 @@ export default function Footer() {
             }}
           >
             {navigationItems.map((content) => (
-              <AccordionItem key={content.title} value={content.title} p={2}>
+              <AccordionItem key={content.title} value={content.titleEn} p={2}>
                 <AccordionItemTrigger>{content.titleEn}</AccordionItemTrigger>
                 <AccordionItemContent>
                   <VStack align="start" fontSize={14} p={2}>
@@ -108,18 +109,26 @@ export default function Footer() {
           <Image src={dakkenLogoSource} alt="DAkken" width="180px" />
           <HStack justify="center">
             <ColorModeButton
+              onClick={notifyNotImplemented}
               color="fg.inverted"
               background="bg.inverted"
               rounded="full"
             />
-            <IconButton
-              aria-label="GitHub"
-              background="bg.inverted"
-              rounded="full"
+            <Link
+              href="https://github.com/Dakken-LLC"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <RiGithubLine />
-            </IconButton>
+              <IconButton
+                aria-label="GitHub"
+                background="bg.inverted"
+                rounded="full"
+              >
+                <RiGithubLine />
+              </IconButton>
+            </Link>
             <IconButton
+              onClick={notifyNotImplemented}
               aria-label="Instagram"
               background="bg.inverted"
               rounded="full"
@@ -127,6 +136,7 @@ export default function Footer() {
               <RiInstagramLine />
             </IconButton>
             <IconButton
+              onClick={notifyNotImplemented}
               aria-label="X(Twitter)"
               background="bg.inverted"
               rounded="full"

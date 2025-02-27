@@ -1,6 +1,7 @@
+import SectionBreadcrumb from "@/components/SectionBreadcrumb";
 import SectionHeader from "@/components/SectionHeader";
 import SectionNav from "@/components/SectionNav";
-import { SkeletonCircle, SkeletonText } from "@/components/ui/skeleton";
+import { SkeletonText } from "@/components/ui/skeleton";
 import {
   TimelineConnector,
   TimelineContent,
@@ -9,26 +10,26 @@ import {
   TimelineRoot,
   TimelineTitle,
 } from "@/components/ui/timeline";
+import { aboutItems, historyData, memberData, profileData } from "@/constants";
 import {
+  Avatar,
   Card,
   DataList,
   Heading,
   HStack,
-  Image,
   SimpleGrid,
   Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
 
-import representativeImageSource from "@/assets/representative.gif";
-import { aboutItems, historyData, memberData, profileData } from "@/constants";
-
 export default function AboutPage() {
   return (
     <Stack my={8}>
+      <SectionBreadcrumb items={[{ title: "About", href: "/about" }]} />
       <SectionHeader title="会社案内" titleEn="About Us" />
       <SectionNav items={aboutItems}></SectionNav>
+
       <Stack gap={16} my={16}>
         <Stack id="vision" gap={8}>
           <Heading size="3xl">企業理念</Heading>
@@ -49,7 +50,6 @@ export default function AboutPage() {
                   </Text>
                 </VStack>
               </Stack>
-              <Image src={representativeImageSource} alt="飯田晃生" w={48} />
             </Stack>
           </VStack>
         </Stack>
@@ -58,12 +58,7 @@ export default function AboutPage() {
           <Heading size="3xl">メンバー</Heading>
           <SimpleGrid gap={4} minChildWidth={350} w="full">
             {memberData.map((data) => (
-              <MemberCard
-                key={data.name}
-                name={data.name}
-                role={data.role}
-                description={data.description}
-              />
+              <MemberCard key={data.name} {...data} />
             ))}
           </SimpleGrid>
         </Stack>
@@ -103,9 +98,11 @@ export default function AboutPage() {
 
 function MemberCard({
   name,
+  avatar,
   role,
 }: {
   name: string;
+  avatar: string;
   role: string;
   description: string;
 }) {
@@ -113,11 +110,10 @@ function MemberCard({
     <Card.Root>
       <Card.Body>
         <HStack mb="6" gap="3">
-          {/* <Avatar.Root>
+          <Avatar.Root>
             <Avatar.Fallback name={name} />
-            <Avatar.Image src={representativeImageSource} alt={name} />
-          </Avatar.Root> */}
-          <SkeletonCircle size="10" />
+            <Avatar.Image src={avatar} alt={name} />
+          </Avatar.Root>
           <Stack gap="0">
             <Text fontWeight="semibold" textStyle="sm">
               {name}

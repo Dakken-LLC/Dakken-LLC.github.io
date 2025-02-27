@@ -1,6 +1,7 @@
 import Markup from "@/components/Markup";
+import SectionBreadcrumb from "@/components/SectionBreadcrumb";
 import { SkeletonText } from "@/components/ui/skeleton";
-import { Breadcrumb, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { Suspense, useEffect, useState } from "react";
 import { useParams } from "react-router";
 
@@ -17,22 +18,13 @@ export default function ArticlePage() {
 
   return (
     <>
-      <Stack my={16} gap={4}>
-        <Breadcrumb.Root>
-          <Breadcrumb.List>
-            <Breadcrumb.Item>
-              <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
-            </Breadcrumb.Item>
-            <Breadcrumb.Separator />
-            <Breadcrumb.Item>
-              <Breadcrumb.Link href="/article">Article</Breadcrumb.Link>
-            </Breadcrumb.Item>
-            <Breadcrumb.Separator />
-            <Breadcrumb.Item>
-              <Breadcrumb.CurrentLink>{slug}</Breadcrumb.CurrentLink>
-            </Breadcrumb.Item>
-          </Breadcrumb.List>
-        </Breadcrumb.Root>
+      <Stack my={8} gap={8}>
+        <SectionBreadcrumb
+          items={[
+            { title: "Article", href: "/article" },
+            { title: slug as string, href: `/article/${slug}` },
+          ]}
+        />
         <Suspense fallback={<SkeletonText noOfLines={20} />}>
           <Markup markdownText={markdownText} />
         </Suspense>

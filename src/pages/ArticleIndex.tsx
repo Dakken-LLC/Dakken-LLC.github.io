@@ -1,4 +1,5 @@
 import articles from "@/articles/meta.json";
+import SectionBreadcrumb from "@/components/SectionBreadcrumb";
 import SectionHeader from "@/components/SectionHeader";
 import {
   PaginationItems,
@@ -29,6 +30,7 @@ export default function ArticleIndexPage() {
 
   return (
     <Stack my={8}>
+      <SectionBreadcrumb items={[{ title: "Article", href: "/article" }]} />
       <SectionHeader title="記事一覧" titleEn="Article" />
 
       <SimpleGrid minChildWidth={330} gap={4}>
@@ -84,7 +86,7 @@ function ArticleCard({
   slug: string;
 }) {
   return (
-    <Card.Root>
+    <Card.Root maxW={{ base: "full", md: "md" }}>
       <HStack justify="center" height={36}>
         <Text fontSize="5xl">{icon}</Text>
       </HStack>

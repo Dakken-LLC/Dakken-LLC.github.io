@@ -1,9 +1,11 @@
 import {
+  Box,
   Button,
   Card,
   Center,
   Heading,
   SimpleGrid,
+  Spacer,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -17,6 +19,7 @@ export default function HomePage() {
   return (
     <>
       <VStack h="100vh" justify="center">
+        <Spacer />
         <VStack w="100%" align={{ base: "center", lg: "end" }}>
           <Heading size="5xl" color="gray.50">
             CHALLENGE FOR THE FUTURE
@@ -25,7 +28,18 @@ export default function HomePage() {
             合同会社DA研
           </Text>
         </VStack>
-        <SlArrowDown color="whitesmoke" size="30px" />
+        <Spacer />
+        <Box position="relative">
+          <Box
+            position="absolute"
+            bottom="100px"
+            left="50%"
+            transform="translateX(-50%)"
+            animation="bounce 1.5s infinite"
+          >
+            <SlArrowDown color="whitesmoke" size="30px" />
+          </Box>
+        </Box>
       </VStack>
 
       <VStack my={8} gap={8}>
@@ -80,7 +94,7 @@ type LinkButtonProps = {
 function LinkButton({ name, href, target }: LinkButtonProps) {
   return (
     <Link to={href} target={target}>
-      <Button as="a">
+      <Button>
         {name}
         <GoChevronRight />
       </Button>

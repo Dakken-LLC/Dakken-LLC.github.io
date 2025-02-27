@@ -1,3 +1,4 @@
+import SectionBreadcrumb from "@/components/SectionBreadcrumb";
 import SectionHeader from "@/components/SectionHeader";
 import SectionNav from "@/components/SectionNav";
 import { SkeletonText } from "@/components/ui/skeleton";
@@ -11,6 +12,7 @@ import {
   HStack,
   Image,
   SimpleGrid,
+  Skeleton,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -19,6 +21,7 @@ import { Link } from "react-router";
 export default function ServicePage() {
   return (
     <Stack my={8}>
+      <SectionBreadcrumb items={[{ title: "Service", href: "/service" }]} />
       <SectionHeader title="サービス" titleEn="Service" />
       <SectionNav items={serviceItems}></SectionNav>
 
@@ -54,7 +57,7 @@ export default function ServicePage() {
         </Stack>
 
         <Stack id="education" gap={8}>
-          <Heading size="3xl">教育</Heading>
+          <Heading size="3xl">法人教育</Heading>
           <SkeletonText noOfLines={10}></SkeletonText>
         </Stack>
 
@@ -88,15 +91,24 @@ function BusinessCard({
       }}
       overflow="hidden"
     >
-      <Image
-        objectFit="cover"
-        maxW={{
-          base: "100%",
-          md: "200px",
-        }}
-        src={imageSrc}
-        alt={title}
-      />
+      {!imageSrc && (
+        <Skeleton
+          maxW={{ base: "100%", md: "200px" }}
+          minH="200px"
+          w="full"
+        ></Skeleton>
+      )}
+      {imageSrc && (
+        <Image
+          objectFit="cover"
+          maxW={{
+            base: "100%",
+            md: "200px",
+          }}
+          src={imageSrc}
+          alt={title}
+        />
+      )}
       <Box>
         <Card.Body>
           <Card.Title mb="2">{title}</Card.Title>
