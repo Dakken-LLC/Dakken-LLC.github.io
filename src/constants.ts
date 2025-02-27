@@ -121,7 +121,7 @@ export const businessData = [
     imageSrc: "",
     // imageSrc: "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
     keywords: ["AWS", "Python", "TypeScript", "Next.js", "Quasar"],
-    href: "/service#webapp",
+    href: "/service#app",
   },
   {
     title: "データ分析",
@@ -138,7 +138,7 @@ export const businessData = [
       "Keras",
       "PyTorch",
     ],
-    href: "/service#data-analysis",
+    href: "/service#data",
   },
   {
     title: "法人教育",
@@ -154,6 +154,6 @@ export const businessData = [
     imageSrc: "",
     // imageSrc: "https://plus.unsplash.com/premium_photo-1663040316559-8684ca45d7e9?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWUlMjBlZGl0aW5nfGVufDB8fDB8fHww",
     keywords: ["Premiere Pro", "After Effects"],
-    href: "/service#video-editing",
+    href: "/service#video",
   },
 ];
