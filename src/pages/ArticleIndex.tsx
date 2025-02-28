@@ -111,7 +111,7 @@ function ArticleCard({
         <Text fontSize="xs" color="gray.500">
           {publishedData}
         </Text>
-        <Card.Title zIndex="banner">{title}</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Description>{description}</Card.Description>
         <HStack mt="4" wrap="wrap">
           {tags.map((tag) => (
