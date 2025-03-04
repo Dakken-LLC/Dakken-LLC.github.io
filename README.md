@@ -1,5 +1,7 @@
 # Homepage
 
+A corporate site of DAkken LLC.
+
 ## Attributions
 
 Photos in Business Section by:
