@@ -1,50 +1,16 @@
-# React + TypeScript + Vite
+# Homepage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A corporate site of DAkken LLC.
 
-Currently, two official plugins are available:
+## Attributions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Photos in Business Section by:
 
-## Expanding the ESLint configuration
+- [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://unsplash.com/photos/five-person-by-table-watching-turned-on-white-imac-vbxyFxlgpjM)
+- [Luke Chesser](https://unsplash.com/@lukechesser) on [Unsplash](https://unsplash.com/photos/graphs-of-performance-analytics-on-a-laptop-screen-JKUTrJ4vK00)
+- [MD Duran](https://unsplash.com/@mdesign85) on [Unsplash](https://unsplash.com/photos/man-holding-microphone-near-flat-screen-tv-dEjMN6JXcj8)
+- [Jakob Owens](https://unsplash.com/@jakobowens1) on [Unsplash](https://unsplash.com/photos/turned-on-imac-screen-8-iudQ2otb8)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## License
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
