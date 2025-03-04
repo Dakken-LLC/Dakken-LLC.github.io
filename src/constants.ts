@@ -1,6 +1,11 @@
 import { IoAccessibility } from "react-icons/io5";
 import { LiaExchangeAltSolid } from "react-icons/lia";
 
+import appEyeCatchImageSrc from "@/assets/eye-catch/five-person-by-table-watching-turned-on-white-imac.webp";
+import dataEyeCatchImageSrc from "@/assets/eye-catch/graphs-of-performance-analytics-on-a-laptop-screen.webp";
+import educationEyeCatchImageSrc from "@/assets/eye-catch/man-holding-microphone-near-flat-screen-tv.webp";
+import videoEyeCatchImageSrc from "@/assets/eye-catch/turned-on-imac-screen.webp";
+
 export const aboutItems = [
   { title: "企業理念", titleEn: "Philosophy", href: "/about/#philosophy" },
   { title: "メンバー", titleEn: "Member", href: "/about/#member" },
@@ -116,18 +121,16 @@ export const profileData = [
 
 export const businessData = [
   {
-    title: "アプリ開発",
-    description: "Webアプリケーションの受注開発を行います。",
-    imageSrc: "",
-    // imageSrc: "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+    title: "Web アプリ開発",
+    description: "Web アプリケーションの受注開発を行います。",
+    imageSrc: appEyeCatchImageSrc,
     keywords: ["AWS", "Python", "TypeScript", "Next.js", "Quasar"],
     href: "/service#app",
   },
   {
     title: "データ分析",
     description: "データ分析業務を請け負います。",
-    imageSrc: "",
-    // imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGF0YSUyMGFuYWx5c2lzfGVufDB8fDB8fHww",
+    imageSrc: dataEyeCatchImageSrc,
     keywords: [
       "Python",
       "Pandas",
@@ -142,18 +145,118 @@ export const businessData = [
   },
   {
     title: "法人教育",
-    description: "プログラミング / データ分析教育を行います。",
-    imageSrc: "",
-    // imageSrc: "https://plus.unsplash.com/premium_photo-1682125773446-259ce64f9dd7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWR1Y2F0aW9ufGVufDB8fDB8fHww",
-    keywords: ["Python", "scikit-learn"],
+    description: "社内のデータ利活用のための社員研修を行います。",
+    imageSrc: educationEyeCatchImageSrc,
+    keywords: ["Python", "機械学習", "需要予測", "数理最適化"],
     href: "/service#education",
   },
   {
     title: "動画編集",
     description: "字幕起こし、編集、動画制作を行います。",
-    imageSrc: "",
-    // imageSrc: "https://plus.unsplash.com/premium_photo-1663040316559-8684ca45d7e9?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWUlMjBlZGl0aW5nfGVufDB8fDB8fHww",
+    imageSrc: videoEyeCatchImageSrc,
     keywords: ["Premiere Pro", "After Effects"],
     href: "/service#video",
   },
 ];
+
+export const businessSectionData = {
+  app: {
+    title: "IT for Everyone",
+    description:
+      "近年、業務の効率化や地域サービスの充実を目的として、Webアプリの導入が進んでいます。クラウド技術の発展や行政のデジタル化推進により、企業や自治体が手軽にWebアプリを活用できる環境が整い、人手不足への対応や業務の最適化を目的とした導入事例も増えています。弊社では、「何から始めればよいかわからない」といったご相談にも対応し、課題の整理から最適なアプリの設計・開発まで柔軟にサポートいたします。",
+    imageSrc: appEyeCatchImageSrc,
+    detail: {
+      flowContents: [
+        "要件ヒアリング",
+        "プロトタイプの制作",
+        "仕様策定とお見積もり",
+        "アプリ開発・テスト",
+        "運用・保守",
+      ],
+      techStacks: [
+        {
+          title: "開発言語",
+          tools: ["Python", "TypeScript"],
+        },
+        {
+          title: "フレームワーク",
+          tools: ["React", "Next.js", "Vue.js"],
+        },
+        {
+          title: "インフラ",
+          tools: ["AWS"],
+        },
+        {
+          title: "コミュニケーションツール",
+          tools: ["Figma", "GitHub", "Google Chat"],
+        },
+      ],
+    },
+    records: [
+      {
+        title: "地方自治体とのセルフケアアプリ開発事例",
+        description: "アプリ開発事例1の説明",
+        imageSrc: "",
+        keywords: [],
+        href: "/service/data/1",
+      },
+      {
+        title: "リカレント教育のための動画配信サービスの開発事例",
+        description: "アプリ開発事例2の説明",
+        imageSrc: "",
+        keywords: [],
+        href: "/service/data/2",
+      },
+    ],
+  },
+
+  data: {
+    title: "データ化はしたけど、何ができるのか分からない",
+    description:
+      "近年の DX の進歩により、様々な領域でアプリケーションが実装され、多くのデータを取得できるようになりました。一方で、多くのアプリケーションでは、その集めたデータを分析するまでには至っておらず、DX 化の恩恵を十分に享受できているとは言えないケースも多々あります。弊社では、そのような問題に取り組むために、「アプリを作ってデータは取ってるんだけど、何かできなかいかな？」っといった相談から始まり、可能な分析を提案・実装し皆様の DX 化をさらに推進するお手伝いをいたします。",
+    imageSrc: dataEyeCatchImageSrc,
+    detail: {
+      flowContents: [
+        "問題意識の共有",
+        "分析手法の提案",
+        "分析業務の委託",
+        "成果物の納品",
+        "必要に応じて追加の分析",
+      ],
+      techStacks: [
+        {
+          title: "利用言語",
+          tools: ["Python", "SQL"],
+        },
+        {
+          title: "機械学習",
+          tools: ["Tensorflow", "PyTorch", "GBD Library"],
+        },
+        {
+          title: "統計解析",
+          tools: ["statsmodels", "Prophet"],
+        },
+        {
+          title: "地理情報分析",
+          tools: ["GIS", "GeoPandas"],
+        },
+      ],
+    },
+    records: [
+      {
+        title: "データ分析事例1",
+        description: "データ分析事例1の説明",
+        imageSrc: "",
+        keywords: ["データ分析", "Python", "機械学習"],
+        href: "/service/data/1",
+      },
+      {
+        title: "データ分析事例2",
+        description: "データ分析事例2の説明",
+        imageSrc: "",
+        keywords: ["データ分析", "Python", "統計解析"],
+        href: "/service/data/2",
+      },
+    ],
+  },
+};

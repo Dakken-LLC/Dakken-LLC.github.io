@@ -1,18 +1,34 @@
 import SectionBreadcrumb from "@/components/SectionBreadcrumb";
 import SectionHeader from "@/components/SectionHeader";
 import SectionNav from "@/components/SectionNav";
-import { SkeletonText } from "@/components/ui/skeleton";
-import { businessData, serviceItems } from "@/constants";
+import {
+  AccordionItem,
+  AccordionItemContent,
+  AccordionItemTrigger,
+  AccordionRoot,
+} from "@/components/ui/accordion";
+import { Skeleton, SkeletonText } from "@/components/ui/skeleton";
+import {
+  TimelineConnector,
+  TimelineContent,
+  TimelineItem,
+  TimelineRoot,
+  TimelineTitle,
+} from "@/components/ui/timeline";
+import { businessData, businessSectionData, serviceItems } from "@/constants";
 import {
   Badge,
   Box,
   Button,
   Card,
+  DataListItem,
+  DataListItemLabel,
+  DataListItemValue,
+  DataListRoot,
   Heading,
   HStack,
   Image,
   SimpleGrid,
-  Skeleton,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -29,8 +45,7 @@ export default function ServicePage() {
         <Stack id="about" gap={8}>
           <Heading size="3xl">事業概要</Heading>
           <Text>
-            データ分析、Webアプリの受注開発を基幹事業とし、教育事業も手がけています。
-            お客様のビジネス課題を解決するための最適なソリューションを提供します。
+            データ分析、Webアプリの受注開発を基幹事業とし、その上で法人教育や動画編集など幅広く事業を展開しています。
           </Text>
           <SimpleGrid
             gap={4}
@@ -47,13 +62,27 @@ export default function ServicePage() {
         </Stack>
 
         <Stack id="app" gap={8}>
-          <Heading size="3xl">アプリ開発</Heading>
-          <SkeletonText noOfLines={10}></SkeletonText>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            gap={{ base: 0, md: 4 }}
+            alignItems="baseline"
+          >
+            <Heading size="3xl">Webアプリ開発</Heading>
+            <Text color="fg.muted">Web Application Development</Text>
+          </Stack>
+          <BusinessSection {...businessSectionData["app"]} />
         </Stack>
 
         <Stack id="data" gap={8}>
-          <Heading size="3xl">データ分析</Heading>
-          <SkeletonText noOfLines={10}></SkeletonText>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            gap={{ base: 0, md: 4 }}
+            alignItems="baseline"
+          >
+            <Heading size="3xl">データ分析</Heading>
+            <Text color="fg.muted">Data Analysis</Text>
+          </Stack>
+          <BusinessSection {...businessSectionData["data"]} />
         </Stack>
 
         <Stack id="education" gap={8}>
@@ -126,5 +155,106 @@ function BusinessCard({
         </Card.Footer>
       </Box>
     </Card.Root>
+  );
+}
+
+function BusinessSection({
+  title,
+  description,
+  imageSrc,
+  detail,
+  records,
+}: {
+  title: string;
+  description: string;
+  imageSrc: string;
+  detail: {
+    flowContents: string[];
+    techStacks: {
+      title: string;
+      tools: string[];
+    }[];
+  };
+  records: {
+    title: string;
+    description: string;
+    imageSrc: string;
+    keywords: string[];
+    href: string;
+  }[];
+}) {
+  return (
+    <Stack>
+      <Stack direction={{ base: "column", md: "row" }} gap={{ base: 4, md: 8 }}>
+        <Image
+          w="full"
+          maxW={{ base: "full", md: "250px" }}
+          src={imageSrc}
+          alt={title}
+        />
+        <Stack>
+          <Heading size="2xl">{title}</Heading>
+          <Text>{description}</Text>
+        </Stack>
+      </Stack>
+      <AccordionRoot collapsible multiple>
+        <AccordionItem value="tech">
+          <AccordionItemTrigger cursor="pointer">
+            納品までの流れと技術スタック
+          </AccordionItemTrigger>
+          <AccordionItemContent>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              gap={{ base: 0, md: 8 }}
+            >
+              <TimelineRoot flex="1">
+                <Text color="fg.muted" fontSize="sm" mb={2}>
+                  納品までの流れ
+                </Text>
+                {detail.flowContents.map((content, i) => (
+                  <TimelineItem key={content} title={content}>
+                    <TimelineConnector>{i + 1}</TimelineConnector>
+                    <TimelineContent>
+                      <TimelineTitle>{content}</TimelineTitle>
+                    </TimelineContent>
+                  </TimelineItem>
+                ))}
+              </TimelineRoot>
+              <Stack flex="1">
+                <DataListRoot>
+                  {detail.techStacks.map((stack) => (
+                    <DataListItem key={stack.title}>
+                      <DataListItemLabel>{stack.title}</DataListItemLabel>
+                      <DataListItemValue gap={1}>
+                        {stack.tools.map((tool) => (
+                          <Badge key={tool}>{tool}</Badge>
+                        ))}
+                      </DataListItemValue>
+                    </DataListItem>
+                  ))}
+                </DataListRoot>
+              </Stack>
+            </Stack>
+          </AccordionItemContent>
+        </AccordionItem>
+        <AccordionItem value="records">
+          <AccordionItemTrigger cursor="pointer">取引実績</AccordionItemTrigger>
+          <AccordionItemContent>
+            <Stack>
+              {records.map((record) => {
+                return (
+                  <Stack key={record.title}>
+                    <Heading size="sm" key={record.title}>
+                      {record.title}
+                    </Heading>
+                    <SkeletonText noOfLines={2}></SkeletonText>
+                  </Stack>
+                );
+              })}
+            </Stack>
+          </AccordionItemContent>
+        </AccordionItem>
+      </AccordionRoot>
+    </Stack>
   );
 }
