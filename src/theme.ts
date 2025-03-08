@@ -1,6 +1,11 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
 const customConfig = defineConfig({
+  globalCss: {
+    body: {
+      fontFamily: ".AppleSystemUIFont", // "Note Sans JP Variable" is available
+    },
+  },
   theme: {
     keyframes: {
       gradient: {
@@ -16,6 +21,9 @@ const customConfig = defineConfig({
       },
     },
     tokens: {
+      fonts: {
+        muted: { value: "M PLUS 1p" },
+      },
       sizes: {
         "header-height": {
           value: "80px",

@@ -20,10 +20,22 @@ export default function HomePage() {
       <VStack h="calc(100svh - 80px)" justify="center">
         <Spacer />
         <VStack w="100%" align={{ base: "center", lg: "end" }}>
-          <Heading size="5xl" color="gray.50">
+          <Heading
+            size="5xl"
+            color="gray.50"
+            fontFamily="Bebas Neue"
+            letterSpacing="0.1em"
+            mr={{ base: "0", lg: "-0.1em" }} // For right alignment with the text below
+          >
             CHALLENGE FOR THE FUTURE
           </Heading>
-          <Text fontSize="lg" color="gray.50">
+          <Text
+            fontSize="lg"
+            color="gray.50"
+            fontFamily="Noto Sans JP Variable"
+            letterSpacing="0.1em"
+            mr={{ base: "0", lg: "-0.1em" }} // For right alignment with the heading above
+          >
             合同会社DA研
           </Text>
         </VStack>
