@@ -259,4 +259,88 @@ export const businessSectionData = {
       },
     ],
   },
+
+  education: {
+    title: "社員研修",
+    description:
+      "データ分析やプログラミングの技術は、今や企業の競争力を左右する重要な要素となっています。しかし、そのような技術を社内で活用するためには、社員一人ひとりがその技術を理解し、活用することが求められます。弊社では、社員研修を通じて、社員のスキルアップを支援し、企業の DX を推進するお手伝いをいたします。",
+    imageSrc: educationEyeCatchImageSrc,
+    detail: {
+      flowContents: [
+        "研修の目的の共有",
+        "研修内容の検討",
+        "研修の実施",
+        "研修成果の評価",
+        "研修の改善",
+      ],
+      techStacks: [
+        {
+          title: "研修内容",
+          tools: ["Python", "機械学習", "統計解析"],
+        },
+        {
+          title: "研修方法",
+          tools: ["オンライン", "対面"],
+        },
+      ],
+    },
+    records: [
+      {
+        title: "社員研修事例1",
+        description: "社員研修事例1の説明",
+        imageSrc: "",
+        keywords: ["社員研修", "Python", "機械学習"],
+        href: "/service/data/1",
+      },
+      {
+        title: "社員研修事例2",
+        description: "社員研修事例2の説明",
+        imageSrc: "",
+        keywords: ["社員研修", "Python", "統計解析"],
+        href: "/service/data/2",
+      },
+    ],
+  },
+
+  video: {
+    title: "分析結果を更に分かりやすく、Webアプリを更におしゃれに",
+    description:
+      "「動画を撮影したけど、編集する時間がない」「自分で作ってみたものの、思うような仕上がりにならない」——そんな問題を解決します。弊社は、シンプルなカット編集から演出の追加など、お客様の要望に応じた編集を承ります。またデータ分析などの教育用動画を一から作ることも可能です。「こんな動画が作りたい」という相談がございましたら、お気軽にお問合せください。",
+    imageSrc: videoEyeCatchImageSrc,
+    detail: {
+      flowContents: [
+        "動画の要件等の共有",
+        "コンテの提案",
+        "最終確認",
+        "修正",
+        "成果物の納品",
+      ],
+      techStacks: [
+        {
+          title: "動画編集ソフト",
+          tools: ["Premiere Pro", "After Effects"],
+        },
+        {
+          title: "3Dモデル / エフェクト作成ソフト",
+          tools: ["Blender", "Unity"],
+        },
+      ],
+    },
+    records: [
+      {
+        title: "動画編集事例1",
+        description: "動画編集事例1の説明",
+        imageSrc: "",
+        keywords: ["動画編集", "Premiere Pro", "After Effects"],
+        href: "/service/data/1",
+      },
+      {
+        title: "動画編集事例2",
+        description: "動画編集事例2の説明",
+        imageSrc: "",
+        keywords: ["動画編集", "Premiere Pro", "After Effects"],
+        href: "/service/data/2",
+      },
+    ],
+  },
 };

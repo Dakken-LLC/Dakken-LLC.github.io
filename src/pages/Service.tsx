@@ -86,13 +86,29 @@ export default function ServicePage() {
         </Stack>
 
         <Stack id="education" gap={8}>
-          <Heading size="3xl">法人教育</Heading>
-          <SkeletonText noOfLines={10}></SkeletonText>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            gap={{ base: 0, md: 4 }}
+            alignItems="baseline"
+          >
+            <Heading size="3xl">法人教育</Heading>
+            <Text color="fg.muted">
+              Corporate Training / Business Education
+            </Text>
+          </Stack>
+          <BusinessSection {...businessSectionData["education"]} />
         </Stack>
 
         <Stack id="video" gap={8}>
-          <Heading size="3xl">動画編集</Heading>
-          <SkeletonText noOfLines={10}></SkeletonText>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            gap={{ base: 0, md: 4 }}
+            alignItems="baseline"
+          >
+            <Heading size="3xl">動画編集</Heading>
+            <Text color="fg.muted">Video Editing</Text>
+          </Stack>
+          <BusinessSection {...businessSectionData["video"]} />
         </Stack>
       </Stack>
     </Stack>
