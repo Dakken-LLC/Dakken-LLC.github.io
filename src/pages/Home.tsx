@@ -17,7 +17,7 @@ import { Link } from "react-router";
 export default function HomePage() {
   return (
     <>
-      <VStack h="calc(100dvh - 80px)" justify="center">
+      <VStack h="calc(100svh - 80px)" justify="center">
         <Spacer />
         <VStack w="100%" align={{ base: "center", lg: "end" }}>
           <Heading size="5xl" color="gray.50">
