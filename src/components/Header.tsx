@@ -10,95 +10,126 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { IoMailOutline } from "react-icons/io5";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 export default function Header() {
   const isTop = useIsTop();
-  const { open, onToggle } = useDisclosure();
+  const { open, onToggle, setOpen } = useDisclosure();
+  const location = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location, setOpen]);
 
   return (
-    <VStack
-      as="header"
-      h="header-height"
-      w="full"
-      pos="sticky"
-      top="0"
-      zIndex="sticky"
-    >
+    <>
+      <VStack
+        as="header"
+        h="header-height"
+        w="full"
+        pos="sticky"
+        top="0"
+        zIndex="modal"
+      >
+        <Box
+          w="inherit"
+          transition="all 0.5s, border-bottom 0s"
+          data-is-top={isTop}
+          data-is-opened={open}
+          css={{
+            "&[data-is-top=false]": {
+              bgColor: "gray.900/60",
+              borderBottom: "3px solid #d34b4b",
+              backdropFilter: "blur(5px)",
+            },
+            "&[data-is-opened=true]": {
+              h: "280px",
+              bgColor: "gray.900/60",
+              borderBottom: "3px solid #d34b4b",
+              backdropFilter: "blur(5px)",
+              zIndex: "modal",
+            },
+          }}
+        >
+          <Container maxW="6xl">
+            <HStack alignItems="flex-start" justifyContent="space-between">
+              <Box
+                h="header-height"
+                w="95px"
+                display="flex"
+                alignItems="center"
+              >
+                <Link to="/">
+                  <Image src={logoSrc} h="50px" userSelect="none" />
+                </Link>
+              </Box>
+
+              <List.Root
+                as="nav"
+                listStyle="none"
+                pos="relative"
+                display="flex"
+                alignItems="center"
+                justifyContent={{ base: "center", md: "flex-end" }}
+                gap={{ base: "1", md: "6" }}
+                flexDir={{ base: "column", md: "row" }}
+                transition="all 0.5s"
+                overflow="hidden"
+                data-is-open={open}
+                css={{
+                  "&[data-is-open=true]": {
+                    mt: "40px",
+                    h: "opened-header-height",
+                  },
+                  "&[data-is-open=false]": {
+                    h: { base: "0", md: "header-height" },
+                  },
+                }}
+              >
+                <ListItem title="会社案内" href="/about" />
+                <ListItem title="サービス" href="/service" />
+                <ListItem title="記事一覧" href="/article" />
+                <ListItem
+                  title="お問い合わせ"
+                  href="/contact"
+                  icon={<IoMailOutline color="black" />}
+                />
+              </List.Root>
+
+              <HamburgerButton
+                onToggle={onToggle}
+                isOpen={open}
+                display={{ base: "flex", md: "none" }}
+                h="header-height"
+                w="95px"
+                align="end"
+                justify="center"
+                cursor="pointer"
+              />
+            </HStack>
+          </Container>
+        </Box>
+      </VStack>
+
       <Box
-        w="inherit"
-        transition="all 0.5s, border-bottom 0s"
-        data-is-top={isTop}
-        data-is-opened={open}
+        zIndex="overlay"
+        pos="fixed"
+        top="0"
+        left="0"
+        h="100vh"
+        w="full"
+        display="none"
+        data-is-open={open}
         css={{
-          "&[data-is-top=false]": {
-            bgColor: "gray.900/60",
-            borderBottom: "3px solid #d34b4b",
-            backdropFilter: "blur(5px)",
-          },
-          "&[data-is-opened=true]": {
-            h: "280px",
-            bgColor: "gray.900/60",
-            borderBottom: "3px solid #d34b4b",
-            backdropFilter: "blur(5px)",
+          "&[data-is-open=true]": {
+            display: "block",
           },
         }}
-      >
-        <Container maxW="6xl">
-          <HStack alignItems="flex-start" justifyContent="space-between">
-            <Box h="header-height" w="110px" display="flex" alignItems="center">
-              <Link to="/">
-                <Image src={logoSrc} h="55px" userSelect="none" />
-              </Link>
-            </Box>
-
-            <List.Root
-              as="nav"
-              listStyle="none"
-              pos="relative"
-              display="flex"
-              alignItems="center"
-              justifyContent={{ base: "center", md: "flex-end" }}
-              gap={{ base: "1", md: "6" }}
-              flexDir={{ base: "column", md: "row" }}
-              transition="all 0.5s"
-              overflow="hidden"
-              data-is-open={open}
-              css={{
-                "&[data-is-open=true]": {
-                  mt: "40px",
-                  h: "opened-header-height",
-                },
-                "&[data-is-open=false]": {
-                  h: { base: "0", md: "header-height" },
-                },
-              }}
-            >
-              <ListItem title="会社案内" href="/about" />
-              <ListItem title="サービス" href="/service" />
-              <ListItem title="記事一覧" href="/article" />
-              <ListItem
-                title="お問い合わせ"
-                href="/contact"
-                icon={<IoMailOutline color="black" />}
-              />
-            </List.Root>
-
-            <HamburgerButton
-              onToggle={onToggle}
-              isOpen={open}
-              display={{ base: "flex", md: "none" }}
-              h="header-height"
-              w="110px"
-              align="end"
-              justify="center"
-              cursor="pointer"
-            />
-          </HStack>
-        </Container>
-      </Box>
-    </VStack>
+        onClick={onToggle}
+      />
+    </>
   );
 }
 
