@@ -1,3 +1,4 @@
+import { navigationItems } from "@/constants";
 import {
   Box,
   Button,
@@ -9,16 +10,14 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { Link } from "react-router";
-
-import { navigationItems } from "@/constants";
 import { GoChevronRight } from "react-icons/go";
 import { SlArrowDown } from "react-icons/sl";
+import { Link } from "react-router";
 
 export default function HomePage() {
   return (
     <>
-      <VStack h="100vh" justify="center">
+      <VStack h="calc(100dvh - 80px)" justify="center">
         <Spacer />
         <VStack w="100%" align={{ base: "center", lg: "end" }}>
           <Heading size="5xl" color="gray.50">

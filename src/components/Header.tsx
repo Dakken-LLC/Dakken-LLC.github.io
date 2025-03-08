@@ -18,10 +18,16 @@ export default function Header() {
   const { open, onToggle } = useDisclosure();
 
   return (
-    <VStack as="header" w="full" h="80px" pos="sticky" top="0" zIndex="sticky">
+    <VStack
+      as="header"
+      h="header-height"
+      w="full"
+      pos="sticky"
+      top="0"
+      zIndex="sticky"
+    >
       <Box
         w="inherit"
-        h="inherit"
         transition="all 0.5s, border-bottom 0s"
         data-is-top={isTop}
         data-is-opened={open}
@@ -39,13 +45,9 @@ export default function Header() {
           },
         }}
       >
-        <Container maxW="6xl" h="inherit">
-          <HStack
-            h="inherit"
-            alignItems="flex-start"
-            justifyContent="space-between"
-          >
-            <Box h="80px" w="110px" display="flex" alignItems="center">
+        <Container maxW="6xl">
+          <HStack alignItems="flex-start" justifyContent="space-between">
+            <Box h="header-height" w="110px" display="flex" alignItems="center">
               <Link to="/">
                 <Image src={logoSrc} h="55px" userSelect="none" />
               </Link>
@@ -66,10 +68,10 @@ export default function Header() {
               css={{
                 "&[data-is-open=true]": {
                   mt: "40px",
-                  h: "240px",
+                  h: "opened-header-height",
                 },
                 "&[data-is-open=false]": {
-                  h: { base: "0", md: "80px" },
+                  h: { base: "0", md: "header-height" },
                 },
               }}
             >
@@ -87,7 +89,7 @@ export default function Header() {
               onToggle={onToggle}
               isOpen={open}
               display={{ base: "flex", md: "none" }}
-              h="80px"
+              h="header-height"
               w="110px"
               align="end"
               justify="center"

@@ -2,6 +2,16 @@
 
 A corporate site of DAkken LLC.
 
+## For Writers
+
+## For Developers
+
+> After customizing the default config, you may need to update the types.
+>
+> ```bash
+> npx @chakra-ui/cli typegen src/theme.ts
+> ```
+
 ## Attributions
 
 Photos in Business Section by:

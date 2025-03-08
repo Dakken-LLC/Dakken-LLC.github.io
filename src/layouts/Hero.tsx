@@ -17,7 +17,7 @@ export default function HeroLayout() {
           h="20vh"
         ></Box>
       </Portal>
-      <Spacer h="20vh" />
+      <Spacer h="hero-skip" />
       <Outlet />
     </>
   );

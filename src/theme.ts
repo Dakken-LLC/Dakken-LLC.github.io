@@ -15,6 +15,22 @@ const customConfig = defineConfig({
         },
       },
     },
+    tokens: {
+      sizes: {
+        "header-height": {
+          value: "80px",
+        },
+        "opened-header-height": {
+          value: "240px",
+        },
+        "hero-height": {
+          value: "20vh",
+        },
+        "hero-skip": {
+          value: "calc(20vh - 80px)",
+        },
+      },
+    },
   },
 });
 
