@@ -18,7 +18,7 @@ export default function BackgroundLayout({
           top="0"
           left={{ base: "0", lg: "calc((100% - 1024px) / 4)" }}
           w="min(100%, 1024px)"
-          h="100vh"
+          h="100svh"
           zIndex={-1}
         ></Box>
         <Box
@@ -29,7 +29,7 @@ export default function BackgroundLayout({
           top="0"
           left="0"
           w="100%"
-          h="100vh"
+          h="100svh"
           zIndex={-2}
         ></Box>
       </Portal>

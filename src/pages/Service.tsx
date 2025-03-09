@@ -67,8 +67,12 @@ export default function ServicePage() {
             gap={{ base: 0, md: 4 }}
             alignItems="baseline"
           >
-            <Heading size="3xl">Webアプリ開発</Heading>
-            <Text color="fg.muted">Web Application Development</Text>
+            <Heading size="3xl" fontFamily="Noto Sans JP Variable">
+              Webアプリ開発
+            </Heading>
+            <Text color="fg.muted" fontFamily="muted" fontWeight="200">
+              Web Application Development
+            </Text>
           </Stack>
           <BusinessSection {...businessSectionData["app"]} />
         </Stack>
@@ -80,7 +84,9 @@ export default function ServicePage() {
             alignItems="baseline"
           >
             <Heading size="3xl">データ分析</Heading>
-            <Text color="fg.muted">Data Analysis</Text>
+            <Text color="fg.muted" fontFamily="muted" fontWeight="200">
+              Data Analysis
+            </Text>
           </Stack>
           <BusinessSection {...businessSectionData["data"]} />
         </Stack>
