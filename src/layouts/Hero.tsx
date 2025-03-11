@@ -13,7 +13,7 @@ export default function HeroLayout() {
           pos="absolute"
           top="0"
           left="0"
-          w="100vw"
+          w="100%"
           h="20vh"
         ></Box>
       </Portal>
