@@ -16,10 +16,10 @@ export default function BackgroundLayout({
           bgSize="contain"
           bgPos="left"
           pos="absolute"
-          top="0"
+          top="70px"
           left={{ base: "0", lg: "calc((100% - 1024px) / 4)" }}
           w="min(100%, 1024px)"
-          h="100svh"
+          h="90svh"
           zIndex={-1}
         ></Box>
         <Box
@@ -32,7 +32,6 @@ export default function BackgroundLayout({
           w="100%"
           h="100svh"
           zIndex={-2}
-
         ></Box>
       </Portal>
       {children}

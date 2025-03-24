@@ -52,12 +52,7 @@ export default function HomePage() {
         </VStack>
         <Spacer />
         <Box position="relative">
-          <Box
-            position="absolute"
-            bottom="80px"
-            transform="translateX(-50%)"
-            animation="bounce 1.5s infinite"
-          >
+          <Box bottom="80px" animation="bounce 1.5s infinite" mb={4}>
             <SlArrowDown color="whitesmoke" size="40px" strokeWidth="5" />
           </Box>
         </Box>
@@ -146,8 +141,12 @@ function MyCard({ title, description, children }: MyCardProps) {
   return (
     <Card.Root boxShadow="md">
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Description>{description}</Card.Description>
+        <Card.Title fontSize="2xl" fontWeight="bold">
+          {title}
+        </Card.Title>
+        <Card.Description fontSize="lg" fontWeight="normal">
+          {description}
+        </Card.Description>
       </Card.Body>
       <Card.Footer>
         <VStack align="start">{children}</VStack>

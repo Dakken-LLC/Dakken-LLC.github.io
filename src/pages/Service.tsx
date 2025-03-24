@@ -138,6 +138,7 @@ function BusinessCard({
 }) {
   return (
     <Card.Root
+      boxShadow="md"
       flexDirection={{
         base: "column",
         md: "row",
