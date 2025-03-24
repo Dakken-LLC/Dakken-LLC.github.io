@@ -10,45 +10,55 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { GoChevronRight } from "react-icons/go";
 import { SlArrowDown } from "react-icons/sl";
 import { Link } from "react-router";
 
 export default function HomePage() {
   return (
-    <>
-      <VStack h="calc(100svh - 80px)" justify="center">
+    <motion.div
+      initial={{ opacity: 0 }} // 初期状態: 不透明度 0
+      animate={{ opacity: 1 }} // アニメーション後: 不透明度 1
+      transition={{ duration: 1 }} // アニメーションの時間: 1秒
+    >
+      <VStack h="calc(100svh - 80px)" justify="center" textAlign="center">
         <Spacer />
         <VStack w="100%" align={{ base: "center", lg: "end" }}>
           <Heading
-            size="5xl"
+            size="6xl"
             color="gray.50"
             fontFamily="Bebas Neue"
+            fontWeight="light"
             letterSpacing="0.1em"
             mr={{ base: "0", lg: "-0.1em" }} // For right alignment with the text below
           >
             CHALLENGE FOR THE FUTURE
+            <Box
+              as="span"
+              animation="blink 2.5s  infinite" // 点滅アニメーションを適用
+            >
+              .
+            </Box>
           </Heading>
           <Text
-            fontSize="lg"
+            fontSize={{ base: "xl", md: "3xl" }}
             color="gray.50"
-            fontFamily="Noto Sans JP Variable"
             letterSpacing="0.1em"
             mr={{ base: "0", lg: "-0.1em" }} // For right alignment with the heading above
           >
-            合同会社DA研
+            合同会社DA研へようこそ&nbsp;
           </Text>
         </VStack>
         <Spacer />
         <Box position="relative">
           <Box
             position="absolute"
-            bottom="100px"
-            left="50%"
+            bottom="80px"
             transform="translateX(-50%)"
             animation="bounce 1.5s infinite"
           >
-            <SlArrowDown color="whitesmoke" size="30px" />
+            <SlArrowDown color="whitesmoke" size="40px" strokeWidth="5" />
           </Box>
         </Box>
       </VStack>
@@ -56,17 +66,25 @@ export default function HomePage() {
       <VStack my={8} gap={8}>
         <Center>
           <Text
-            fontSize={{ base: "3xl", md: "5xl" }}
+            fontSize={{ base: "5xl", md: "6xl" }}
+            textAlign="center"
             fontWeight="bold"
-            textUnderlineOffset="0.3em"
-            textDecoration="underline"
             bgGradient="to-r"
             bgClip="text"
             gradientFrom="cyan.400"
             gradientVia="blue.500"
             gradientTo="purple.500"
+            borderBottom="4px solid"
+            borderImage="linear-gradient(to right, #22D3EE, #3B82F6, #8B5CF6) 1"
+            pb="2"
+            style={{
+              wordBreak: "keep-all",
+              overflowWrap: "anywhere",
+            }}
           >
-            データの力で未来を切り拓く
+            DX × データ分析で
+            <wbr />
+            毎日に革命を
           </Text>
         </Center>
         <Center>
@@ -92,7 +110,7 @@ export default function HomePage() {
           </MyCard>
         ))}
       </SimpleGrid>
-    </>
+    </motion.div>
   );
 }
 
@@ -105,7 +123,12 @@ type LinkButtonProps = {
 function LinkButton({ name, href, target }: LinkButtonProps) {
   return (
     <Link to={href} target={target}>
-      <Button>
+      <Button
+        bg="gray.700"
+        color="white"
+        fontSize="lg"
+        _hover={{ bg: "#d34b4b" }}
+      >
         {name}
         <GoChevronRight />
       </Button>
@@ -121,7 +144,7 @@ type MyCardProps = {
 
 function MyCard({ title, description, children }: MyCardProps) {
   return (
-    <Card.Root>
+    <Card.Root boxShadow="md">
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Description>{description}</Card.Description>

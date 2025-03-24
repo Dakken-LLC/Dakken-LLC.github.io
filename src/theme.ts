@@ -3,20 +3,31 @@ import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 const customConfig = defineConfig({
   globalCss: {
     body: {
-      fontFamily: ".AppleSystemUIFont", // "Note Sans JP Variable" is available
+      fontFamily: "'Noto Sans JP', sans-serif",
     },
   },
   theme: {
     keyframes: {
       gradient: {
         "0%": {
-          backgroundPosition: "0% 50%",
+          backgroundPosition: "0% 0%",
         },
         "50%": {
-          backgroundPosition: "100% 50%",
+          backgroundPosition: "0% 100%",
         },
         "100%": {
-          backgroundPosition: "0% 50%",
+          backgroundPosition: "0% 0%",
+        },
+      },
+      blink: {
+        "25%": {
+          opacity: 1,
+        },
+        "50%": {
+          opacity: 0,
+        },
+        "75%": {
+          opacity: 1,
         },
       },
     },
