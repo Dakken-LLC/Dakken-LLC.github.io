@@ -175,7 +175,7 @@ function BusinessCard({
         </Card.Body>
         <Card.Footer>
           <Link to={href}>
-            <Button bg="gray.700" color="white" _hover={{ bg: "#d34b4b" }}>
+            <Button bg="gray.700" color="white" _hover={{ bg: "red.500" }}>
               詳細を見る
             </Button>
           </Link>

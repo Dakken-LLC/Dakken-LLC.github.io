@@ -34,15 +34,15 @@ export default function HomePage() {
             mr={{ base: "0", lg: "-0.1em" }} // For right alignment with the text below
           >
             CHALLENGE FOR THE FUTURE
-            <Box
+            <Text
               as="span"
-              animation="blink 2.5s  infinite" // 点滅アニメーションを適用
+              animation="blink 2.5s  infinite"
             >
               .
-            </Box>
+            </Text>
           </Heading>
           <Text
-            fontSize={{ base: "xl", md: "3xl" }}
+            fontSize={{ base: "xl", md: "2xl" }}
             color="gray.50"
             letterSpacing="0.1em"
             mr={{ base: "0", lg: "-0.1em" }} // For right alignment with the heading above
@@ -122,7 +122,7 @@ function LinkButton({ name, href, target }: LinkButtonProps) {
         bg="gray.700"
         color="white"
         fontSize="lg"
-        _hover={{ bg: "#d34b4b" }}
+        _hover={{ bg: "red.500" }}
       >
         {name}
         <GoChevronRight />

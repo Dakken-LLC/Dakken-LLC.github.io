@@ -57,19 +57,18 @@ export default function Header() {
             <HStack alignItems="flex-start" justifyContent="space-between">
               <Box
                 h="header-height"
-                w="150px"
+                w="100px"
                 display="flex"
                 alignItems="center"
               >
                 <Link to="/">
-                  <Image src={logoSrc} h="60px" userSelect="none" />
+                  <Image src={logoSrc} h="50px" userSelect="none" />
                 </Link>
               </Box>
 
               <List.Root
                 as="nav"
                 fontSize="lg"
-                fontWeight="semibold"
                 listStyle="none"
                 pos="relative"
                 display="flex"
@@ -84,11 +83,9 @@ export default function Header() {
                   "&[data-is-open=true]": {
                     mt: "40px",
                     h: "opened-header-height",
-                    left: "-25px",
                   },
                   "&[data-is-open=false]": {
                     h: { base: "0", md: "header-height" },
-                    left: "-25px",
                   },
                 }}
               >
