@@ -34,10 +34,7 @@ export default function HomePage() {
             mr={{ base: "0", lg: "-0.1em" }} // For right alignment with the text below
           >
             CHALLENGE FOR THE FUTURE
-            <Text
-              as="span"
-              animation="blink 2.5s  infinite"
-            >
+            <Text as="span" animation="blink 2.5s  infinite">
               .
             </Text>
           </Heading>
