@@ -11,20 +11,21 @@ export default function BackgroundLayout({
       <Portal>
         <Box
           bgImage={`url(${backgroundImageSrc})`}
+          filter="blur(1px)"
           bgRepeat="no-repeat"
           bgSize="contain"
           bgPos="left"
           pos="absolute"
-          top="0"
+          top="70px"
           left={{ base: "0", lg: "calc((100% - 1024px) / 4)" }}
           w="min(100%, 1024px)"
-          h="100svh"
+          h="90svh"
           zIndex={-1}
         ></Box>
         <Box
-          animation="gradient 18s ease infinite"
+          animation="gradient 15s ease infinite"
           bgImage="linear-gradient(0deg, #0cb1c1, #3948b9, #224b8f)"
-          bgSize="180% 180%"
+          bgSize="100% 150%"
           pos="absolute"
           top="0"
           left="0"

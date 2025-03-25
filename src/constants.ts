@@ -95,12 +95,12 @@ export const memberData = [
 export const historyData = [
   {
     title: "会社設立",
-    description: "1st September 2024",
+    description: "2024/1/17",
     icon: IoAccessibility,
   },
   {
     title: "代表交代",
-    description: "1st April 2025",
+    description: "2025/4/1",
     icon: LiaExchangeAltSolid,
   },
 ];

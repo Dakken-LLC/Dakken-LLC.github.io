@@ -57,7 +57,7 @@ export default function Header() {
             <HStack alignItems="flex-start" justifyContent="space-between">
               <Box
                 h="header-height"
-                w="95px"
+                w="100px"
                 display="flex"
                 alignItems="center"
               >
@@ -68,6 +68,7 @@ export default function Header() {
 
               <List.Root
                 as="nav"
+                fontSize="lg"
                 listStyle="none"
                 pos="relative"
                 display="flex"

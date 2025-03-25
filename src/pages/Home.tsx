@@ -10,45 +10,47 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { GoChevronRight } from "react-icons/go";
 import { SlArrowDown } from "react-icons/sl";
 import { Link } from "react-router";
 
 export default function HomePage() {
   return (
-    <>
-      <VStack h="calc(100svh - 80px)" justify="center">
+    <motion.div
+      initial={{ opacity: 0 }} // 初期状態: 不透明度 0
+      animate={{ opacity: 1 }} // アニメーション後: 不透明度 1
+      transition={{ duration: 1 }} // アニメーションの時間: 1秒
+    >
+      <VStack h="calc(100svh - 80px)" justify="center" textAlign="center">
         <Spacer />
         <VStack w="100%" align={{ base: "center", lg: "end" }}>
           <Heading
-            size="5xl"
+            size="6xl"
             color="gray.50"
             fontFamily="Bebas Neue"
+            fontWeight="light"
             letterSpacing="0.1em"
             mr={{ base: "0", lg: "-0.1em" }} // For right alignment with the text below
           >
             CHALLENGE FOR THE FUTURE
+            <Text as="span" animation="blink 2.5s  infinite">
+              .
+            </Text>
           </Heading>
           <Text
-            fontSize="lg"
+            fontSize={{ base: "xl", md: "2xl" }}
             color="gray.50"
-            fontFamily="Noto Sans JP Variable"
             letterSpacing="0.1em"
             mr={{ base: "0", lg: "-0.1em" }} // For right alignment with the heading above
           >
-            合同会社DA研
+            合同会社DA研へようこそ&nbsp;
           </Text>
         </VStack>
         <Spacer />
         <Box position="relative">
-          <Box
-            position="absolute"
-            bottom="100px"
-            left="50%"
-            transform="translateX(-50%)"
-            animation="bounce 1.5s infinite"
-          >
-            <SlArrowDown color="whitesmoke" size="30px" />
+          <Box bottom="80px" animation="bounce 1.5s infinite" mb={4}>
+            <SlArrowDown color="whitesmoke" size="40px" strokeWidth="5" />
           </Box>
         </Box>
       </VStack>
@@ -56,17 +58,25 @@ export default function HomePage() {
       <VStack my={8} gap={8}>
         <Center>
           <Text
-            fontSize={{ base: "3xl", md: "5xl" }}
+            fontSize={{ base: "5xl", md: "6xl" }}
+            textAlign="center"
             fontWeight="bold"
-            textUnderlineOffset="0.3em"
-            textDecoration="underline"
             bgGradient="to-r"
             bgClip="text"
             gradientFrom="cyan.400"
             gradientVia="blue.500"
             gradientTo="purple.500"
+            borderBottom="4px solid"
+            borderImage="linear-gradient(to right, #22D3EE, #3B82F6, #8B5CF6) 1"
+            pb="2"
+            style={{
+              wordBreak: "keep-all",
+              overflowWrap: "anywhere",
+            }}
           >
-            データの力で未来を切り拓く
+            DX × データ分析で
+            <wbr />
+            毎日に革命を
           </Text>
         </Center>
         <Center>
@@ -92,7 +102,7 @@ export default function HomePage() {
           </MyCard>
         ))}
       </SimpleGrid>
-    </>
+    </motion.div>
   );
 }
 
@@ -105,7 +115,12 @@ type LinkButtonProps = {
 function LinkButton({ name, href, target }: LinkButtonProps) {
   return (
     <Link to={href} target={target}>
-      <Button>
+      <Button
+        bg="gray.700"
+        color="white"
+        fontSize="lg"
+        _hover={{ bg: "red.500" }}
+      >
         {name}
         <GoChevronRight />
       </Button>
@@ -121,10 +136,14 @@ type MyCardProps = {
 
 function MyCard({ title, description, children }: MyCardProps) {
   return (
-    <Card.Root>
+    <Card.Root boxShadow="md">
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Description>{description}</Card.Description>
+        <Card.Title fontSize="2xl" fontWeight="bold">
+          {title}
+        </Card.Title>
+        <Card.Description fontSize="lg" fontWeight="normal">
+          {description}
+        </Card.Description>
       </Card.Body>
       <Card.Footer>
         <VStack align="start">{children}</VStack>

@@ -98,7 +98,7 @@ export default function ServicePage() {
             alignItems="baseline"
           >
             <Heading size="3xl">法人教育</Heading>
-            <Text color="fg.muted">
+            <Text color="fg.muted" fontFamily="muted" fontWeight="200">
               Corporate Training / Business Education
             </Text>
           </Stack>
@@ -112,7 +112,9 @@ export default function ServicePage() {
             alignItems="baseline"
           >
             <Heading size="3xl">動画編集</Heading>
-            <Text color="fg.muted">Video Editing</Text>
+            <Text color="fg.muted" fontFamily="muted" fontWeight="200">
+              Video Editing
+            </Text>
           </Stack>
           <BusinessSection {...businessSectionData["video"]} />
         </Stack>
@@ -136,6 +138,7 @@ function BusinessCard({
 }) {
   return (
     <Card.Root
+      boxShadow="md"
       flexDirection={{
         base: "column",
         md: "row",
@@ -172,7 +175,9 @@ function BusinessCard({
         </Card.Body>
         <Card.Footer>
           <Link to={href}>
-            <Button>詳細を見る</Button>
+            <Button bg="gray.700" color="white" _hover={{ bg: "red.500" }}>
+              詳細を見る
+            </Button>
           </Link>
         </Card.Footer>
       </Box>
